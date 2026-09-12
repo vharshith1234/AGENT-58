@@ -1,12 +1,223 @@
 # Agent 58 — Faculty Workload System
 
-## Quick start
+Multi-role web application for **Vignan's Foundation for Science, Technology & Research** to calculate, balance, approve, and report faculty workload across schools and departments.
 
-### Backend
+CSE academic data is treated as **REAL** (Section-7 timetable import). Other departments use **DEMO** timetable/workload while keeping official directory identities and photos.
+
+**Repository:** https://github.com/vharshith1234/AGENT-58
+
+---
+
+## Table of contents
+
+1. [Features overview](#features-overview)
+2. [Tech stack](#tech-stack)
+3. [Architecture](#architecture)
+4. [Role functionality](#role-functionality)
+5. [Workload engine](#workload-engine)
+6. [Approval & correction flows](#approval--correction-flows)
+7. [Data sources (REAL vs DEMO)](#data-sources-real-vs-demo)
+8. [Quick start](#quick-start)
+9. [Environment variables](#environment-variables)
+10. [Seed & import scripts](#seed--import-scripts)
+11. [API overview](#api-overview)
+12. [Demo logins](#demo-logins)
+13. [Tests & notes](#tests--notes)
+
+---
+
+## Features overview
+
+| Area | What it does |
+|---|---|
+| **Authentication** | Email/password login, JWT access + refresh tokens, role-based dashboards |
+| **Workload calculation** | Deterministic engine for teaching, projects, research, admin, committees, PhD |
+| **Norms & policies** | HR-managed activity weights and min/expected/max norms |
+| **HOD operations** | Courses, allocations, timetable (incl. Excel import), projects, research, balancing, what-if |
+| **Faculty self-service** | View load, verify, request corrections, download statements, manage photo |
+| **Dean / Principal** | Cross-dept comparison, overload/underload, approvals, institution compliance & reports |
+| **Reports** | Department/institution Excel & CSV; compliance PDF; faculty PDF/XLSX/CSV statements |
+| **Profiles & photos** | Official Vignan directory sync + optional Cloudinary / local uploads |
+| **Notifications** | In-app alerts for corrections and approval events |
+| **Caching** | In-memory response cache + frontend GET cache for faster dashboards |
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, TypeScript, Vite, React Router, Tailwind CSS |
+| Backend | NestJS, Prisma, Passport JWT, bcrypt, pdf-lib, xlsx, compression |
+| Database | PostgreSQL (local recommended; Neon optional) |
+| Auth | JWT access + refresh; RBAC permissions guard |
+| Optional | Cloudinary for profile photos |
+
+---
+
+## Architecture
+
+```
+frontend (Vite :5173) ──HTTP──► backend NestJS (:3000/api) ──Prisma──► PostgreSQL
+                                      │
+                                      ├── /uploads  (local photos)
+                                      └── workload engine (pure calc + snapshots)
+```
+
+- **Frontend:** `frontend/` — role shells, dashboards, charts, login UI  
+- **Backend:** `backend/` — Nest modules per role + shared workload/reports/auth  
+- **Schema:** `backend/prisma/schema.prisma`  
+- **API prefix:** `/api`  
+- **Static uploads:** `/uploads/` (outside `/api`)
+
+---
+
+## Role functionality
+
+### HR (`/hr/*`)
+
+Institutional master data and policy control.
+
+- Dashboard with institution workload health (REAL + DEMO combined)
+- Faculty management (create/update, search, profiles)
+- Departments & schools
+- Workload **policies** (activity weights) and **norms** (min / expected / max)
+- Weightings UI, analytics, history
+- Review **correction requests**
+- Compliance view and report exports
+- Notifications & profile
+
+### HOD (`/hod/*`)
+
+Department academic operations and load balancing.
+
+- Dashboard and faculty list (department-scoped)
+- Courses, course allocations, timetable (CRUD + Excel import/preview)
+- Project supervision, research entries
+- Administration roles & committees
+- Workload table and **balancing** suggestions / apply
+- **What-if simulation** (read-only; never persists)
+- Correction review, analytics, department reports
+- **Submit department package** for Dean approval
+
+### Faculty (`/faculty/*`)
+
+Personal workload and statements.
+
+- Dashboard, my courses / timetable / projects / research / responsibilities
+- My workload breakdown and status (NORMAL / OVERLOAD / UNDERLOAD)
+- Verify workload; submit correction requests
+- Download workload statement (PDF / Excel / CSV)
+- Profile photo upload/delete
+- Notifications
+
+### Dean (`/dean/*`)
+
+School / cross-department oversight.
+
+- Institution-wide dashboard counts and department cards
+- Department comparison, workload analysis
+- Overload / underload faculty lists
+- Approvals: approve, send back, or **escalate to Principal**
+- Trends, reports, notifications, profile
+
+### Principal (`/principal/*`)
+
+Institution-level governance.
+
+- Principal overview with schools/departments/faculty stats
+- Institution overview (schools → departments)
+- Faculty directory, analytics, compliance
+- Overload / underload metric cards, trends
+- Approvals: approve, **finalize**, or send back
+- Institution reports & compliance PDF
+
+---
+
+## Workload engine
+
+Implemented in `backend/src/workload/workload.engine.ts` (pure, deterministic).
+
+**Activity types:** THEORY, TUTORIAL, LAB, UG/PG projects, PhD, COMMITTEE, ADMIN_ROLE, RESEARCH  
+
+**Status bands** (against norms):
+
+| Status | Meaning |
+|---|---|
+| `UNDERLOAD` | Below minimum |
+| `NORMAL` | Within min–max |
+| `OVERLOAD` | Above maximum |
+| `INDETERMINATE` | Insufficient data |
+
+**Rules of note**
+
+- Official **teaching load** comes from **course allocations** (timetable is schedule/evidence, not double-counted).
+- Weights and norms are always read from the database (HR-managed).
+- Mutations recalculate and persist **snapshots**.
+- What-if / simulate endpoints compute without writing.
+- DEMO activity rows are kept separate from REAL for reporting splits.
+
+Run unit tests:
+
 ```bash
 cd backend
+npm run test:engine
+```
+
+---
+
+## Approval & correction flows
+
+```
+HOD submits package
+        │
+        ▼
+   Dean review ──approve──► (optional escalate)
+        │                         │
+     send-back                    ▼
+                           Principal review
+                                  │
+                     ┌────────────┼────────────┐
+                     ▼            ▼            ▼
+                 finalize      approve      send-back
+```
+
+- Faculty can open **correction requests**; HOD and HR can review them.
+- Approval actions write audit logs and notifications.
+
+---
+
+## Data sources (REAL vs DEMO)
+
+| Kind | Departments | Academic data | Identities / photos |
+|---|---|---|---|
+| **REAL** | CSE (School of Computing) | Section-7 timetable / allocations | Official + seeded |
+| **DEMO** | IT, CA, ACSE, ECE, EEE, MECH, CIVIL, DMS | Synthetic timetable/workload until import | [Vignan people directory](https://vignan.ac.in/newvignan/people.php) |
+
+Dashboards often show **REAL** and **DEMO** metrics separately, plus combined institution totals.
+
+---
+
+## Quick start
+
+### Prerequisites
+
+- Node.js 20+
+- PostgreSQL running locally (recommended)
+
+Create DB/user example:
+
+- Database: `agent58`
+- User: `agent58`
+- Password: `agent58_local_dev`
+- Host: `127.0.0.1:5432`
+
+### Backend
+
+```bash
+cd backend
+cp .env.example .env   # edit if your Postgres credentials differ
 npm install --legacy-peer-deps
-# Uses local Postgres from backend/.env (avoids Neon sleep / P1001)
 npx prisma db push
 npm run db:seed:real
 npm run db:seed:demo-depts
@@ -15,24 +226,95 @@ npm run db:enrich:official
 npm run db:sync:official
 npm run start:dev
 ```
+
 API: http://localhost:3000/api
 
+> Local Postgres avoids Neon free-tier sleep / Prisma `P1001` (“Can't reach database server”).
+
 ### Frontend
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+
 App: http://localhost:5173/login
 
-## Logins
+---
 
-Every account uses the same pattern:
+## Environment variables
 
-- **Email:** `name@vignan.ac.in`
-- **Password:** `Vignan@` followed by 8 random digits
+Copy `backend/.env.example` → `backend/.env`.
 
-Sign in at http://localhost:5173/login with the email and password below. Each account opens the matching dashboard.
+| Variable | Purpose |
+|---|---|
+| `DATABASE_URL` | Postgres connection string |
+| `PRISMA_CLIENT_ENGINE_TYPE` | Use `binary` |
+| `JWT_SECRET` / `JWT_REFRESH_SECRET` | Token signing secrets |
+| `JWT_EXPIRES_IN` / `JWT_REFRESH_EXPIRES_IN` | e.g. `15m` / `7d` |
+| `PORT` | Backend port (default `3000`) |
+| `CLOUDINARY_*` | Optional cloud photo storage |
+
+Frontend (optional `frontend/.env`):
+
+| Variable | Default |
+|---|---|
+| `VITE_API_URL` | `http://localhost:3000/api` |
+
+**Do not commit** `backend/.env` (gitignored).
+
+---
+
+## Seed & import scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run db:seed:real` | Seed SOCI/CSE, policies, norms, admin + CSE faculty |
+| `npm run db:import:section7` | Import CSE Section-7 timetable as REAL |
+| `npm run db:section7:logins` | Ensure Section-7 faculty login accounts |
+| `npm run db:seed:demo-depts` | Additive DEMO departments + demo academics |
+| `npm run db:enrich:official` | Enrich profiles from official directory |
+| `npm run db:sync:official` | Sync official photo/profile URLs into DB |
+| `npm run db:reset:logins` | Reset passwords from credential store |
+
+Optional CSE import after real seed:
+
+```bash
+cd backend
+npm run db:import:section7
+npm run db:section7:logins
+npm run db:enrich:official
+npm run db:sync:official
+```
+
+---
+
+## API overview
+
+Base URL: `http://localhost:3000/api`
+
+| Prefix | Capabilities |
+|---|---|
+| `/auth` | login, refresh, logout, me, profile photo |
+| `/hr` | faculty/departments CRUD, policies, norms, corrections, compliance |
+| `/hod` | courses, allocations, timetable, projects, research, balancing, submit-approval |
+| `/faculty` | own workload, corrections, statements, photo |
+| `/dean` | dashboard, departments, approvals |
+| `/principal` | dashboard, hierarchy, faculty, approvals finalize |
+| `/workload` | summary, history, recalculate, simulate, balance |
+| `/reports` | department/institution Excel & CSV, compliance PDF |
+| `/notifications` | list, unread count, mark read |
+
+All protected routes require `Authorization: Bearer <accessToken>` (except login/forgot).
+
+---
+
+## Demo logins
+
+Sign in at http://localhost:5173/login.
+
+**Password pattern:** `Vignan@` + 8 digits (see tables below).
 
 ### Admin
 
@@ -57,7 +339,7 @@ Sign in at http://localhost:5173/login with the email and password below. Each a
 
 ### Other-department faculty (DEMO academic data)
 
-CSE academic data is **REAL**. Other departments use **DEMO** timetable/workload data until a real timetable is imported. Identities, photos, and profile details for those departments come from https://vignan.ac.in/newvignan/people.php
+CSE academic data is **REAL**. Other departments use **DEMO** timetable/workload until a real timetable is imported. Identities, photos, and profile details come from https://vignan.ac.in/newvignan/people.php
 
 | Department | Name | Email | Password |
 |---|---|---|---|
@@ -102,23 +384,16 @@ CSE academic data is **REAL**. Other departments use **DEMO** timetable/workload
 | DMS | Dr. Dhulipalla Vijay Krishna | dhulipallavijaykrishna@vignan.ac.in | Vignan@21929529 |
 | DMS | Dr. K. Siva Nageswara Rao | ksivanageswararao@vignan.ac.in | Vignan@80844766 |
 
-## Seed / import
+---
 
-```bash
-cd backend
-npm run db:import:section7
-npm run db:section7:logins
-npm run db:seed:demo-depts
-npm run db:enrich:official
-npm run db:sync:official
-```
+## Tests & notes
 
-## Engine tests
 ```bash
 cd backend
 npm run test:engine
 ```
 
-## Notes
-- Weights/norms come from DB; what-if never writes; mutations recalculate snapshots.
-- Agent 25/56 feeds are stub provider interfaces in the HOD module (no fake rows unless you insert them).
+- Prefer **local Postgres** for development; Neon free tier can sleep and cause connection errors.
+- After reseeding, always run `db:enrich:official` and `db:sync:official` so faculty photos appear.
+- Agent 25 (PhD) / Agent 56 (committees) are stub provider interfaces in the HOD module — no invented rows unless you insert data.
+- What-if never writes; live mutations recalculate snapshots.
