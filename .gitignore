@@ -12,6 +12,9 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+!.env.production
+!**/.env.example
+!**/.env.production
 
 # Uploads / local DB
 uploads/
