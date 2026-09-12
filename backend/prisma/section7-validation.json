@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-09-12T04:29:04.566Z",
+  "sourceTimetable": "Section-7 image provided in chat",
+  "sourceDirectory": "https://vignan.ac.in/newvignan/people.php",
+  "facultyFoundInTimetable": 20,
+  "facultyKeptOperational": 7,
+  "incompleteNamesSkipped": [
+    "SK Suf… (truncated)"
+  ],
+  "facultyMatchedWithWebsite": [
+    "Mr. Senthil D",
+    "Mr. U. Venkateswara Rao",
+    "Mr. Syed Nafees Ahamed",
+    "Ms. Pushya Chaparala",
+    "Mrs. V. Sai Spandana",
+    "Dr. J. Veeranjaneyulu"
+  ],
+  "facultyUncertain": [
+    {
+      "name": "Dr. Gabbi Reddy Keerthi",
+      "note": "Timetable name kept as Gabbi Reddy Keerthi; directory lists Keerthi G. Photo copied from the CSE directory row."
+    },
+    {
+      "name": "Mrs. B. Lalitha",
+      "note": "Directory Lalitha is Ravuri, timetable initial is B. Not merged."
+    },
+    {
+      "name": "G. Naveen",
+      "note": "Directory Naveen records are B.N. Naveen Kumar (Maths) and B. Naveen Kumar Reddy. Not merged with G. Naveen."
+    },
+    {
+      "name": "T. Meghana",
+      "note": "Different initial/department. Not merged."
+    },
+    {
+      "name": "Ms. A. Durga Bhavani",
+      "note": "Directory has dr . s durga and ms . setti sridurga (Chemistry). Not merged with A. Durga Bhavani."
+    },
+    {
+      "name": "M Vyshnavi",
+      "note": "Several directory Vyshnavi records (Koduru / Nakka / Tallam). Not merged."
+    }
+  ],
+  "facultyUnmatched": [
+    "A. Venkata Kaveri",
+    "SK Javeed Ali",
+    "SD. Thajuddin Baba",
+    "Bhathula Ninnagari",
+    "Mr. R. Gowtham",
+    "Sai Swateh Sinkhu",
+    "Kuruva Sandhya Rani",
+    "Sri Manju Nadh"
+  ],
+  "manualVerification": [
+    "SK Suf… — truncated on timetable next to A. Venkata Kaveri; not created.",
+    "Dr. Gabbi Reddy Keerthi vs directory Keerthi G — possible same person, not merged.",
+    "Mrs. B. Lalitha vs Ravuri Lalitha — not merged.",
+    "G. Naveen vs other Naveen records — not merged.",
+    "T. Meghana vs Chikkala Meghana (SSH) — not merged.",
+    "M Vyshnavi — multiple directory hits, not merged.",
+    "Ms. A. Durga Bhavani — no confident directory match.",
+    "Co-listed lab/tutorial faculty were not given invented hour splits; only the first-listed teacher received allocation hours from the grid."
+  ],
+  "demoFacultyDeactivated": [],
+  "demoCoursesRemoved": [],
+  "fakeProjectsResearchPhdCommitteesCleared": true,
+  "coursesImported": 13,
+  "timetableRecordsImported": 33,
+  "courseAllocationsCreated": 12,
+  "activeOperationalFacultyCount": 7,
+  "expectedTimetableFacultyCount": 7,
+  "countsMatch": true,
+  "notes": [
+    "Allocation hours were computed from timetable grid durations for the first-listed teacher of each course.",
+    "Multi-faculty lab/tutorial cells do not invent a faculty assignment on the slot.",
+    "Seven Section-7 faculty have FACULTY logins as name@vignan.ac.in. Password pattern: Vignan@{8-digit}.",
+    "Credits, student strength, semester, and joining dates were not visible; stored as unspecified/zero rather than guessed.",
+    "Class Teacher (Dr. Gabbi Reddy Keerthi, Section-7) is the only administrative role taken from the timetable."
+  ]
+}

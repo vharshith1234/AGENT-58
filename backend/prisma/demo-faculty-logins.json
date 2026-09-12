@@ -1,0 +1,343 @@
+{
+  "directoryCards": 717,
+  "photosAssigned": 54,
+  "photosSkipped": [
+    {
+      "name": "Bhathula Ninnagari",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. V. Sai Spandana",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Gabbi Reddy Keerthi",
+      "reason": "no confident directory match"
+    }
+  ],
+  "detailsEnriched": 54,
+  "logins": [
+    {
+      "department": "CSE",
+      "name": "Dr. Balakrishna Kethineni",
+      "email": "balakrishnakethineni@vignan.ac.in",
+      "password": "Vignan@59222368",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. D. Yakobu",
+      "email": "dyakobu@vignan.ac.in",
+      "password": "Vignan@28543860",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. K Rachananjali",
+      "email": "krachananjali@vignan.ac.in",
+      "password": "Vignan@65906650",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. M Umadevi",
+      "email": "mumadevi@vignan.ac.in",
+      "password": "Vignan@44650534",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. P.Siva Prasad",
+      "email": "psivaprasad@vignan.ac.in",
+      "password": "Vignan@28555936",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. Prashant Upadhyay",
+      "email": "prashantupadhyay@vignan.ac.in",
+      "password": "Vignan@84172863",
+      "photo": true
+    },
+    {
+      "department": "IT",
+      "name": "Dr. Bhaskaru Obulapu",
+      "email": "bhaskaruobulapu@vignan.ac.in",
+      "password": "Vignan@91622904",
+      "photo": true
+    },
+    {
+      "department": "IT",
+      "name": "Dr. Hemanta Kumar Bhuyan",
+      "email": "hemantakumarbhuyan@vignan.ac.in",
+      "password": "Vignan@85828152",
+      "photo": true
+    },
+    {
+      "department": "IT",
+      "name": "Dr. Kamepalli Sujatha",
+      "email": "kamepallisujatha@vignan.ac.in",
+      "password": "Vignan@87986385",
+      "photo": true
+    },
+    {
+      "department": "IT",
+      "name": "Dr. Nerella Sameera",
+      "email": "nerellasameera@vignan.ac.in",
+      "password": "Vignan@79460514",
+      "photo": true
+    },
+    {
+      "department": "IT",
+      "name": "Dr. Peram Subba Rao",
+      "email": "peramsubbarao@vignan.ac.in",
+      "password": "Vignan@25828074",
+      "photo": true
+    },
+    {
+      "department": "CA",
+      "name": "Dr. Irfan Sayyad",
+      "email": "irfansayyad@vignan.ac.in",
+      "password": "Vignan@45219451",
+      "photo": true
+    },
+    {
+      "department": "CA",
+      "name": "Dr. Kota Lakshmi Thanuja",
+      "email": "kotalakshmithanuja@vignan.ac.in",
+      "password": "Vignan@11441501",
+      "photo": true
+    },
+    {
+      "department": "CA",
+      "name": "Dr. Kurra Santhi Sri",
+      "email": "kurrasanthisri@vignan.ac.in",
+      "password": "Vignan@73652801",
+      "photo": true
+    },
+    {
+      "department": "CA",
+      "name": "Dr. N. Veeranjaneyulu",
+      "email": "nveeranjaneyulu@vignan.ac.in",
+      "password": "Vignan@21782060",
+      "photo": true
+    },
+    {
+      "department": "CA",
+      "name": "Dr. R S Padma Priya",
+      "email": "rspadmapriya@vignan.ac.in",
+      "password": "Vignan@74131364",
+      "photo": true
+    },
+    {
+      "department": "ACSE",
+      "name": "Dr. Kondapalli Krupa Sagari",
+      "email": "kondapallikrupasagari@vignan.ac.in",
+      "password": "Vignan@11957888",
+      "photo": true
+    },
+    {
+      "department": "ACSE",
+      "name": "Dr. Nirupama Bhat Mundukur",
+      "email": "nirupamabhatmundukur@vignan.ac.in",
+      "password": "Vignan@40594193",
+      "photo": true
+    },
+    {
+      "department": "ACSE",
+      "name": "Dr. Sreekantha Reddy",
+      "email": "sreekanthareddy@vignan.ac.in",
+      "password": "Vignan@94404895",
+      "photo": true
+    },
+    {
+      "department": "ACSE",
+      "name": "Dr. Srinivasarao Pallanti",
+      "email": "srinivasaraopallanti@vignan.ac.in",
+      "password": "Vignan@12862470",
+      "photo": true
+    },
+    {
+      "department": "ACSE",
+      "name": "Dr. Venkatesulu Dondeti",
+      "email": "venkatesuludondeti@vignan.ac.in",
+      "password": "Vignan@52497442",
+      "photo": true
+    },
+    {
+      "department": "ECE",
+      "name": "Dr. B Seetha Ramanjaneyulu",
+      "email": "bseetharamanjaneyulu@vignan.ac.in",
+      "password": "Vignan@64838902",
+      "photo": true
+    },
+    {
+      "department": "ECE",
+      "name": "Dr. M.S.S.Rukmini",
+      "email": "mssrukmini@vignan.ac.in",
+      "password": "Vignan@70557577",
+      "photo": true
+    },
+    {
+      "department": "ECE",
+      "name": "Dr. Ravi Sekhar Yarrabothu",
+      "email": "ravisekharyarrabothu@vignan.ac.in",
+      "password": "Vignan@91655727",
+      "photo": true
+    },
+    {
+      "department": "ECE",
+      "name": "Dr. Sarada Musala",
+      "email": "saradamusala@vignan.ac.in",
+      "password": "Vignan@92011235",
+      "photo": true
+    },
+    {
+      "department": "ECE",
+      "name": "Dr. Shaik Jakeer Hussain",
+      "email": "shaikjakeerhussain@vignan.ac.in",
+      "password": "Vignan@23765248",
+      "photo": true
+    },
+    {
+      "department": "EEE",
+      "name": "Dr. Anil Kumar D",
+      "email": "anilkumard@vignan.ac.in",
+      "password": "Vignan@10271495",
+      "photo": true
+    },
+    {
+      "department": "EEE",
+      "name": "Dr. Attuluri Rakada Vijay Babu",
+      "email": "attulurirakadavijaybabu@vignan.ac.in",
+      "password": "Vignan@52384998",
+      "photo": true
+    },
+    {
+      "department": "EEE",
+      "name": "Dr. Mercy Rosalina",
+      "email": "mercyrosalina@vignan.ac.in",
+      "password": "Vignan@35632266",
+      "photo": true
+    },
+    {
+      "department": "EEE",
+      "name": "Dr. Polamraju V S Sobhan",
+      "email": "polamrajuvssobhan@vignan.ac.in",
+      "password": "Vignan@95382361",
+      "photo": true
+    },
+    {
+      "department": "EEE",
+      "name": "Dr. Srinivasarao Gorantla",
+      "email": "srinivasaraogorantla@vignan.ac.in",
+      "password": "Vignan@46762207",
+      "photo": true
+    },
+    {
+      "department": "MECH",
+      "name": "Dr. B Nageswara Rao",
+      "email": "bnageswararao@vignan.ac.in",
+      "password": "Vignan@21812187",
+      "photo": true
+    },
+    {
+      "department": "MECH",
+      "name": "Dr. Dusanapudi Satyanarayana",
+      "email": "dusanapudisatyanarayana@vignan.ac.in",
+      "password": "Vignan@37231289",
+      "photo": true
+    },
+    {
+      "department": "MECH",
+      "name": "Dr. M Ramakrishna",
+      "email": "mramakrishna@vignan.ac.in",
+      "password": "Vignan@30921370",
+      "photo": true
+    },
+    {
+      "department": "MECH",
+      "name": "Dr. N Narayan Rao",
+      "email": "nnarayanrao@vignan.ac.in",
+      "password": "Vignan@44909553",
+      "photo": true
+    },
+    {
+      "department": "MECH",
+      "name": "Dr. Y. Jyothi",
+      "email": "yjyothi@vignan.ac.in",
+      "password": "Vignan@71008827",
+      "photo": true
+    },
+    {
+      "department": "CIVIL",
+      "name": "Dr. A.V.A.Bharat Kumar",
+      "email": "avabharatkumar@vignan.ac.in",
+      "password": "Vignan@33449965",
+      "photo": true
+    },
+    {
+      "department": "CIVIL",
+      "name": "Dr. Anirudh Maddi",
+      "email": "anirudhmaddi@vignan.ac.in",
+      "password": "Vignan@12951116",
+      "photo": true
+    },
+    {
+      "department": "CIVIL",
+      "name": "Dr. Asadi Siva Sankar",
+      "email": "asadisivasankar@vignan.ac.in",
+      "password": "Vignan@57992295",
+      "photo": true
+    },
+    {
+      "department": "CIVIL",
+      "name": "Dr. Dasari Ravi Kanth",
+      "email": "dasariravikanth@vignan.ac.in",
+      "password": "Vignan@53789340",
+      "photo": true
+    },
+    {
+      "department": "CIVIL",
+      "name": "Dr. P Sundara Kumar",
+      "email": "psundarakumar@vignan.ac.in",
+      "password": "Vignan@15750792",
+      "photo": true
+    },
+    {
+      "department": "DMS",
+      "name": "Dr. B.Madhusudhan Rao",
+      "email": "bmadhusudhanrao@vignan.ac.in",
+      "password": "Vignan@40997884",
+      "photo": true
+    },
+    {
+      "department": "DMS",
+      "name": "Dr. Bandaru Srinivasa Rao",
+      "email": "bandarusrinivasarao@vignan.ac.in",
+      "password": "Vignan@64999171",
+      "photo": true
+    },
+    {
+      "department": "DMS",
+      "name": "Dr. Ch Hymavathi",
+      "email": "chhymavathi@vignan.ac.in",
+      "password": "Vignan@33424102",
+      "photo": true
+    },
+    {
+      "department": "DMS",
+      "name": "Dr. Dhulipalla Vijay Krishna",
+      "email": "dhulipallavijaykrishna@vignan.ac.in",
+      "password": "Vignan@21929529",
+      "photo": true
+    },
+    {
+      "department": "DMS",
+      "name": "Dr. K .Siva Nageswara Rao",
+      "email": "ksivanageswararao@vignan.ac.in",
+      "password": "Vignan@80844766",
+      "photo": true
+    }
+  ]
+}

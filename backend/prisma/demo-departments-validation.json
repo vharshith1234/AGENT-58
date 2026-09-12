@@ -1,0 +1,206 @@
+{
+  "sourceDirectory": "https://vignan.ac.in/newvignan/people.php",
+  "directoryPeopleParsed": 709,
+  "realCse": {
+    "uniqueTimetableFaculty": 7,
+    "matchedFaculty": 7,
+    "unmatched": [],
+    "manualVerification": [
+      "Gabbi Reddy Keerthi vs directory Keerthi G — not merged.",
+      "Sai Spandana Verella vs V. Sai Spandana — not merged.",
+      "Bhathula Ninnagari — not found in directory listing."
+    ],
+    "officialImagesFound": 0,
+    "officialImagesMissing": 7,
+    "courses": 13,
+    "timetableEntries": 33,
+    "courseAllocations": 12,
+    "note": "CSE Section-7 timetable remains REAL. Years 2–4 / sections A–C are DEMO and assigned only to DEMO faculty."
+  },
+  "cseDemoAcademic": {
+    "extraFaculty": [
+      "Dr. Balakrishna Kethineni",
+      "Dr. D. Yakobu",
+      "Dr. K Rachananjali",
+      "Dr. M Umadevi",
+      "Dr. P.Siva Prasad",
+      "Dr. Prashant Upadhyay"
+    ],
+    "courses": 12,
+    "allocations": 27,
+    "timetableEntries": 27,
+    "years": [
+      2,
+      3,
+      4
+    ],
+    "sections": [
+      "A",
+      "B",
+      "C"
+    ],
+    "note": "CSE DEMO years 2–4 / sections A–C are assigned only to DEMO faculty. REAL Section-7 teaching is unchanged."
+  },
+  "demoDepartments": {
+    "departments": [
+      {
+        "code": "IT",
+        "name": "Information Technology",
+        "faculty": 5,
+        "hod": "Dr. Kamepalli Sujatha",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "CA",
+        "name": "Computer Applications",
+        "faculty": 5,
+        "hod": "Dr. Kurra Santhi Sri",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "ACSE",
+        "name": "Advanced Computer Science and Engineering",
+        "faculty": 5,
+        "hod": "Dr. Kondapalli Krupa Sagari",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "ECE",
+        "name": "Electronics and Communication Engineering",
+        "faculty": 5,
+        "hod": "Dr. B Seetha Ramanjaneyulu",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "EEE",
+        "name": "Electrical and Electronics Engineering",
+        "faculty": 5,
+        "hod": "Dr. Mercy Rosalina",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "MECH",
+        "name": "Mechanical Engineering",
+        "faculty": 5,
+        "hod": "Dr. B Nageswara Rao",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "CIVIL",
+        "name": "Civil Engineering",
+        "faculty": 5,
+        "hod": "Dr. Asadi Siva Sankar",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 25
+      },
+      {
+        "code": "DMS",
+        "name": "Management Studies",
+        "faculty": 5,
+        "hod": "Dr. B.Madhusudhan Rao",
+        "years": [
+          2,
+          3,
+          4
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ],
+        "courses": 12,
+        "allocations": 16
+      }
+    ],
+    "faculty": 40,
+    "courses": 96,
+    "timetableEntries": 191,
+    "courseAllocations": 191,
+    "workloadCalculations": 40,
+    "skippedDepartments": []
+  },
+  "administrativeRoles": {
+    "hods": 9,
+    "deans": 1,
+    "principal": 1,
+    "duplicatePeoplePrevented": true
+  },
+  "duplicateFacultyNames": [],
+  "duplicateEmails": []
+}

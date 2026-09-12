@@ -1,0 +1,6387 @@
+{
+  "source": "https://vignan.ac.in/newvignan/people.php",
+  "count": 709,
+  "people": [
+    {
+      "rawName": "dr . a.ranganadha reddy",
+      "name": "Dr. A.Ranganadha Reddy",
+      "designation": "PROFESSOR (BI)",
+      "rank": 1,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . d. adam stephen",
+      "name": "Dr. D. Adam Stephen",
+      "designation": "PROFESSOR (SSH)",
+      "rank": 1,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gomatam mohana charyulu",
+      "name": "Dr. Gomatam Mohana Charyulu",
+      "designation": "PROFESSOR (ENGLISH)",
+      "rank": 1,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jithendra chimakurthy",
+      "name": "Dr. Jithendra Chimakurthy",
+      "designation": "PROFESSOR (PHARMACY)",
+      "rank": 1,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k. venkata madhuri",
+      "name": "Dr. K. Venkata Madhuri",
+      "designation": "PROFESSOR (PHYSICS)",
+      "rank": 1,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kamepalli sujatha",
+      "name": "Dr. Kamepalli Sujatha",
+      "designation": "PROFESSOR (IT)",
+      "rank": 1,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . koya prabhakara rao",
+      "name": "Dr. Koya Prabhakara Rao",
+      "designation": "PROFESSOR (CHEMISTRY)",
+      "rank": 1,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. veeranjaneyulu",
+      "name": "Dr. N. Veeranjaneyulu",
+      "designation": "PROFESSOR (CA)",
+      "rank": 1,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p sudam sekhar",
+      "name": "Dr. P Sudam Sekhar",
+      "designation": "PROFESSOR (MATHS AND STAT)",
+      "rank": 1,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . popuri ashok kumar",
+      "name": "Dr. Popuri Ashok Kumar",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sarada musala",
+      "name": "Dr. Sarada Musala",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sarita satpathy",
+      "name": "Dr. Sarita Satpathy",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . t c venkateswarulu",
+      "name": "Dr. T C Venkateswarulu",
+      "designation": "PROFESSOR (BIOTECH)",
+      "rank": 1,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . telagathoti pitchaiah",
+      "name": "Dr. Telagathoti Pitchaiah",
+      "designation": "PROFESSOR (BME)",
+      "rank": 1,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkatrama phani kumar s",
+      "name": "Dr. Venkatrama Phani Kumar S",
+      "designation": "PROFESSOR (CSE)",
+      "rank": 1,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jyostna devi bodapati",
+      "name": "Dr. Jyostna Devi Bodapati",
+      "designation": "ASSOCIATE PROFESSOR (ACSE)",
+      "rank": 2,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . merugu chandra surya rao",
+      "name": "Dr. Merugu Chandra Surya Rao",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p sundara kumar",
+      "name": "Dr. P Sundara Kumar",
+      "designation": "ASSOCIATE PROFESSOR (CIVIL)",
+      "rank": 2,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . polamraju v s sobhan",
+      "name": "Dr. Polamraju V S Sobhan",
+      "designation": "ASSOCIATE PROFESSOR (EEE)",
+      "rank": 2,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . a. rajani kumari",
+      "name": "Mr. S . A. Rajani Kumari",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . amar jukuntla",
+      "name": "Dr. Amar Jukuntla",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . t ch anil kumar",
+      "name": "Dr. T Ch Anil Kumar",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k.v. krishna kishore",
+      "name": "Dr. K.V. Krishna Kishore",
+      "designation": "PROFESSOR (CSE)",
+      "rank": 1,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kalpana koneru",
+      "name": "Dr. Kalpana Koneru",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m ramakrishna",
+      "name": "Dr. M Ramakrishna",
+      "designation": "PROFESSOR (MECH)",
+      "rank": 1,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m.s.s.rukmini",
+      "name": "Dr. M.S.S.Rukmini",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. srinivasu",
+      "name": "Dr. N. Srinivasu",
+      "designation": "PROFESSOR (CHEMISTRY)",
+      "rank": 1,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ravi sekhar yarrabothu",
+      "name": "Dr. Ravi Sekhar Yarrabothu",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shaik jakeer hussain",
+      "name": "Dr. Shaik Jakeer Hussain",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivasarao gorantla",
+      "name": "Dr. Srinivasarao Gorantla",
+      "designation": "PROFESSOR (EEE)",
+      "rank": 1,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . tatineni ramesh babu",
+      "name": "Dr. Tatineni Ramesh Babu",
+      "designation": "PROFESSOR (VIAT)",
+      "rank": 1,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . usha rani. nelakuditi",
+      "name": "Dr. Usha Rani. Nelakuditi",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkatesulu dondeti",
+      "name": "Dr. Venkatesulu Dondeti",
+      "designation": "PROFESSOR (ACSE)",
+      "rank": 1,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijaya ramu dirisala",
+      "name": "Dr. Vijaya Ramu Dirisala",
+      "designation": "PROFESSOR (BIOTECH)",
+      "rank": 1,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . aditya gutta",
+      "name": "Dr. Aditya Gutta",
+      "designation": "PROFESSOR (AGE)",
+      "rank": 1,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . asadi siva sankar",
+      "name": "Dr. Asadi Siva Sankar",
+      "designation": "PROFESSOR (CIVIL)",
+      "rank": 1,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . asha s",
+      "name": "Dr. Asha S",
+      "designation": "PROFESSOR (BIOTECH)",
+      "rank": 1,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b nageswara rao",
+      "name": "Dr. B Nageswara Rao",
+      "designation": "PROFESSOR (MECH)",
+      "rank": 1,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b seetha ramanjaneyulu",
+      "name": "Dr. B Seetha Ramanjaneyulu",
+      "designation": "PROFESSOR (ECE)",
+      "rank": 1,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . b.krishnakanth",
+      "name": "Dr. B.Krishnakanth",
+      "designation": "PROFESSOR (NA)",
+      "rank": 1,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b.madhusudhan rao",
+      "name": "Dr. B.Madhusudhan Rao",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bandaru srinivasa rao",
+      "name": "Dr. Bandaru Srinivasa Rao",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ch hymavathi",
+      "name": "Dr. Ch Hymavathi",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ch. n. s. sai pavan kumar",
+      "name": "Dr. Ch. N. S. Sai Pavan Kumar",
+      "designation": "PROFESSOR (FT)",
+      "rank": 1,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . chandrasekar kuppan",
+      "name": "Dr. Chandrasekar Kuppan",
+      "designation": "PROFESSOR (CHEMISTRY)",
+      "rank": 1,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . d. john babu",
+      "name": "Dr. D. John Babu",
+      "designation": "PROFESSOR (BIOTECH)",
+      "rank": 1,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dhulipalla vijay krishna",
+      "name": "Dr. Dhulipalla Vijay Krishna",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dusanapudi satyanarayana",
+      "name": "Dr. Dusanapudi Satyanarayana",
+      "designation": "PROFESSOR (MECH)",
+      "rank": 1,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g. subba rao",
+      "name": "Dr. G. Subba Rao",
+      "designation": "PROFESSOR (VIAT)",
+      "rank": 1,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . grandhi srikar",
+      "name": "Dr. Grandhi Srikar",
+      "designation": "PROFESSOR (PHARMACY)",
+      "rank": 1,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . j. n. kiran",
+      "name": "Dr. J. N. Kiran",
+      "designation": "PROFESSOR (PHYSICS)",
+      "rank": 1,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k .siva nageswara rao",
+      "name": "Dr. K .Siva Nageswara Rao",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kondapalli krupa sagari",
+      "name": "Dr. Kondapalli Krupa Sagari",
+      "designation": "PROFESSOR (ACSE)",
+      "rank": 1,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kurra santhi sri",
+      "name": "Dr. Kurra Santhi Sri",
+      "designation": "PROFESSOR (CA)",
+      "rank": 1,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m.sreenivasulu",
+      "name": "Dr. M.Sreenivasulu",
+      "designation": "PROFESSOR (PHYSICS)",
+      "rank": 1,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . madhusudhan rao vallabhaneni",
+      "name": "Dr. Madhusudhan Rao Vallabhaneni",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mercy rosalina",
+      "name": "Dr. Mercy Rosalina",
+      "designation": "PROFESSOR (EEE)",
+      "rank": 1,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mitta raghavendra",
+      "name": "Dr. Mitta Raghavendra",
+      "designation": "PROFESSOR (PHARMACY)",
+      "rank": 1,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n s sampath kumar",
+      "name": "Dr. N S Sampath Kumar",
+      "designation": "PROFESSOR (BIOTECH)",
+      "rank": 1,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nagaraju devunuri",
+      "name": "Dr. Nagaraju Devunuri",
+      "designation": "PROFESSOR (AGE)",
+      "rank": 1,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nemmani rama gopal",
+      "name": "Dr. Nemmani Rama Gopal",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nirupama bhat mundukur",
+      "name": "Dr. Nirupama Bhat Mundukur",
+      "designation": "PROFESSOR (ACSE)",
+      "rank": 1,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p. l. n. varma",
+      "name": "Dr. P. L. N. Varma",
+      "designation": "PROFESSOR (MATHS AND STAT)",
+      "rank": 1,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p. lakshmi narayanamma",
+      "name": "Dr. P. Lakshmi Narayanamma",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p.bangaraiah",
+      "name": "Dr. P.Bangaraiah",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . peram subba rao",
+      "name": "Dr. Peram Subba Rao",
+      "designation": "PROFESSOR (IT)",
+      "rank": 1,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . phani kumar katuri",
+      "name": "Dr. Phani Kumar Katuri",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ramesh naidu mandapati",
+      "name": "Dr. Ramesh Naidu Mandapati",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s durga",
+      "name": "Dr. S Durga",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s. anil kumar",
+      "name": "Dr. S. Anil Kumar",
+      "designation": "PROFESSOR (VIAT)",
+      "rank": 1,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . satya sree nannapaneni",
+      "name": "Dr. Satya Sree Nannapaneni",
+      "designation": "PROFESSOR (CHEMISTRY)",
+      "rank": 1,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shaik abdul rahaman",
+      "name": "Dr. Shaik Abdul Rahaman",
+      "designation": "PROFESSOR (PHARMACY)",
+      "rank": 1,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sibbala subramanyam",
+      "name": "Dr. Sibbala Subramanyam",
+      "designation": "PROFESSOR (PHARMACY)",
+      "rank": 1,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sreekantha reddy",
+      "name": "Dr. Sreekantha Reddy",
+      "designation": "PROFESSOR (ACSE)",
+      "rank": 1,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivas reddy",
+      "name": "Dr. Srinivas Reddy",
+      "designation": "PROFESSOR (DMS)",
+      "rank": 1,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . srinivasarao pallanti",
+      "name": "Dr. Srinivasarao Pallanti",
+      "designation": "PROFESSOR (ACSE)",
+      "rank": 1,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . subbaiah tondepu",
+      "name": "Dr. Subbaiah Tondepu",
+      "designation": "PROFESSOR (CHEM)",
+      "rank": 1,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . susanta kumar satpathy",
+      "name": "Dr. Susanta Kumar Satpathy",
+      "designation": "PROFESSOR (DIP)",
+      "rank": 1,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . v r k murthy",
+      "name": "Dr. V R K Murthy",
+      "designation": "PROFESSOR (MATHS AND STAT)",
+      "rank": 1,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkata subba rao m",
+      "name": "Dr. Venkata Subba Rao M",
+      "designation": "PROFESSOR (MATHS AND STAT)",
+      "rank": 1,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijayababu palukuri",
+      "name": "Dr. Vijayababu Palukuri",
+      "designation": "PROFESSOR (LAW)",
+      "rank": 1,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . apoorva singumahanthi",
+      "name": "Dr. Apoorva Singumahanthi",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jawad ahmad dar",
+      "name": "Dr. Jawad Ahmad Dar",
+      "designation": "ASSOCIATE PROFESSOR (ACSE)",
+      "rank": 2,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . y srinivasa rao",
+      "name": "Dr. Y Srinivasa Rao",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . a. vijaya sai",
+      "name": "Dr. A. Vijaya Sai",
+      "designation": "ASSOCIATE PROFESSOR (BIOTECH)",
+      "rank": 2,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . abraham peele karlapudi",
+      "name": "Dr. Abraham Peele Karlapudi",
+      "designation": "ASSOCIATE PROFESSOR (BI)",
+      "rank": 2,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . alugunulla venkata narayana",
+      "name": "Dr. Alugunulla Venkata Narayana",
+      "designation": "ASSOCIATE PROFESSOR (BIOTECH)",
+      "rank": 2,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . amit kumar singh",
+      "name": "Dr. Amit Kumar Singh",
+      "designation": "ASSOCIATE PROFESSOR (BME)",
+      "rank": 2,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . anandarup goswami",
+      "name": "Dr. Anandarup Goswami",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . anjani devi chintagunta",
+      "name": "Dr. Anjani Devi Chintagunta",
+      "designation": "ASSOCIATE PROFESSOR (BI)",
+      "rank": 2,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . annapurna kunchaparti",
+      "name": "Dr. Annapurna Kunchaparti",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . appana sai manideep",
+      "name": "Dr. Appana Sai Manideep",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . aruna kumari .anchula",
+      "name": "Dr. Aruna Kumari .Anchula",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . attuluri rakada vijay babu",
+      "name": "Dr. Attuluri Rakada Vijay Babu",
+      "designation": "ASSOCIATE PROFESSOR (EEE)",
+      "rank": 2,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b n naveen kumar",
+      "name": "Dr. B N Naveen Kumar",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b.nageswara rao",
+      "name": "Dr. B.Nageswara Rao",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b.sumlatha",
+      "name": "Dr. B.Sumlatha",
+      "designation": "ASSOCIATE PROFESSOR (CHEM)",
+      "rank": 2,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . balakrishna kethineni",
+      "name": "Dr. Balakrishna Kethineni",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bharat kumar tripuramallu",
+      "name": "Dr. Bharat Kumar Tripuramallu",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bhaskaru obulapu",
+      "name": "Dr. Bhaskaru Obulapu",
+      "designation": "ASSOCIATE PROFESSOR (IT)",
+      "rank": 2,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . charles david",
+      "name": "Dr. Charles David",
+      "designation": "ASSOCIATE PROFESSOR (BI)",
+      "rank": 2,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . cheboyana suresh",
+      "name": "Dr. Cheboyana Suresh",
+      "designation": "ASSOCIATE PROFESSOR (SSH)",
+      "rank": 2,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . d. yakobu",
+      "name": "Dr. D. Yakobu",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . d.sudhir babu",
+      "name": "Dr. D.Sudhir Babu",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dr.nagalatha bathina",
+      "name": "Dr. Dr.Nagalatha Bathina",
+      "designation": "ASSOCIATE PROFESSOR (NA)",
+      "rank": 2,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ds bhupal naik",
+      "name": "Dr. Ds Bhupal Naik",
+      "designation": "ASSOCIATE PROFESSOR (ACSE)",
+      "rank": 2,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . eva patel",
+      "name": "Dr. Eva Patel",
+      "designation": "ASSOCIATE PROFESSOR (ACSE)",
+      "rank": 2,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g srinivasa rao",
+      "name": "Dr. G Srinivasa Rao",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g. s. r. satyanarayana",
+      "name": "Dr. G. S. R. Satyanarayana",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . habibuddin shaik",
+      "name": "Dr. Habibuddin Shaik",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . hanumantha rao sama",
+      "name": "Dr. Hanumantha Rao Sama",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . harisha n",
+      "name": "Dr. Harisha N",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . hemanta kumar bhuyan",
+      "name": "Dr. Hemanta Kumar Bhuyan",
+      "designation": "ASSOCIATE PROFESSOR (IT)",
+      "rank": 2,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jalaja",
+      "name": "Dr. Jalaja",
+      "designation": "ASSOCIATE PROFESSOR (BIOTECH)",
+      "rank": 2,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k krishnadevi",
+      "name": "Dr. K Krishnadevi",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k rachananjali",
+      "name": "Dr. K Rachananjali",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k. mariadas",
+      "name": "Dr. K. Mariadas",
+      "designation": "ASSOCIATE PROFESSOR (DIP)",
+      "rank": 2,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kalpana p",
+      "name": "Dr. Kalpana P",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kishore v v n pilli",
+      "name": "Dr. Kishore V V N Pilli",
+      "designation": "ASSOCIATE PROFESSOR (AGE)",
+      "rank": 2,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kvb ravindra babu",
+      "name": "Dr. Kvb Ravindra Babu",
+      "designation": "ASSOCIATE PROFESSOR (ENGLISH)",
+      "rank": 2,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . laavanya m",
+      "name": "Dr. Laavanya M",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m l n madhu mohan",
+      "name": "Dr. M L N Madhu Mohan",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m umadevi",
+      "name": "Dr. M Umadevi",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. indira",
+      "name": "Dr. M. Indira",
+      "designation": "ASSOCIATE PROFESSOR (BI)",
+      "rank": 2,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . md. nazneen bobby",
+      "name": "Dr. Md. Nazneen Bobby",
+      "designation": "ASSOCIATE PROFESSOR (BIOTECH)",
+      "rank": 2,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mithun rudrapal",
+      "name": "Dr. Mithun Rudrapal",
+      "designation": "ASSOCIATE PROFESSOR (PHARMACY)",
+      "rank": 2,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n narayan rao",
+      "name": "Dr. N Narayan Rao",
+      "designation": "ASSOCIATE PROFESSOR (MECH)",
+      "rank": 2,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n v r vikram g",
+      "name": "Dr. N V R Vikram G",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. ananda rao",
+      "name": "Dr. N. Ananda Rao",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nageswara rao gude",
+      "name": "Dr. Nageswara Rao Gude",
+      "designation": "ASSOCIATE PROFESSOR (ENGLISH)",
+      "rank": 2,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nerella sameera",
+      "name": "Dr. Nerella Sameera",
+      "designation": "ASSOCIATE PROFESSOR (IT)",
+      "rank": 2,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p joshua reginald",
+      "name": "Dr. P Joshua Reginald",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p. sasi ratnaker",
+      "name": "Dr. P. Sasi Ratnaker",
+      "designation": "ASSOCIATE PROFESSOR (ENGLISH)",
+      "rank": 2,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p.ramana kumar",
+      "name": "Dr. P.Ramana Kumar",
+      "designation": "ASSOCIATE PROFESSOR (NA)",
+      "rank": 2,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p.siva prasad",
+      "name": "Dr. P.Siva Prasad",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pachiyannan muthusamy",
+      "name": "Dr. Pachiyannan Muthusamy",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . partha sarothi rakshit",
+      "name": "Dr. Partha Sarothi Rakshit",
+      "designation": "ASSOCIATE PROFESSOR (LAW)",
+      "rank": 2,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . perumalla krishna chaitanya",
+      "name": "Dr. Perumalla Krishna Chaitanya",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . prashant upadhyay",
+      "name": "Dr. Prashant Upadhyay",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . preeti thakur",
+      "name": "Dr. Preeti Thakur",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pusarla susmitha",
+      "name": "Dr. Pusarla Susmitha",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . r prathap kumar",
+      "name": "Dr. R Prathap Kumar",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . r s padma priya",
+      "name": "Dr. R S Padma Priya",
+      "designation": "ASSOCIATE PROFESSOR (CA)",
+      "rank": 2,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rajanand hiremath",
+      "name": "Dr. Rajanand Hiremath",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ramanjaneyulu mannam",
+      "name": "Dr. Ramanjaneyulu Mannam",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ranga rao ambati",
+      "name": "Dr. Ranga Rao Ambati",
+      "designation": "ASSOCIATE PROFESSOR (BIOTECH)",
+      "rank": 2,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ravi kumar kottalanka",
+      "name": "Dr. Ravi Kumar Kottalanka",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s. kubera sampath kumar",
+      "name": "Dr. S. Kubera Sampath Kumar",
+      "designation": "ASSOCIATE PROFESSOR (TT)",
+      "rank": 2,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s. vinoth",
+      "name": "Dr. S. Vinoth",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s.deva kumar",
+      "name": "Dr. S.Deva Kumar",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sathish kumar konidala",
+      "name": "Dr. Sathish Kumar Konidala",
+      "designation": "ASSOCIATE PROFESSOR (PHARMACY)",
+      "rank": 2,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shaik anwar",
+      "name": "Dr. Shaik Anwar",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shaik firdoz",
+      "name": "Dr. Shaik Firdoz",
+      "designation": "ASSOCIATE PROFESSOR (BI)",
+      "rank": 2,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shakila bhanu",
+      "name": "Dr. Shakila Bhanu",
+      "designation": "ASSOCIATE PROFESSOR (ENGLISH)",
+      "rank": 2,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shantappa duttarganvi",
+      "name": "Dr. Shantappa Duttarganvi",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sireesha malladi",
+      "name": "Dr. Sireesha Malladi",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . siva koteswararao chinnam",
+      "name": "Dr. Siva Koteswararao Chinnam",
+      "designation": "ASSOCIATE PROFESSOR (CSE)",
+      "rank": 2,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sivadi balakrishna",
+      "name": "Dr. Sivadi Balakrishna",
+      "designation": "ASSOCIATE PROFESSOR (ACSE)",
+      "rank": 2,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sivasankar mandal baidya",
+      "name": "Dr. Sivasankar Mandal Baidya",
+      "designation": "ASSOCIATE PROFESSOR (SSH)",
+      "rank": 2,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srikanth yadav m",
+      "name": "Dr. Srikanth Yadav M",
+      "designation": "ASSOCIATE PROFESSOR (IT)",
+      "rank": 2,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivasadesikan v",
+      "name": "Dr. Srinivasadesikan V",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . subbarayudu thunga",
+      "name": "Dr. Subbarayudu Thunga",
+      "designation": "ASSOCIATE PROFESSOR (DMS)",
+      "rank": 2,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sudip mandal",
+      "name": "Dr. Sudip Mandal",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . surya prabha matangi",
+      "name": "Dr. Surya Prabha Matangi",
+      "designation": "ASSOCIATE PROFESSOR (PHARMACY)",
+      "rank": 2,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . talari naresh",
+      "name": "Dr. Talari Naresh",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . tirupataiah chereddy",
+      "name": "Dr. Tirupataiah Chereddy",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . v manoj kumar uppuluri",
+      "name": "Dr. V Manoj Kumar Uppuluri",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . v.vimalraj",
+      "name": "Dr. V.Vimalraj",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vara prasad yarlagadda",
+      "name": "Dr. Vara Prasad Yarlagadda",
+      "designation": "ASSOCIATE PROFESSOR (VIAT)",
+      "rank": 2,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkaiah malapati",
+      "name": "Dr. Venkaiah Malapati",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkata kanaka srivani maddala",
+      "name": "Dr. Venkata Kanaka Srivani Maddala",
+      "designation": "ASSOCIATE PROFESSOR (CHEMISTRY)",
+      "rank": 2,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijaya kumar chavan",
+      "name": "Dr. Vijaya Kumar Chavan",
+      "designation": "ASSOCIATE PROFESSOR (PHYSICS)",
+      "rank": 2,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijayaraghavan",
+      "name": "Dr. Vijayaraghavan",
+      "designation": "ASSOCIATE PROFESSOR (ECE)",
+      "rank": 2,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . y. jyothi",
+      "name": "Dr. Y. Jyothi",
+      "designation": "ASSOCIATE PROFESSOR (MECH)",
+      "rank": 2,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yookesh t lakshmanasamy",
+      "name": "Dr. Yookesh T Lakshmanasamy",
+      "designation": "ASSOCIATE PROFESSOR (MATHS AND STAT)",
+      "rank": 2,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ayyanna d s",
+      "name": "Dr. Ayyanna D S",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . lurdhumary kunduri",
+      "name": "Dr. Lurdhumary Kunduri",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. anusha",
+      "name": "Dr. M. Anusha",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . praveena kati",
+      "name": "Dr. Praveena Kati",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rahamat shaikh",
+      "name": "Dr. Rahamat Shaikh",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . santhoshraju munjeti",
+      "name": "Dr. Santhoshraju Munjeti",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . .kiran kumar kaveti",
+      "name": "Dr. .Kiran Kumar Kaveti",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . a usha kiran",
+      "name": "Mr. S . A Usha Kiran",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . a v nageswara rao",
+      "name": "Dr. A V Nageswara Rao",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . a. manigandan",
+      "name": "Dr. A. Manigandan",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . a. selvam",
+      "name": "Dr. A. Selvam",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . a.saranya",
+      "name": "Dr. A.Saranya",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . a.v.a.bharat kumar",
+      "name": "Dr. A.V.A.Bharat Kumar",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . abhijnan pritam sarma",
+      "name": "Dr. Abhijnan Pritam Sarma",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . abhilash narayandas",
+      "name": "Dr. Abhilash Narayandas",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . abhinav deep dora",
+      "name": "Dr. Abhinav Deep Dora",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . abhishek kumar",
+      "name": "Dr. Abhishek Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . agilandeshwari poopathi",
+      "name": "Dr. Agilandeshwari Poopathi",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ajoy kumar nandy",
+      "name": "Dr. Ajoy Kumar Nandy",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . akash ajay",
+      "name": "Dr. Akash Ajay",
+      "designation": "ASSISTANT PROFESSOR (BIOTECH)",
+      "rank": 3,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . akhil a r",
+      "name": "Dr. Akhil A R",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . akhil babu edara",
+      "name": "Dr. Akhil Babu Edara",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . alla pranav sai reddy",
+      "name": "Dr. Alla Pranav Sai Reddy",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . amaze mathe",
+      "name": "Dr. Amaze Mathe",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . amitabh soni",
+      "name": "Dr. Amitabh Soni",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . amjad khan a",
+      "name": "Dr. Amjad Khan A",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . anil babu bathula",
+      "name": "Dr. Anil Babu Bathula",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . anil kumar d",
+      "name": "Dr. Anil Kumar D",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . anil madugula",
+      "name": "Dr. Anil Madugula",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . anirudh maddi",
+      "name": "Dr. Anirudh Maddi",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . anitha jyothi ramasani",
+      "name": "Mr. S . Anitha Jyothi Ramasani",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . anjana k s",
+      "name": "Dr. Anjana K S",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . anjitha v v",
+      "name": "Dr. Anjitha V V",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . anki reddy bade",
+      "name": "Dr. Anki Reddy Bade",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . annapurna kiranmai p",
+      "name": "Dr. Annapurna Kiranmai P",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . anusha kakumanu",
+      "name": "Mr. S . Anusha Kakumanu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . anusha viswanadapalli",
+      "name": "Mr. S . Anusha Viswanadapalli",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . aparna nerusu",
+      "name": "Dr. Aparna Nerusu",
+      "designation": "ASSISTANT PROFESSOR (BIOTECH)",
+      "rank": 3,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . aremanda tushara",
+      "name": "Dr. Aremanda Tushara",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . aritra narayan hisabia",
+      "name": "Dr. Aritra Narayan Hisabia",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . arkaprabha majumdar",
+      "name": "Dr. Arkaprabha Majumdar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . arnab de",
+      "name": "Dr. Arnab De",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . arpita maji",
+      "name": "Dr. Arpita Maji",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . arpita roy",
+      "name": "Dr. Arpita Roy",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . arshad cm",
+      "name": "Dr. Arshad Cm",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . aswathy chandra c. h",
+      "name": "Dr. Aswathy Chandra C. H",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . aswini valluri",
+      "name": "Dr. Aswini Valluri",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . atiqur rahman",
+      "name": "Dr. Atiqur Rahman",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . avvaru subramanyam",
+      "name": "Dr. Avvaru Subramanyam",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b sudharani",
+      "name": "Dr. B Sudharani",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . b suvarna",
+      "name": "Mr. S . B Suvarna",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . b. bharathi",
+      "name": "Mr. S . B. Bharathi",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . b. jhansi. k. s. nandini",
+      "name": "Mr. S . B. Jhansi. K. S. Nandini",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b. triveni",
+      "name": "Dr. B. Triveni",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . b. vijaya purnima",
+      "name": "Dr. B. Vijaya Purnima",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . b.bhagyasri",
+      "name": "Mr. S . B.Bhagyasri",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . b.jayalakshmi",
+      "name": "Dr. B.Jayalakshmi",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . baiju krishnan",
+      "name": "Dr. Baiju Krishnan",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bairaboina sai sambasiva rao",
+      "name": "Dr. Bairaboina Sai Sambasiva Rao",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . balakrishnama manohar",
+      "name": "Dr. Balakrishnama Manohar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . bammidi madhuri",
+      "name": "Mr. S . Bammidi Madhuri",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . banavath sunil kumar naik",
+      "name": "Dr. Banavath Sunil Kumar Naik",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . bandaru rohith phaneendra",
+      "name": "Dr. Bandaru Rohith Phaneendra",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . benson mansingh p m",
+      "name": "Dr. Benson Mansingh P M",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . bhagavatula naga sai sriram",
+      "name": "Dr. Bhagavatula Naga Sai Sriram",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . bhagya shree nadamala",
+      "name": "Dr. Bhagya Shree Nadamala",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bhimavarapu krishna reddy",
+      "name": "Dr. Bhimavarapu Krishna Reddy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . bhimavarapu. jyothika",
+      "name": "Dr. Bhimavarapu. Jyothika",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . bhimavarapu. jyothika",
+      "name": "Dr. Bhimavarapu. Jyothika",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . bhukya akash",
+      "name": "Dr. Bhukya Akash",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . bhuvanesh bawankar",
+      "name": "Dr. Bhuvanesh Bawankar",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bibin k",
+      "name": "Dr. Bibin K",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . bighnesh dash mohapatra",
+      "name": "Dr. Bighnesh Dash Mohapatra",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . bishnu prasad mishra",
+      "name": "Dr. Bishnu Prasad Mishra",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . biyyala srinivasulu",
+      "name": "Dr. Biyyala Srinivasulu",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . britto manoj a",
+      "name": "Dr. Britto Manoj A",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . brundavanam satyasai",
+      "name": "Dr. Brundavanam Satyasai",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ch amarendra",
+      "name": "Dr. Ch Amarendra",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . ch lakshmi manogna",
+      "name": "Dr. Ch Lakshmi Manogna",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ch. koteswara pavan",
+      "name": "Dr. Ch. Koteswara Pavan",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ch. v s raghuveera kumar",
+      "name": "Dr. Ch. V S Raghuveera Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . chaitanya priya",
+      "name": "Dr. Chaitanya Priya",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . chakravaram sravani",
+      "name": "Dr. Chakravaram Sravani",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . chavali amaresh",
+      "name": "Dr. Chavali Amaresh",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . chavva ravi kishore reddy",
+      "name": "Dr. Chavva Ravi Kishore Reddy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . cheepu ravi kiran",
+      "name": "Dr. Cheepu Ravi Kiran",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . cherukuri naga narasimha rao",
+      "name": "Dr. Cherukuri Naga Narasimha Rao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . chikkala meghana",
+      "name": "Dr. Chikkala Meghana",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . chinna gopi simhadri",
+      "name": "Dr. Chinna Gopi Simhadri",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . chitran d",
+      "name": "Dr. Chitran D",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . christiana r.e korrapati",
+      "name": "Dr. Christiana R.E Korrapati",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . chukka ajay kumar",
+      "name": "Dr. Chukka Ajay Kumar",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . d anandha kumar",
+      "name": "Dr. D Anandha Kumar",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . d. ravi kiran",
+      "name": "Dr. D. Ravi Kiran",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . d.punnamma",
+      "name": "Dr. D.Punnamma",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . d.yedukondalu",
+      "name": "Dr. D.Yedukondalu",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . dasari ravi kanth",
+      "name": "Dr. Dasari Ravi Kanth",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . dasepalli muni hemanth kumar",
+      "name": "Dr. Dasepalli Muni Hemanth Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . deepak chowdary edara",
+      "name": "Dr. Deepak Chowdary Edara",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . dega bala kotaiah",
+      "name": "Dr. Dega Bala Kotaiah",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . dehtaj shaik",
+      "name": "Dr. Dehtaj Shaik",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . devalla manogna",
+      "name": "Dr. Devalla Manogna",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . devaraji perumal",
+      "name": "Dr. Devaraji Perumal",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dinesh k",
+      "name": "Dr. Dinesh K",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . divya",
+      "name": "Dr. Divya",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . divya k",
+      "name": "Dr. Divya K",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . donthamchetty ravitheja",
+      "name": "Dr. Donthamchetty Ravitheja",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dr ramesh babu para",
+      "name": "Dr. Dr. Ramesh Babu Para",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dr. b. naveen kumar reddy",
+      "name": "Dr. Dr. B. Naveen Kumar Reddy",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . dr. heisnam kenny devi",
+      "name": "Dr. Dr. Heisnam Kenny Devi",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . farooq shaik",
+      "name": "Dr. Farooq Shaik",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g balu narasimha rao",
+      "name": "Dr. G Balu Narasimha Rao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . g mahalakshmi",
+      "name": "Mr. S . G Mahalakshmi",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g veerabhadra chary",
+      "name": "Dr. G Veerabhadra Chary",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g. dhana lakshmi",
+      "name": "Dr. G. Dhana Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g. prasanna",
+      "name": "Dr. G. Prasanna",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . g.kalaiarasi",
+      "name": "Dr. G.Kalaiarasi",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gaddam tejaswi",
+      "name": "Dr. Gaddam Tejaswi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gali shilpa",
+      "name": "Dr. Gali Shilpa",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gandikota sravani",
+      "name": "Dr. Gandikota Sravani",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ghali krishna harshitha",
+      "name": "Dr. Ghali Krishna Harshitha",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gokavarapu alekhya",
+      "name": "Dr. Gokavarapu Alekhya",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gokula nanda chhatria",
+      "name": "Dr. Gokula Nanda Chhatria",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . golimidi ravi kumar",
+      "name": "Dr. Golimidi Ravi Kumar",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . gonuguntla viswarupachari",
+      "name": "Dr. Gonuguntla Viswarupachari",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gopya sri arumalla",
+      "name": "Dr. Gopya Sri Arumalla",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gouthami paltati",
+      "name": "Dr. Gouthami Paltati",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . govardhana rao chilukoti",
+      "name": "Dr. Govardhana Rao Chilukoti",
+      "designation": "ASSISTANT PROFESSOR (TT)",
+      "rank": 3,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . govindarajulu",
+      "name": "Dr. Govindarajulu",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gss neeharika",
+      "name": "Dr. Gss Neeharika",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gudapati ramyasri",
+      "name": "Dr. Gudapati Ramyasri",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . guduru babu",
+      "name": "Dr. Guduru Babu",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . guggilam navya",
+      "name": "Mr. S . Guggilam Navya",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . gujjula murali",
+      "name": "Dr. Gujjula Murali",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gumma sivanagaraju",
+      "name": "Dr. Gumma Sivanagaraju",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . gunakala archana",
+      "name": "Dr. Gunakala Archana",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . guntupalli ganga prasad",
+      "name": "Dr. Guntupalli Ganga Prasad",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . guntur jyotsna",
+      "name": "Dr. Guntur Jyotsna",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . guravaiah bandi",
+      "name": "Dr. Guravaiah Bandi",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gurpreet singh saund",
+      "name": "Dr. Gurpreet Singh Saund",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gurugubelli visalakshi",
+      "name": "Dr. Gurugubelli Visalakshi",
+      "designation": "ASSISTANT PROFESSOR (NA)",
+      "rank": 3,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . gurusamy murugesan",
+      "name": "Dr. Gurusamy Murugesan",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . hadole mahesh vinayak",
+      "name": "Dr. Hadole Mahesh Vinayak",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . haveela gampa",
+      "name": "Dr. Haveela Gampa",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . hima harshan p",
+      "name": "Dr. Hima Harshan P",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . hitendra singh",
+      "name": "Dr. Hitendra Singh",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . imtiyaz ahmad bhat",
+      "name": "Dr. Imtiyaz Ahmad Bhat",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . irfan sayyad",
+      "name": "Dr. Irfan Sayyad",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . j. veeranjaneyulu",
+      "name": "Dr. J. Veeranjaneyulu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . jagadish tulimelli",
+      "name": "Dr. Jagadish Tulimelli",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . jagarlamudi nethra",
+      "name": "Dr. Jagarlamudi Nethra",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . james deva koresh h",
+      "name": "Dr. James Deva Koresh H",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . jarugumalla dayanika",
+      "name": "Mr. S . Jarugumalla Dayanika",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . javisetti anjaneyulu",
+      "name": "Dr. Javisetti Anjaneyulu",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . jayamma rodda",
+      "name": "Mr. S . Jayamma Rodda",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jayanta bhattacharya",
+      "name": "Dr. Jayanta Bhattacharya",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . jayasri thota",
+      "name": "Dr. Jayasri Thota",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jerripotu gopala rao",
+      "name": "Dr. Jerripotu Gopala Rao",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jhansi lakshmi potharlanka",
+      "name": "Dr. Jhansi Lakshmi Potharlanka",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jhili mishra",
+      "name": "Dr. Jhili Mishra",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jitendriya swain",
+      "name": "Dr. Jitendriya Swain",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . joshua remlalliana",
+      "name": "Dr. Joshua Remlalliana",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . jyothi thirumala setty",
+      "name": "Mr. S . Jyothi Thirumala Setty",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . jyothi v. hosamath",
+      "name": "Dr. Jyothi V. Hosamath",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . k raveendra reddy",
+      "name": "Dr. K Raveendra Reddy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k venkata prasad",
+      "name": "Dr. K Venkata Prasad",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k. balakrishnareddy",
+      "name": "Dr. K. Balakrishnareddy",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . k. himabindu",
+      "name": "Mr. S . K. Himabindu",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k. lova raju",
+      "name": "Dr. K. Lova Raju",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . k. naga ashok",
+      "name": "Dr. K. Naga Ashok",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . k. vijaya kumari",
+      "name": "Mr. S . K. Vijaya Kumari",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k.anjana",
+      "name": "Dr. K.Anjana",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . k.aswini",
+      "name": "Mr. S . K.Aswini",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k.b.manikandan",
+      "name": "Dr. K.B.Manikandan",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . k.j.n.v. narasa reddy",
+      "name": "Dr. K.J.N.V. Narasa Reddy",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . k.p. sony sigma",
+      "name": "Dr. K.P. Sony Sigma",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . k.priyanka",
+      "name": "Dr. K.Priyanka",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . kakarla pravallika",
+      "name": "Mr. S . Kakarla Pravallika",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kalluri mercy bhikshavathi",
+      "name": "Dr. Kalluri Mercy Bhikshavathi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kamakhya paul",
+      "name": "Dr. Kamakhya Paul",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . karedi eden georgia",
+      "name": "Dr. Karedi Eden Georgia",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . karimunnissabegum shaik",
+      "name": "Mr. S . Karimunnissabegum Shaik",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . karuna sindhuja.a",
+      "name": "Dr. Karuna Sindhuja.A",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kasimkota kiranmai",
+      "name": "Dr. Kasimkota Kiranmai",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . katari sudheer kumar",
+      "name": "Dr. Katari Sudheer Kumar",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . katikala hima bindu",
+      "name": "Dr. Katikala Hima Bindu",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . katuri ramya sri",
+      "name": "Mr. S . Katuri Ramya Sri",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . keerthi g",
+      "name": "Dr. Keerthi G",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kiran kumar kalagadda",
+      "name": "Dr. Kiran Kumar Kalagadda",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kiran kumar raja pagidipalli",
+      "name": "Dr. Kiran Kumar Raja Pagidipalli",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kiran sagar unikela",
+      "name": "Dr. Kiran Sagar Unikela",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kodirekka saritha",
+      "name": "Dr. Kodirekka Saritha",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . koduru poorna chandra rao",
+      "name": "Dr. Koduru Poorna Chandra Rao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . koduru vyshnavi",
+      "name": "Mr. S . Koduru Vyshnavi",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kolimigundla amarnath",
+      "name": "Dr. Kolimigundla Amarnath",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . kolla jyotsna",
+      "name": "Mr. S . Kolla Jyotsna",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kolluru pavan kumar",
+      "name": "Dr. Kolluru Pavan Kumar",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kolusu tejasree",
+      "name": "Dr. Kolusu Tejasree",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kommineni bala gopi krishna",
+      "name": "Dr. Kommineni Bala Gopi Krishna",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kommoju vallayyachari",
+      "name": "Dr. Kommoju Vallayyachari",
+      "designation": "ASSISTANT PROFESSOR (BIOTECH)",
+      "rank": 3,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kommu kishore babu",
+      "name": "Dr. Kommu Kishore Babu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kondeti suneel kumar",
+      "name": "Dr. Kondeti Suneel Kumar",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . kota lakshmi thanuja",
+      "name": "Dr. Kota Lakshmi Thanuja",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kottnana janakiram",
+      "name": "Dr. Kottnana Janakiram",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . krishna bhattacharjee",
+      "name": "Dr. Krishna Bhattacharjee",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . krishna chennakesava rao",
+      "name": "Dr. Krishna Chennakesava Rao",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . krishna komaragiri",
+      "name": "Dr. Krishna Komaragiri",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . kumar devapogu",
+      "name": "Dr. Kumar Devapogu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kumaraswamy manepalli",
+      "name": "Dr. Kumaraswamy Manepalli",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kummara naresh",
+      "name": "Dr. Kummara Naresh",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kuna praveen",
+      "name": "Dr. Kuna Praveen",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . kuppam chandrasekhar",
+      "name": "Dr. Kuppam Chandrasekhar",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . labeesh kumar (dr. rer. nat.)",
+      "name": "Dr. Labeesh Kumar (Dr. Rer. Nat.)",
+      "designation": "ASSISTANT PROFESSOR (TT)",
+      "rank": 3,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . lalisetti ganesh",
+      "name": "Dr. Lalisetti Ganesh",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . lammata ashish kumar",
+      "name": "Dr. Lammata Ashish Kumar",
+      "designation": "ASSISTANT PROFESSOR (NA)",
+      "rank": 3,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . landa yasasri",
+      "name": "Dr. Landa Yasasri",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . lanke haritha",
+      "name": "Dr. Lanke Haritha",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . latesh babu talluri",
+      "name": "Dr. Latesh Babu Talluri",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . lavanya madagani",
+      "name": "Dr. Lavanya Madagani",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . leela priya inturu",
+      "name": "Mr. S . Leela Priya Inturu",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . lingutla geethanjali",
+      "name": "Dr. Lingutla Geethanjali",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . loganathan arunachalam",
+      "name": "Dr. Loganathan Arunachalam",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . lokesh madineni",
+      "name": "Dr. Lokesh Madineni",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m abou raihan rinku",
+      "name": "Dr. M Abou Raihan Rinku",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m prathap",
+      "name": "Dr. M Prathap",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . m s kishan varma",
+      "name": "Dr. M S Kishan Varma",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . m veerendra",
+      "name": "Dr. M Veerendra",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. aswini",
+      "name": "Dr. M. Aswini",
+      "designation": "ASSISTANT PROFESSOR (TT)",
+      "rank": 3,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. lakshmi naga nandini",
+      "name": "Dr. M. Lakshmi Naga Nandini",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. padma devi",
+      "name": "Dr. M. Padma Devi",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. rajarao",
+      "name": "Dr. M. Rajarao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. sabareesh",
+      "name": "Dr. M. Sabareesh",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m. umamaheswara rao",
+      "name": "Dr. M. Umamaheswara Rao",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . m.janaki",
+      "name": "Mr. S . M.Janaki",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m.s.s.r. tejaswini",
+      "name": "Dr. M.S.S.R. Tejaswini",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . m.v.raju",
+      "name": "Dr. M.V.Raju",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . maddali anusha",
+      "name": "Dr. Maddali Anusha",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . magham.sumalatha",
+      "name": "Mr. S . Magham.Sumalatha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . malathi balasubramaniyan",
+      "name": "Dr. Malathi Balasubramaniyan",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mamilla r charan raja",
+      "name": "Dr. Mamilla R Charan Raja",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . manasa reddy cheemalamarri",
+      "name": "Dr. Manasa Reddy Cheemalamarri",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . manne bharathi",
+      "name": "Dr. Manne Bharathi",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . maridu bhargavi",
+      "name": "Mr. S . Maridu Bhargavi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . mathi bhuvaneswari",
+      "name": "Dr. Mathi Bhuvaneswari",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mattupalli bujju babu",
+      "name": "Dr. Mattupalli Bujju Babu",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . md faiyaz ahmed",
+      "name": "Dr. Md Faiyaz Ahmed",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . md hasanuzzaman",
+      "name": "Dr. Md Hasanuzzaman",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . md oqail ahmad",
+      "name": "Dr. Md Oqail Ahmad",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . michael cholines pedapudi",
+      "name": "Dr. Michael Cholines Pedapudi",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mihir barman",
+      "name": "Dr. Mihir Barman",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mihir bhatt",
+      "name": "Dr. Mihir Bhatt",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mohammad rahaman khan",
+      "name": "Dr. Mohammad Rahaman Khan",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mohammed anwar ali",
+      "name": "Dr. Mohammed Anwar Ali",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . mohammed shameem k k",
+      "name": "Dr. Mohammed Shameem K K",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mohammed zubair ahamed",
+      "name": "Dr. Mohammed Zubair Ahamed",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mohana venkateswara rao mathi",
+      "name": "Dr. Mohana Venkateswara Rao Mathi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . molathoti salomi",
+      "name": "Dr. Molathoti Salomi",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . ms. mallavalli thambi rani",
+      "name": "Dr. Ms. Mallavalli Thambi Rani",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . muhammed sihas km",
+      "name": "Dr. Muhammed Sihas Km",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mulinti yousuf",
+      "name": "Dr. Mulinti Yousuf",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . murla bhumi reddy",
+      "name": "Dr. Murla Bhumi Reddy",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . mushini srikanthakumari",
+      "name": "Mr. S . Mushini Srikanthakumari",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . mutyalu navuluru",
+      "name": "Dr. Mutyalu Navuluru",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n anand kumar",
+      "name": "Dr. N Anand Kumar",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . n b akhilandeswari",
+      "name": "Dr. N B Akhilandeswari",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . n b prakash tiruveedula",
+      "name": "Dr. N B Prakash Tiruveedula",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n bharath kumar",
+      "name": "Dr. N Bharath Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n bhargavi",
+      "name": "Dr. N Bhargavi",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . n. anantha lakshmi",
+      "name": "Mr. S . N. Anantha Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . n. archana",
+      "name": "Mr. S . N. Archana",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . n. kavya",
+      "name": "Mr. S . N. Kavya",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. santhosh",
+      "name": "Dr. N. Santhosh",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. satya vijaya kumar",
+      "name": "Dr. N. Satya Vijaya Kumar",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n. shiva kumar",
+      "name": "Dr. N. Shiva Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . n. venkata prasanna",
+      "name": "Dr. N. Venkata Prasanna",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . n.dasharath",
+      "name": "Dr. N.Dasharath",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . naba krushna sabat",
+      "name": "Dr. Naba Krushna Sabat",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . nachu nikhil sai",
+      "name": "Dr. Nachu Nikhil Sai",
+      "designation": "ASSISTANT PROFESSOR (NA)",
+      "rank": 3,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nadeem firoz",
+      "name": "Dr. Nadeem Firoz",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . naga lakshmi",
+      "name": "Dr. Naga Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (BIOTECH)",
+      "rank": 3,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . naga lakshmi",
+      "name": "Dr. Naga Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . naga lavanya kalavakolli",
+      "name": "Dr. Naga Lavanya Kalavakolli",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . naga srinivasa rao",
+      "name": "Dr. Naga Srinivasa Rao",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . naga sudheer bandlamudi",
+      "name": "Dr. Naga Sudheer Bandlamudi",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . nagaraju j",
+      "name": "Dr. Nagaraju J",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nagendra rao howji",
+      "name": "Dr. Nagendra Rao Howji",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . nageswara rao arudala",
+      "name": "Dr. Nageswara Rao Arudala",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nageswara rao epuru",
+      "name": "Dr. Nageswara Rao Epuru",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . nakka venkata vyshnavi",
+      "name": "Dr. Nakka Venkata Vyshnavi",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . nakkala mounika",
+      "name": "Mr. S . Nakkala Mounika",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nalamolu ravina madhulitha",
+      "name": "Dr. Nalamolu Ravina Madhulitha",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . nalluri bhargavi",
+      "name": "Mr. S . Nalluri Bhargavi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . nalluri brahma naidu",
+      "name": "Dr. Nalluri Brahma Naidu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . napolean joseph a",
+      "name": "Dr. Napolean Joseph A",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . narasimha murthy",
+      "name": "Dr. Narasimha Murthy",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . narasimharao vallabhu",
+      "name": "Dr. Narasimharao Vallabhu",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nazma",
+      "name": "Dr. Nazma",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . nazma sultana shaik",
+      "name": "Mr. S . Nazma Sultana Shaik",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . neeli sarvani",
+      "name": "Dr. Neeli Sarvani",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . nelapati susmitha",
+      "name": "Mr. S . Nelapati Susmitha",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . nelaturi nagendra reddy",
+      "name": "Dr. Nelaturi Nagendra Reddy",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . nimmakanti bujji",
+      "name": "Dr. Nimmakanti Bujji",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ongole gandhi",
+      "name": "Dr. Ongole Gandhi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . p amrutha varshini",
+      "name": "Dr. P Amrutha Varshini",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p l n manoj kumar",
+      "name": "Dr. P L N Manoj Kumar",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p ramadoss",
+      "name": "Dr. P Ramadoss",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p srinivasarao",
+      "name": "Dr. P Srinivasarao",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p vamsi krishna",
+      "name": "Dr. P Vamsi Krishna",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . p vidya",
+      "name": "Mr. S . P Vidya",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . p. lakshmi",
+      "name": "Dr. P. Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p. perumal",
+      "name": "Dr. P. Perumal",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . p. radha madhavi",
+      "name": "Mr. S . P. Radha Madhavi",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p. rajani",
+      "name": "Dr. P. Rajani",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . p. vamsi krishna",
+      "name": "Dr. P. Vamsi Krishna",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p. vijaya lakshmi",
+      "name": "Dr. P. Vijaya Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . p.anusha",
+      "name": "Mr. S . P.Anusha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p.lakshmi narayana",
+      "name": "Dr. P.Lakshmi Narayana",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . p.parthiban",
+      "name": "Dr. P.Parthiban",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . p.ramya",
+      "name": "Dr. P.Ramya",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . p.siva kumari",
+      "name": "Mr. S . P.Siva Kumari",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . padakanti rakesh",
+      "name": "Dr. Padakanti Rakesh",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . paladugu praveen kumar",
+      "name": "Dr. Paladugu Praveen Kumar",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . palaparthi seethalakshmi",
+      "name": "Mr. S . Palaparthi Seethalakshmi",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . palavelli vamsi krishna",
+      "name": "Dr. Palavelli Vamsi Krishna",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pandu u.",
+      "name": "Dr. Pandu U.",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . panthgani vijaya babu",
+      "name": "Dr. Panthgani Vijaya Babu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . paranthaman r",
+      "name": "Dr. Paranthaman R",
+      "designation": "ASSISTANT PROFESSOR (TT)",
+      "rank": 3,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . paravada manoj kumar",
+      "name": "Dr. Paravada Manoj Kumar",
+      "designation": "ASSISTANT PROFESSOR (NA)",
+      "rank": 3,
+      "dirCode": "NA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . parimala garnepudi",
+      "name": "Mr. S . Parimala Garnepudi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . parshuram singh",
+      "name": "Dr. Parshuram Singh",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . partha sarkar",
+      "name": "Dr. Partha Sarkar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . patibandla lavanya",
+      "name": "Dr. Patibandla Lavanya",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . pavani karra",
+      "name": "Mr. S . Pavani Karra",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . pedababu mandapati",
+      "name": "Dr. Pedababu Mandapati",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . pedamallu niharika",
+      "name": "Dr. Pedamallu Niharika",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . penumudi sai prasanna",
+      "name": "Mr. S . Penumudi Sai Prasanna",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . perabathula satish",
+      "name": "Dr. Perabathula Satish",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . phanindra thota",
+      "name": "Dr. Phanindra Thota",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . pilli ashok kumar",
+      "name": "Dr. Pilli Ashok Kumar",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . pilli mounika",
+      "name": "Mr. S . Pilli Mounika",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . pinapala chanikya",
+      "name": "Dr. Pinapala Chanikya",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . podila naresh",
+      "name": "Dr. Podila Naresh",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . policharla gurubrahmam",
+      "name": "Dr. Policharla Gurubrahmam",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ponnuru mahesh",
+      "name": "Dr. Ponnuru Mahesh",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pradeep chand kopila",
+      "name": "Dr. Pradeep Chand Kopila",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pradeep gorre",
+      "name": "Dr. Pradeep Gorre",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . prakash priyadarshi",
+      "name": "Dr. Prakash Priyadarshi",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pramod kaki",
+      "name": "Dr. Pramod Kaki",
+      "designation": "ASSISTANT PROFESSOR (CHEM)",
+      "rank": 3,
+      "dirCode": "CHEM",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . prathiba jonnala",
+      "name": "Dr. Prathiba Jonnala",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . praveen kumar pandey",
+      "name": "Dr. Praveen Kumar Pandey",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . praveenkumar kazipeta",
+      "name": "Dr. Praveenkumar Kazipeta",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . preetham .p",
+      "name": "Dr. Preetham .P",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . pushya chaparala",
+      "name": "Dr. Pushya Chaparala",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . pvps arun",
+      "name": "Dr. Pvps Arun",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . r naga sirisha",
+      "name": "Mr. S . R Naga Sirisha",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . r prathiba",
+      "name": "Mr. S . R Prathiba",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . r swathika",
+      "name": "Mr. S . R Swathika",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . r. nithya",
+      "name": "Dr. R. Nithya",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . ragam padmaja",
+      "name": "Mr. S . Ragam Padmaja",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . raghavendra murali",
+      "name": "Dr. Raghavendra Murali",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . rahul p",
+      "name": "Dr. Rahul P",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rajeev ranjan",
+      "name": "Dr. Rajeev Ranjan",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . rajendra babu vemuri",
+      "name": "Dr. Rajendra Babu Vemuri",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rajyalakshmi",
+      "name": "Dr. Rajyalakshmi",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rambabu kusuma",
+      "name": "Dr. Rambabu Kusuma",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ramesh kumar mojjada",
+      "name": "Dr. Ramesh Kumar Mojjada",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rameshbabu kunchala",
+      "name": "Dr. Rameshbabu Kunchala",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ramu muthe",
+      "name": "Dr. Ramu Muthe",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . ramya sunkara",
+      "name": "Dr. Ramya Sunkara",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ranadip gangopadhyay",
+      "name": "Dr. Ranadip Gangopadhyay",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rangu seshu kumar",
+      "name": "Dr. Rangu Seshu Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rani j r",
+      "name": "Dr. Rani J R",
+      "designation": "ASSISTANT PROFESSOR (BIOTECH)",
+      "rank": 3,
+      "dirCode": "BIOTECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ranjan prakash",
+      "name": "Dr. Ranjan Prakash",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . rapolu sai kumar",
+      "name": "Dr. Rapolu Sai Kumar",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . raveena begum",
+      "name": "Dr. Raveena Begum",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ravibabu velaga",
+      "name": "Dr. Ravibabu Velaga",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ravipati venkata ramana",
+      "name": "Dr. Ravipati Venkata Ramana",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ravula nagaraju",
+      "name": "Dr. Ravula Nagaraju",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ravuri anil kumar",
+      "name": "Dr. Ravuri Anil Kumar",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . ravuri lalitha",
+      "name": "Mr. S . Ravuri Lalitha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . rayavarapu vamsi",
+      "name": "Dr. Rayavarapu Vamsi",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . reema chakrabarti",
+      "name": "Dr. Reema Chakrabarti",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . renugadevi r",
+      "name": "Dr. Renugadevi R",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . ritul aryan",
+      "name": "Dr. Ritul Aryan",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . romil aryan",
+      "name": "Dr. Romil Aryan",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rose rani chavvakula",
+      "name": "Dr. Rose Rani Chavvakula",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . rushi prasad sahoo",
+      "name": "Dr. Rushi Prasad Sahoo",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . s jayasankar",
+      "name": "Dr. S Jayasankar",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s karthikeyan",
+      "name": "Dr. S Karthikeyan",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s sai shiva",
+      "name": "Dr. S Sai Shiva",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . s suresh babu",
+      "name": "Dr. S Suresh Babu",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . s. sathishkumar",
+      "name": "Dr. S. Sathishkumar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . s. venkateswarlu",
+      "name": "Dr. S. Venkateswarlu",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . s.d. chaitanya",
+      "name": "Dr. S.D. Chaitanya",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . s.girish kumar",
+      "name": "Dr. S.Girish Kumar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . s.krishnaveni",
+      "name": "Mr. S . S.Krishnaveni",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . sahithi modugula",
+      "name": "Dr. Sahithi Modugula",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . sai eswari yalavarthi",
+      "name": "Mr. S . Sai Eswari Yalavarthi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . sajida sultana.sk",
+      "name": "Dr. Sajida Sultana.Sk",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sajja radharani",
+      "name": "Dr. Sajja Radharani",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sameeul haq nazki",
+      "name": "Dr. Sameeul Haq Nazki",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . samhitha",
+      "name": "Mr. S . Samhitha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . samminga ashok kumar",
+      "name": "Dr. Samminga Ashok Kumar",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sangeetha k",
+      "name": "Dr. Sangeetha K",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sanjay kumar gupta",
+      "name": "Dr. Sanjay Kumar Gupta",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sanjaya kumar sethi",
+      "name": "Dr. Sanjaya Kumar Sethi",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sankaran krishnamoorthy",
+      "name": "Dr. Sankaran Krishnamoorthy",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sateesh kumar reddy",
+      "name": "Dr. Sateesh Kumar Reddy",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sateesh reddy avutu",
+      "name": "Dr. Sateesh Reddy Avutu",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . satish kanapala",
+      "name": "Dr. Satish Kanapala",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . satish kumar satti",
+      "name": "Dr. Satish Kumar Satti",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . satya venkata kishore p",
+      "name": "Dr. Satya Venkata Kishore P",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . saubhagya ranjan biswal",
+      "name": "Dr. Saubhagya Ranjan Biswal",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sekhar manepalli",
+      "name": "Dr. Sekhar Manepalli",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . selvamuthukumar m",
+      "name": "Dr. Selvamuthukumar M",
+      "designation": "ASSISTANT PROFESSOR (MECH)",
+      "rank": 3,
+      "dirCode": "MECH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . senthil d",
+      "name": "Dr. Senthil D",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . setti sridurga",
+      "name": "Dr. Setti Sridurga",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shah al mamun sarkar",
+      "name": "Dr. Shah Al Mamun Sarkar",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik jani",
+      "name": "Dr. Shaik Jani",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . shaik kareena yashmin",
+      "name": "Dr. Shaik Kareena Yashmin",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik khadersha",
+      "name": "Dr. Shaik Khadersha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik mastan shareef",
+      "name": "Dr. Shaik Mastan Shareef",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shaik mastan sharif",
+      "name": "Dr. Shaik Mastan Sharif",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik nyamathulla",
+      "name": "Dr. Shaik Nyamathulla",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . shaik reehana",
+      "name": "Dr. Shaik Reehana",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . shaik ruksana",
+      "name": "Dr. Shaik Ruksana",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . shaik shama",
+      "name": "Mr. S . Shaik Shama",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik sikindar",
+      "name": "Dr. Shaik Sikindar",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . shaik.bajamma",
+      "name": "Dr. Shaik.Bajamma",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . shaik.mahabub basha",
+      "name": "Dr. Shaik.Mahabub Basha",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shareena jasmin. p k",
+      "name": "Dr. Shareena Jasmin. P K",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . shubhalakshmi sengupta",
+      "name": "Dr. Shubhalakshmi Sengupta",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sibgatu ullah nazki",
+      "name": "Dr. Sibgatu Ullah Nazki",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . simanta das",
+      "name": "Dr. Simanta Das",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . siva jagadish kumar munagala",
+      "name": "Dr. Siva Jagadish Kumar Munagala",
+      "designation": "ASSISTANT PROFESSOR (TT)",
+      "rank": 3,
+      "dirCode": "TT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . siva rao alakunta",
+      "name": "Dr. Siva Rao Alakunta",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . siva venkata surya othuri",
+      "name": "Dr. Siva Venkata Surya Othuri",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sk. hussain basha",
+      "name": "Dr. Sk. Hussain Basha",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sk.bhadar",
+      "name": "Dr. Sk.Bhadar",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . soumita jana",
+      "name": "Dr. Soumita Jana",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . soumitra das",
+      "name": "Dr. Soumitra Das",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sourav mondal",
+      "name": "Dr. Sourav Mondal",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . sowjanya padavala",
+      "name": "Mr. S . Sowjanya Padavala",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sravana jyothi doddapaneni",
+      "name": "Dr. Sravana Jyothi Doddapaneni",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sree raghu ram koduru",
+      "name": "Dr. Sree Raghu Ram Koduru",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sreekar guddeti",
+      "name": "Dr. Sreekar Guddeti",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sreenivasulu peta",
+      "name": "Dr. Sreenivasulu Peta",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sri lakshmi manasa dharanikota",
+      "name": "Dr. Sri Lakshmi Manasa Dharanikota",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srikrishna ghosh",
+      "name": "Dr. Srikrishna Ghosh",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivasa rao pathipati",
+      "name": "Dr. Srinivasa Rao Pathipati",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivasa reddy tippasani",
+      "name": "Dr. Srinivasa Reddy Tippasani",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . srinivasarao kasarla",
+      "name": "Dr. Srinivasarao Kasarla",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sripathi siva kumar",
+      "name": "Dr. Sripathi Siva Kumar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . subham kumar sahoo",
+      "name": "Dr. Subham Kumar Sahoo",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . subrata rana",
+      "name": "Dr. Subrata Rana",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sudheer sannikanti",
+      "name": "Dr. Sudheer Sannikanti",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sumanjit sarkar",
+      "name": "Dr. Sumanjit Sarkar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sumit ragho gawai",
+      "name": "Dr. Sumit Ragho Gawai",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sunil babu melingi",
+      "name": "Dr. Sunil Babu Melingi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sunil tej boppudi",
+      "name": "Dr. Sunil Tej Boppudi",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . sunkara anitha",
+      "name": "Mr. S . Sunkara Anitha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . sureshbabu amarthaluri",
+      "name": "Dr. Sureshbabu Amarthaluri",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . sureshbabu aremanda",
+      "name": "Dr. Sureshbabu Aremanda",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . surla sireesha",
+      "name": "Dr. Surla Sireesha",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . susmita saha sarkar",
+      "name": "Mr. S . Susmita Saha Sarkar",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . swarna lalitha",
+      "name": "Mr. S . Swarna Lalitha",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . swarnalatha potluri",
+      "name": "Dr. Swarnalatha Potluri",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . swathi koganti",
+      "name": "Dr. Swathi Koganti",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . syam babu davuluri",
+      "name": "Dr. Syam Babu Davuluri",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . syam prasad reddy t",
+      "name": "Dr. Syam Prasad Reddy T",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . syed irshaan",
+      "name": "Dr. Syed Irshaan",
+      "designation": "ASSISTANT PROFESSOR (FT)",
+      "rank": 3,
+      "dirCode": "FT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . syed nafees ahamed",
+      "name": "Dr. Syed Nafees Ahamed",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . syed nafees ahamed",
+      "name": "Dr. Syed Nafees Ahamed",
+      "designation": "ASSISTANT PROFESSOR (DIP)",
+      "rank": 3,
+      "dirCode": "DIP",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . syed reshma",
+      "name": "Dr. Syed Reshma",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . syed.shareefunnisa",
+      "name": "Mr. S . Syed.Shareefunnisa",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . t prabhakara rao",
+      "name": "Dr. T Prabhakara Rao",
+      "designation": "ASSISTANT PROFESSOR (AGE)",
+      "rank": 3,
+      "dirCode": "AGE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . t soujanya",
+      "name": "Mr. S . T Soujanya",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . t v vamsikrishna",
+      "name": "Dr. T V Vamsikrishna",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . t. kanna",
+      "name": "Dr. T. Kanna",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . t.leelavathy",
+      "name": "Mr. S . T.Leelavathy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . t.priyanka",
+      "name": "Dr. T.Priyanka",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . t.r.rajesh",
+      "name": "Dr. T.R.Rajesh",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . t.umamaheswari",
+      "name": "Mr. S . T.Umamaheswari",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . talari priyabharathi",
+      "name": "Dr. Talari Priyabharathi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . tallam sri vyshnavi",
+      "name": "Dr. Tallam Sri Vyshnavi",
+      "designation": "ASSISTANT PROFESSOR (CA)",
+      "rank": 3,
+      "dirCode": "CA",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . tavva nagamani",
+      "name": "Mr. S . Tavva Nagamani",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . tellagorla sudha rani",
+      "name": "Dr. Tellagorla Sudha Rani",
+      "designation": "ASSISTANT PROFESSOR (BME)",
+      "rank": 3,
+      "dirCode": "BME",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . thulasya naik b",
+      "name": "Dr. Thulasya Naik B",
+      "designation": "ASSISTANT PROFESSOR (ACSE)",
+      "rank": 3,
+      "dirCode": "ACSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . tipura damarla",
+      "name": "Mr. S . Tipura Damarla",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . tirumalasetti narasimha rao",
+      "name": "Dr. Tirumalasetti Narasimha Rao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . u.chandramouli",
+      "name": "Dr. U.Chandramouli",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . udamala anusha",
+      "name": "Mr. S . Udamala Anusha",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . uddagiri yojitha",
+      "name": "Dr. Uddagiri Yojitha",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . upalanchi vara lakshmi",
+      "name": "Dr. Upalanchi Vara Lakshmi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . uppala venkateswara rao",
+      "name": "Dr. Uppala Venkateswara Rao",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . utpala sriranganath",
+      "name": "Dr. Utpala Sriranganath",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . uttej kumar nannapaneni",
+      "name": "Dr. Uttej Kumar Nannapaneni",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . v omprakash yakkala",
+      "name": "Dr. V Omprakash Yakkala",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . v. jayanth krishna",
+      "name": "Dr. V. Jayanth Krishna",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . v.nandini",
+      "name": "Mr. S . V.Nandini",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . v.sai spandana",
+      "name": "Mr. S . V.Sai Spandana",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . vaddala suresh",
+      "name": "Dr. Vaddala Suresh",
+      "designation": "ASSISTANT PROFESSOR (CIVIL)",
+      "rank": 3,
+      "dirCode": "CIVIL",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . vamshi krishna",
+      "name": "Dr. Vamshi Krishna",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . vanguri. priyanka raj",
+      "name": "Dr. Vanguri. Priyanka Raj",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . varagani srinivasa rao",
+      "name": "Dr. Varagani Srinivasa Rao",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . varagani tejaswi",
+      "name": "Mr. S . Varagani Tejaswi",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mrs . vedala aravinda rohini",
+      "name": "Mr. S . Vedala Aravinda Rohini",
+      "designation": "ASSISTANT PROFESSOR (LAW)",
+      "rank": 3,
+      "dirCode": "LAW",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . velivela naga sruthi",
+      "name": "Dr. Velivela Naga Sruthi",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . velpula nagi reddy",
+      "name": "Dr. Velpula Nagi Reddy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . velpula praveen",
+      "name": "Dr. Velpula Praveen",
+      "designation": "ASSISTANT PROFESSOR (BI)",
+      "rank": 3,
+      "dirCode": "BI",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . vemavarapu lydia vedam",
+      "name": "Dr. Vemavarapu Lydia Vedam",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vemireddy venkatareddy",
+      "name": "Dr. Vemireddy Venkatareddy",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . venkata rajulu pilli",
+      "name": "Dr. Venkata Rajulu Pilli",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkata ramana maddula",
+      "name": "Dr. Venkata Ramana Maddula",
+      "designation": "ASSISTANT PROFESSOR (PHARMACY)",
+      "rank": 3,
+      "dirCode": "PHARMACY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkata siva varma ch",
+      "name": "Dr. Venkata Siva Varma Ch",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkata subba rao pittu",
+      "name": "Dr. Venkata Subba Rao Pittu",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . venkatesh mahalingam",
+      "name": "Dr. Venkatesh Mahalingam",
+      "designation": "ASSISTANT PROFESSOR (ECE)",
+      "rank": 3,
+      "dirCode": "ECE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijai meyyappan moorthy",
+      "name": "Dr. Vijai Meyyappan Moorthy",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijaya bhaskararao bonam",
+      "name": "Dr. Vijaya Bhaskararao Bonam",
+      "designation": "ASSISTANT PROFESSOR (SSH)",
+      "rank": 3,
+      "dirCode": "SSH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . vijaya lakshmi garlapati",
+      "name": "Dr. Vijaya Lakshmi Garlapati",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vijitha ananthi j.",
+      "name": "Dr. Vijitha Ananthi J.",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vinod kumar",
+      "name": "Dr. Vinod Kumar",
+      "designation": "ASSISTANT PROFESSOR (ENGLISH)",
+      "rank": 3,
+      "dirCode": "ENGLISH",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vinoj jothipandian",
+      "name": "Dr. Vinoj Jothipandian",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . vishal jaiswal",
+      "name": "Dr. Vishal Jaiswal",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . vishnupandi s",
+      "name": "Dr. Vishnupandi S",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . y. ravi kumar",
+      "name": "Dr. Y. Ravi Kumar",
+      "designation": "ASSISTANT PROFESSOR (PHYSICS)",
+      "rank": 3,
+      "dirCode": "PHYSICS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yadlapalli ramamohan",
+      "name": "Dr. Yadlapalli Ramamohan",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yalamanda babu gopisetty",
+      "name": "Dr. Yalamanda Babu Gopisetty",
+      "designation": "ASSISTANT PROFESSOR (MATHS AND STAT)",
+      "rank": 3,
+      "dirCode": "MATHS AND STAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yamuna chukka",
+      "name": "Dr. Yamuna Chukka",
+      "designation": "ASSISTANT PROFESSOR (VIAT)",
+      "rank": 3,
+      "dirCode": "VIAT",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yemineni s l v narayana",
+      "name": "Dr. Yemineni S L V Narayana",
+      "designation": "ASSISTANT PROFESSOR (CHEMISTRY)",
+      "rank": 3,
+      "dirCode": "CHEMISTRY",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "ms . yemineni sravani",
+      "name": "Dr. Yemineni Sravani",
+      "designation": "ASSISTANT PROFESSOR (CSE)",
+      "rank": 3,
+      "dirCode": "CSE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "mr . yogesh vinayak hadole",
+      "name": "Dr. Yogesh Vinayak Hadole",
+      "designation": "ASSISTANT PROFESSOR (DMS)",
+      "rank": 3,
+      "dirCode": "DMS",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . yuvaraja s",
+      "name": "Dr. Yuvaraja S",
+      "designation": "ASSISTANT PROFESSOR (EEE)",
+      "rank": 3,
+      "dirCode": "EEE",
+      "researchInterests": null,
+      "isHodHint": false
+    },
+    {
+      "rawName": "dr . ziaul haque choudhury",
+      "name": "Dr. Ziaul Haque Choudhury",
+      "designation": "ASSISTANT PROFESSOR (IT)",
+      "rank": 3,
+      "dirCode": "IT",
+      "researchInterests": null,
+      "isHodHint": false
+    }
+  ]
+}

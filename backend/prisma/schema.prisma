@@ -1,0 +1,430 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model School {
+  id          String       @id @default(cuid())
+  name        String
+  code        String       @unique
+  departments Department[]
+  users       User[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Department {
+  id            String                @id @default(cuid())
+  name          String
+  code          String                @unique
+  schoolId      String
+  school        School                @relation(fields: [schoolId], references: [id])
+  status        String                @default("ACTIVE")
+  dataSource    String                @default("REAL")
+  hodFacultyId  String?
+  hodFaculty    Faculty?              @relation("DepartmentHod", fields: [hodFacultyId], references: [id])
+  faculty       Faculty[]
+  affiliations  FacultyAffiliation[]
+  users         User[]
+  courses       Course[]
+  norms         WorkloadNorm[]
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+
+  @@index([dataSource])
+  @@index([schoolId])
+}
+
+model User {
+  id                  String             @id @default(cuid())
+  email               String             @unique
+  passwordHash        String
+  name                String
+  role                String
+  status              String             @default("ACTIVE")
+  photoUrl            String?
+  facultyId           String?            @unique
+  faculty             Faculty?           @relation(fields: [facultyId], references: [id])
+  departmentId        String?
+  department          Department?        @relation(fields: [departmentId], references: [id])
+  schoolId            String?
+  school              School?            @relation(fields: [schoolId], references: [id])
+  refreshTokens       RefreshToken[]
+  corrections         CorrectionRequest[] @relation("CorrectionSubmitter")
+  reviewedCorrections CorrectionRequest[] @relation("CorrectionReviewer")
+  approvalsSubmitted  ApprovalRequest[]  @relation("ApprovalSubmitter")
+  auditLogs           ApprovalAuditLog[]
+  notifications       Notification[]
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  @@index([role, departmentId])
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  tokenHash String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Faculty {
+  id                   String                 @id @default(cuid())
+  facultyCode          String                 @unique
+  name                 String
+  email                String                 @unique
+  phone                String?
+  departmentId         String
+  department           Department             @relation(fields: [departmentId], references: [id])
+  designation          String
+  qualification        String
+  joiningDate          DateTime?
+  employmentType       String
+  status               String                 @default("Active")
+  dataSource           String                 @default("REAL")
+  identitySource       String                 @default("INTERNAL")
+  officialProfileUrl   String?
+  researchInterests    String?
+  academicExperience   String?
+  education            String?
+  specialization       String?
+  photoUrl             String?
+  photoThumbUrl        String?
+  employeeId           String?
+  user                 User?
+  affiliations         FacultyAffiliation[]
+  headedDepartments    Department[]           @relation("DepartmentHod")
+  allocations          CourseAllocation[]
+  timetableSlots       TimetableSlot[]
+  projectsGuide        Project[]              @relation("ProjectGuide")
+  projectsCoGuide      Project[]              @relation("ProjectCoGuide")
+  phdSupervisions      PhDSupervision[]
+  committeeMemberships CommitteeMembership[]
+  research             ResearchCommitment[]
+  adminRoles           AdminResponsibility[]
+  snapshots            WorkloadSnapshot[]
+  createdAt            DateTime               @default(now())
+  updatedAt            DateTime               @updatedAt
+
+  @@index([departmentId])
+  @@index([status])
+  @@index([email])
+  @@index([dataSource])
+  @@index([name])
+  @@index([designation])
+}
+
+model FacultyAffiliation {
+  id           String     @id @default(cuid())
+  facultyId    String
+  faculty      Faculty    @relation(fields: [facultyId], references: [id], onDelete: Cascade)
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  isPrimary    Boolean    @default(false)
+
+  @@unique([facultyId, departmentId])
+  @@index([departmentId])
+}
+
+model AcademicPeriod {
+  id        String            @id @default(cuid())
+  name      String
+  code      String            @unique
+  startDate DateTime
+  endDate   DateTime
+  isActive  Boolean           @default(false)
+  snapshots WorkloadSnapshot[]
+  approvals ApprovalRequest[]
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+}
+
+model WorkloadPolicy {
+  id            String   @id @default(cuid())
+  activityType  String
+  weight        Float
+  effectiveFrom DateTime
+  updatedBy     String?
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([activityType, effectiveFrom])
+}
+
+model WorkloadNorm {
+  id            String      @id @default(cuid())
+  departmentId  String?
+  department    Department? @relation(fields: [departmentId], references: [id])
+  academicYear  String?
+  semester      Int?
+  min           Float
+  expected      Float
+  max           Float
+  effectiveFrom DateTime
+  isActive      Boolean     @default(true)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([departmentId, isActive])
+}
+
+model Course {
+  id             String             @id @default(cuid())
+  code           String
+  name           String
+  semester       Int
+  credits        Float
+  type           String
+  hoursPerWeek   Float
+  students       Int
+  section        String?
+  academicYear   String?
+  status         String             @default("ACTIVE")
+  dataSource     String             @default("REAL")
+  departmentId   String
+  department     Department         @relation(fields: [departmentId], references: [id])
+  allocations    CourseAllocation[]
+  timetableSlots TimetableSlot[]
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  @@unique([code, departmentId])
+  @@index([departmentId, status])
+  @@index([dataSource])
+}
+
+model CourseAllocation {
+  id             String   @id @default(cuid())
+  courseId       String
+  course         Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  facultyId      String
+  faculty        Faculty  @relation(fields: [facultyId], references: [id])
+  hours          Float
+  section        String?
+  justification  String?
+  dataSource     String   @default("REAL")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([facultyId])
+  @@index([courseId])
+  @@index([dataSource])
+}
+
+model TimetableSlot {
+  id          String   @id @default(cuid())
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  facultyId   String?
+  faculty     Faculty? @relation(fields: [facultyId], references: [id])
+  dayOfWeek   Int
+  startTime   String
+  endTime     String
+  room        String?
+  contactType String
+  durationHrs Float
+  batchLabel  String?
+  dataSource  String   @default("REAL")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([facultyId, dayOfWeek, startTime])
+  @@index([dataSource])
+}
+
+model Project {
+  id           String   @id @default(cuid())
+  title        String
+  studentCount Int
+  guideId      String
+  guide        Faculty  @relation("ProjectGuide", fields: [guideId], references: [id])
+  coGuideId    String?
+  coGuide      Faculty? @relation("ProjectCoGuide", fields: [coGuideId], references: [id])
+  semester     Int
+  level        String   @default("UG")
+  guideShare   Float    @default(0.7)
+  academicYear String?
+  status       String   @default("ACTIVE")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model PhDSupervision {
+  id           String   @id @default(cuid())
+  facultyId    String
+  faculty      Faculty  @relation(fields: [facultyId], references: [id])
+  scholarCount Int
+  role         String   @default("SUPERVISOR")
+  share        Float    @default(1)
+  source       String   @default("AGENT25")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Committee {
+  id          String                 @id @default(cuid())
+  name        String
+  memberships CommitteeMembership[]
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+}
+
+model CommitteeMembership {
+  id          String    @id @default(cuid())
+  committeeId String
+  committee   Committee @relation(fields: [committeeId], references: [id], onDelete: Cascade)
+  facultyId   String
+  faculty     Faculty   @relation(fields: [facultyId], references: [id])
+  role        String
+  startDate   DateTime
+  endDate     DateTime?
+  source      String    @default("AGENT56")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model ResearchCommitment {
+  id            String    @id @default(cuid())
+  facultyId     String
+  faculty       Faculty   @relation(fields: [facultyId], references: [id])
+  projectTitle  String
+  role          String
+  commitmentPct Float
+  status        String    @default("Active")
+  fundingStatus String?
+  startDate     DateTime?
+  endDate       DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model AdminResponsibility {
+  id             String   @id @default(cuid())
+  facultyId      String
+  faculty        Faculty  @relation(fields: [facultyId], references: [id])
+  roleName       String
+  scopeLabel     String?
+  weightOverride Float?
+  duration       String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([facultyId])
+}
+
+model WorkloadSnapshot {
+  id                String         @id @default(cuid())
+  facultyId         String
+  faculty           Faculty        @relation(fields: [facultyId], references: [id])
+  periodId          String
+  period            AcademicPeriod @relation(fields: [periodId], references: [id])
+  teachingRaw       Float
+  projectsRaw       Float
+  researchRaw       Float
+  adminRaw          Float
+  committeeRaw      Float
+  phdRaw            Float
+  teachingWeighted  Float
+  projectsWeighted  Float
+  researchWeighted  Float
+  adminWeighted     Float
+  committeeWeighted Float
+  phdWeighted       Float
+  total             Float
+  status            String
+  provisionalTeaching Boolean      @default(false)
+  normMin           Float
+  normExpected      Float
+  normMax           Float
+  evidenceJson      String?
+  dataSource        String         @default("REAL")
+  calculatedAt      DateTime       @default(now())
+  createdAt         DateTime       @default(now())
+
+  @@index([facultyId, calculatedAt])
+  @@index([periodId, status])
+  @@index([dataSource, status])
+}
+
+model CorrectionRequest {
+  id             String   @id @default(cuid())
+  submittedById  String
+  submittedBy    User     @relation("CorrectionSubmitter", fields: [submittedById], references: [id])
+  facultyId      String?
+  issueCategory  String
+  targetRole     String
+  description    String
+  currentValue   String?
+  expectedValue  String?
+  status         String   @default("PENDING")
+  resolutionNote String?
+  reviewedById   String?
+  reviewedBy     User?    @relation("CorrectionReviewer", fields: [reviewedById], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([status])
+  @@index([facultyId])
+}
+
+model ApprovalRequest {
+  id            String             @id @default(cuid())
+  departmentId  String
+  periodId      String
+  period        AcademicPeriod     @relation(fields: [periodId], references: [id])
+  submittedById String
+  submittedBy   User               @relation("ApprovalSubmitter", fields: [submittedById], references: [id])
+  level         String             @default("DEAN")
+  status        String             @default("PENDING")
+  summaryJson   String?
+  comment       String?
+  auditLogs     ApprovalAuditLog[]
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+
+  @@index([departmentId, status])
+}
+
+model ApprovalAuditLog {
+  id                String          @id @default(cuid())
+  approvalRequestId String
+  approvalRequest   ApprovalRequest @relation(fields: [approvalRequestId], references: [id], onDelete: Cascade)
+  actorId           String
+  actor             User            @relation(fields: [actorId], references: [id])
+  action            String
+  comment           String?
+  createdAt         DateTime        @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  body      String
+  kind      String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId, read])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  role      String?
+  action    String
+  entity    String
+  entityId  String?
+  oldValue  String?
+  newValue  String?
+  createdAt DateTime @default(now())
+}
