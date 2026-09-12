@@ -7,6 +7,22 @@ import { existsSync, mkdirSync } from 'fs';
 const compression = require('compression');
 import { AppModule } from './app.module';
 
+function isAllowedOrigin(origin: string | undefined): boolean {
+  if (!origin) return true;
+  if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
+
+  const fromEnv = (process.env.CORS_ORIGINS || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (fromEnv.includes(origin)) return true;
+
+  // Vercel preview + production deployments
+  if (/^https:\/\/([a-z0-9-]+\.)*vercel\.app$/i.test(origin)) return true;
+
+  return false;
+}
+
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     logger: ['error', 'warn', 'log'],
@@ -21,10 +37,7 @@ async function bootstrap() {
       origin: string | undefined,
       callback: (err: Error | null, allow?: boolean) => void,
     ) => {
-      if (
-        !origin ||
-        /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
-      ) {
+      if (isAllowedOrigin(origin)) {
         callback(null, true);
         return;
       }
@@ -40,8 +53,9 @@ async function bootstrap() {
       forbidNonWhitelisted: false,
     }),
   );
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
-  console.log(`Agent 58 API listening on http://localhost:${port}/api`);
+  const port = Number(process.env.PORT) || 3000;
+  // Bind all interfaces so Render health checks can detect the open port
+  await app.listen(port, '0.0.0.0');
+  console.log(`Agent 58 API listening on http://0.0.0.0:${port}/api`);
 }
 bootstrap();
