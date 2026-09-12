@@ -17,8 +17,14 @@ function isAllowedOrigin(origin: string | undefined): boolean {
     .filter(Boolean);
   if (fromEnv.includes(origin)) return true;
 
-  // Vercel preview + production deployments
+  // Vercel preview + production deployments for this app
   if (/^https:\/\/([a-z0-9-]+\.)*vercel\.app$/i.test(origin)) return true;
+  if (
+    origin === 'https://agent-58-tawny.vercel.app' ||
+    origin.startsWith('https://agent-58-') && origin.endsWith('.vercel.app')
+  ) {
+    return true;
+  }
 
   return false;
 }
