@@ -5,6 +5,8 @@ dist
 !.env.example
 prisma/dev.db
 prisma/dev.db-journal
+.local-pg/
+embedded-postgres-windows-x64-*.tgz
 coverage
 uploads/
 *.log

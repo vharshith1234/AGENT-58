@@ -9,12 +9,12 @@ Official photos and profile details come from https://vignan.ac.in/newvignan/peo
 
 | Department | Faculty | Email | Password |
 |---|---|---|---|
-| CSE | Dr. Balakrishna Kethineni | balakrishnakethineni@vignan.ac.in | Vignan@59222368 |
-| CSE | Dr. D. Yakobu | dyakobu@vignan.ac.in | Vignan@28543860 |
-| CSE | Dr. K Rachananjali | krachananjali@vignan.ac.in | Vignan@65906650 |
-| CSE | Dr. M Umadevi | mumadevi@vignan.ac.in | Vignan@44650534 |
-| CSE | Dr. P.Siva Prasad | psivaprasad@vignan.ac.in | Vignan@28555936 |
-| CSE | Dr. Prashant Upadhyay | prashantupadhyay@vignan.ac.in | Vignan@84172863 |
+| CSE | Dr. Akhil Babu Edara | akhilbabuedara@vignan.ac.in | Vignan@20881343 |
+| CSE | Dr. Anil Babu Bathula | anilbabubathula@vignan.ac.in | Vignan@55195847 |
+| CSE | Dr. Anil Madugula | anilmadugula@vignan.ac.in | Vignan@66905227 |
+| CSE | Dr. Balakrishna Kethineni | balakrishnakethineni@vignan.ac.in | Vignan@77042821 |
+| CSE | Dr. K Rachananjali | krachananjali@vignan.ac.in | Vignan@86825929 |
+| CSE | Dr. Siva Koteswararao Chinnam | sivakoteswararaochinnam@vignan.ac.in | Vignan@70291898 |
 | IT | Dr. Bhaskaru Obulapu | bhaskaruobulapu@vignan.ac.in | Vignan@91622904 |
 | IT | Dr. Hemanta Kumar Bhuyan | hemantakumarbhuyan@vignan.ac.in | Vignan@85828152 |
 | IT | Dr. Kamepalli Sujatha | kamepallisujatha@vignan.ac.in | Vignan@87986385 |

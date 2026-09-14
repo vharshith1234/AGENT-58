@@ -16,7 +16,7 @@ import { FileInterceptor } from '@nestjs/platform-express'
 import { memoryStorage } from 'multer'
 import { writeFileSync, existsSync, mkdirSync } from 'fs'
 import { extname, join } from 'path'
-import { IsOptional, IsString, MinLength } from 'class-validator'
+import { IsEmail, IsObject, IsOptional, IsString, MinLength } from 'class-validator'
 import { ConfigService } from '@nestjs/config'
 import { AuthService } from './auth.service'
 import { LoginDto } from './dto/login.dto'
@@ -39,6 +39,26 @@ class ForgotPasswordDto {
   email!: string
 }
 
+class VerifyForgotOtpDto {
+  @IsString()
+  @MinLength(3)
+  email!: string
+
+  @IsString()
+  @MinLength(4)
+  otp!: string
+}
+
+class ResetPasswordDto {
+  @IsString()
+  @MinLength(10)
+  resetToken!: string
+
+  @IsString()
+  @MinLength(8)
+  newPassword!: string
+}
+
 class UpdateProfileDto {
   @IsOptional()
   @IsString()
@@ -48,6 +68,66 @@ class UpdateProfileDto {
   @IsOptional()
   @IsString()
   phone?: string
+
+  @IsOptional()
+  @IsEmail()
+  email?: string
+
+  @IsOptional()
+  @IsString()
+  designation?: string
+
+  @IsOptional()
+  @IsString()
+  departmentName?: string
+
+  @IsOptional()
+  @IsString()
+  specialization?: string
+
+  @IsOptional()
+  @IsString()
+  qualification?: string
+
+  @IsOptional()
+  @IsString()
+  employeeId?: string
+
+  @IsOptional()
+  @IsString()
+  facultyCode?: string
+
+  @IsOptional()
+  @IsString()
+  employmentType?: string
+
+  @IsOptional()
+  @IsString()
+  joiningDate?: string
+
+  @IsOptional()
+  @IsString()
+  researchInterests?: string
+
+  @IsOptional()
+  @IsString()
+  teachingEngagements?: string
+
+  @IsOptional()
+  @IsString()
+  academicExperience?: string
+
+  @IsOptional()
+  @IsString()
+  education?: string
+
+  @IsOptional()
+  @IsString()
+  officialProfileUrl?: string
+
+  @IsOptional()
+  @IsObject()
+  profileExtras?: Record<string, unknown>
 }
 
 const uploadRoot = join(process.cwd(), 'uploads', 'profiles')
@@ -72,6 +152,21 @@ export class AuthController {
   @HttpCode(200)
   forgot(@Body() dto: ForgotPasswordDto) {
     return this.auth.forgotPassword(dto.email)
+  }
+
+  @Post('forgot/verify')
+  @HttpCode(200)
+  verifyForgotOtp(@Body() dto: VerifyForgotOtpDto) {
+    return this.auth.verifyForgotOtp(dto.email, dto.otp)
+  }
+
+  @Post('forgot/reset')
+  @HttpCode(200)
+  resetForgotPassword(@Body() dto: ResetPasswordDto) {
+    return this.auth.resetPasswordWithToken({
+      resetToken: dto.resetToken,
+      newPassword: dto.newPassword,
+    })
   }
 
   @Post('refresh')

@@ -31,6 +31,10 @@
     "db:enrich:official": "node prisma/enrich-official-profiles.js",
     "db:reset:logins": "node prisma/reset-login-credentials.js",
     "db:sync:official": "node prisma/sync-official-profiles.js",
+    "db:seed:kolluru": "node prisma/seed-kolluru-pavan.js",
+    "db:import:cse-odd2026": "node prisma/parse-cse-odd-2026.js && node prisma/import-cse-odd-2026.js",
+    "db:local": "node prisma/start-local-pg.js",
+    "rules:designation": "node prisma/generate-designation-rules.js",
     "test:engine": "jest --testPathPatterns=workload.engine.spec"
   },
   "prisma": {
@@ -49,10 +53,13 @@
     "class-validator": "^0.15.1",
     "cloudinary": "^1.41.3",
     "compression": "^1.8.2",
+    "embedded-postgres": "^18.4.0-beta.17",
     "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^10.0.9",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pdf-lib": "^1.17.1",
+    "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "xlsx": "^0.18.5"
@@ -69,6 +76,7 @@
     "@types/jest": "^30.0.0",
     "@types/multer": "^2.2.0",
     "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.1",
     "@types/passport-jwt": "^4.0.1",
     "@types/supertest": "^7.0.0",
     "eslint": "^9.18.0",
@@ -103,5 +111,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "optionalDependencies": {
+    "@embedded-postgres/windows-x64": "^18.4.0-beta.17"
   }
 }

@@ -1,10 +1,14 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   ErrorRetry,
   PageHeader,
+  Pager,
   Panel,
   Stat,
   TableSkeleton,
+  filterByQuery,
+  paginate,
   useApiData,
 } from '../../components/DashboardShell'
 import { BarChart, DonutBreakdown } from '../../components/OverviewCharts'
@@ -43,7 +47,7 @@ export function DeanOverview() {
     <>
       <PageHeader
         title="Dean Overview"
-        subtitle="Institution-wide workload comparison across all departments."
+        subtitle="Current institution workload summary."
       />
       <ErrorRetry error={dash.error} onRetry={() => void dash.reload()} />
       {dash.loading && <TableSkeleton />}
@@ -58,24 +62,47 @@ export function DeanOverview() {
         <Stat label="Compliance" value={compliance} />
       </div>
       <div className="grid-2">
-        <BarChart
-          title="Department faculty counts"
-          items={comparisons.map((c: any) => ({
-            label: c.department.code,
-            value:
-              Number(c.facultyCount || 0) ||
-              Number(c.normal || 0) + Number(c.overload || 0) + Number(c.underload || 0),
-            color: '#1e3a8a',
-          }))}
-        />
         <DonutBreakdown
-          title="Institution load mix"
+          title="Current load mix"
           segments={[
             { label: 'Normal', value: normal, color: '#059669' },
             { label: 'Overload', value: overload, color: '#dc2626' },
             { label: 'Underload', value: underload, color: '#2563eb' },
           ]}
         />
+        <Panel
+          title="Recent Requests"
+          action={
+            <Link className="btn btn-primary btn-sm" to="/dean/requests">
+              Open Requests
+            </Link>
+          }
+        >
+          {(dash.data?.pending || []).length === 0 ? (
+            <p className="empty-state">No pending approval requests.</p>
+          ) : (
+            <div className="request-card-list">
+              {(dash.data?.pending || []).slice(0, 6).map((r: any) => (
+                <article key={r.id} className="request-card">
+                  <div className="request-card-top">
+                    <strong>{r.level || 'Approval'} request</strong>
+                    <StatusPill status={r.status || 'PENDING'} />
+                  </div>
+                  <div className="request-card-meta">
+                    <span>
+                      <i className="fa-solid fa-user" aria-hidden />{' '}
+                      {r.submittedBy?.name || 'Department'}
+                    </span>
+                    <span>
+                      <i className="fa-regular fa-calendar" aria-hidden />{' '}
+                      {r.createdAt ? new Date(r.createdAt).toLocaleDateString() : '—'}
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </Panel>
       </div>
     </>
   )
@@ -172,35 +199,16 @@ export function DeanComparisonPage() {
 
 export function DeanApprovalsPage() {
   const approvals = useApiData(() => api<any[]>('/dean/approvals'))
-  const [message, setMessage] = useState<string | null>(null)
-
-  async function act(id: string, action: 'approve' | 'send-back' | 'escalate') {
-    const path =
-      action === 'approve'
-        ? `/dean/approvals/${id}/approve`
-        : action === 'send-back'
-          ? `/dean/approvals/${id}/send-back`
-          : `/dean/approvals/${id}/escalate`
-    await api(path, {
-      method: 'POST',
-      body: JSON.stringify({
-        comment:
-          action === 'send-back'
-            ? 'Please revise allocations and resubmit.'
-            : `Dean ${action}`,
-      }),
-    })
-    setMessage(`Action ${action} completed.`)
-    await approvals.reload()
-  }
 
   return (
     <>
-      <PageHeader title="Approvals" subtitle="Review HOD workload packages." />
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title="Approval queue">
+      <PageHeader
+        title="Package activity"
+        subtitle="Monitor only — HR / Uttej controls assignments and request decisions."
+      />
+      <Panel title="Approval history">
         {(approvals.data || []).length === 0 && (
-          <p className="empty-state">No approval packages yet.</p>
+          <p className="empty-state">No packages yet.</p>
         )}
         <div style={{ display: 'grid', gap: '0.75rem' }}>
           {(approvals.data || []).map((a) => (
@@ -217,31 +225,6 @@ export function DeanApprovalsPage() {
                   <span>Submitted by {a.submittedBy?.name}</span>
                 </div>
               </div>
-              {(a.status === 'PENDING' || a.status === 'HOD_SUBMITTED' || a.status === 'DEAN_REVIEW') && a.level === 'DEAN' && (
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={() => void act(a.id, 'approve')}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-warn"
-                    onClick={() => void act(a.id, 'send-back')}
-                  >
-                    Send back
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() => void act(a.id, 'escalate')}
-                  >
-                    Escalate
-                  </button>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -252,15 +235,17 @@ export function DeanApprovalsPage() {
 
 export function DeanOverloadPage() {
   const dash = useApiData(() => api<any>('/dean/dashboard'))
+  const [page, setPage] = useState(1)
   const rows = (dash.data?.comparisons || []).flatMap((c: any) =>
     (c.faculty || [])
       .filter((f: any) => f.status === 'OVERLOAD')
       .map((f: any) => ({ ...f, department: c.department })),
   )
+  const paged = paginate(rows, page, 10)
   return (
     <>
       <PageHeader title="Overload" subtitle="Faculty above the maximum norm." />
-      <Panel title="Overloaded faculty">
+      <Panel title="Overloaded faculty" action={<span className="meta-chip">{rows.length}</span>}>
         <table className="data-table">
           <thead>
             <tr>
@@ -272,7 +257,7 @@ export function DeanOverloadPage() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((f: any) => (
+            {paged.rows.map((f: any) => (
               <tr key={f.facultyId}>
                 <td>{f.name}</td>
                 <td>{f.department?.code}</td>
@@ -281,8 +266,16 @@ export function DeanOverloadPage() {
                 <td>{(f.total - f.normMax).toFixed(1)}</td>
               </tr>
             ))}
+            {paged.rows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="empty-state">
+                  No overloaded faculty.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
+        <Pager page={paged.page} pages={paged.pages} total={paged.total} onPage={setPage} />
       </Panel>
     </>
   )
@@ -322,16 +315,106 @@ function flattenFaculty(dash: any, status: string) {
 }
 
 export function DeanAnalysisPage() {
-  return <DeanComparisonPage />
+  const dash = useApiData(() => api<any>('/dean/dashboard'))
+  const [query, setQuery] = useState('')
+  const [status, setStatus] = useState('ALL')
+  const [page, setPage] = useState(1)
+  const allFaculty = (dash.data?.comparisons || []).flatMap((c: any) =>
+    (c.faculty || []).map((f: any) => ({
+      ...f,
+      department: c.department,
+      departmentCode: c.department?.code,
+    })),
+  )
+  const filtered = filterByQuery(
+    allFaculty.filter((f: any) => (status === 'ALL' ? true : f.status === status)),
+    query,
+    (f: any) =>
+      `${f.name || ''} ${f.departmentCode || ''} ${f.designation || ''} ${f.status || ''}`,
+  )
+  const paged = paginate(filtered, page, 10)
+
+  return (
+    <>
+      <PageHeader
+        title="Faculty Workload"
+        subtitle="Cross-department faculty load status with filters."
+      />
+      <Panel title="Filters">
+        <div className="form-grid">
+          <input
+            className="dash-input"
+            placeholder="Search faculty or department"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setPage(1)
+            }}
+          />
+          <select
+            className="dash-input"
+            value={status}
+            onChange={(e) => {
+              setStatus(e.target.value)
+              setPage(1)
+            }}
+          >
+            <option value="ALL">All statuses</option>
+            <option value="NORMAL">Normal</option>
+            <option value="OVERLOAD">Overload</option>
+            <option value="UNDERLOAD">Underload</option>
+          </select>
+        </div>
+      </Panel>
+      <Panel title="Faculty detail" action={<span className="meta-chip">{filtered.length}</span>}>
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Faculty</th>
+              <th>Department</th>
+              <th>Total</th>
+              <th>Norm</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {paged.rows.map((f: any) => (
+              <tr key={`${f.facultyId}-${f.departmentCode}`}>
+                <td>{f.name}</td>
+                <td>{f.departmentCode || '—'}</td>
+                <td>{Number(f.total || 0).toFixed(1)}</td>
+                <td>
+                  {f.normMin ?? '—'}–{f.normMax ?? '—'}
+                </td>
+                <td>
+                  <StatusPill status={f.status} />
+                </td>
+              </tr>
+            ))}
+            {paged.rows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="empty-state">
+                  No faculty match these filters.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <Pager page={paged.page} pages={paged.pages} total={paged.total} onPage={setPage} />
+      </Panel>
+    </>
+  )
 }
 
 export function DeanUnderloadPage() {
   const dash = useApiData(() => api<any>('/dean/dashboard'))
+  const [page, setPage] = useState(1)
   const rows = flattenFaculty(dash.data, 'UNDERLOAD')
+  const paged = paginate(rows, page, 10)
   return (
     <>
       <PageHeader title="Underload" subtitle="Faculty below the minimum norm." />
-      <Panel title="Underloaded faculty">
+      <Panel title="Underloaded faculty" action={<span className="meta-chip">{rows.length}</span>}>
         <table className="data-table">
           <thead>
             <tr>
@@ -343,7 +426,7 @@ export function DeanUnderloadPage() {
             </tr>
           </thead>
           <tbody>
-            {rows.map((f: any) => (
+            {paged.rows.map((f: any) => (
               <tr key={f.facultyId}>
                 <td>{f.name}</td>
                 <td>{f.department?.code}</td>
@@ -352,26 +435,154 @@ export function DeanUnderloadPage() {
                 <td>{(f.normMax - f.total).toFixed(1)}</td>
               </tr>
             ))}
+            {paged.rows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="empty-state">
+                  No underloaded faculty.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
+        <Pager page={paged.page} pages={paged.pages} total={paged.total} onPage={setPage} />
       </Panel>
     </>
   )
 }
 
 export function DeanTrendsPage() {
+  const dash = useApiData(() => api<any>('/dean/dashboard'))
   const history = useApiData(() => api<any[]>('/workload/history'))
+  const [query, setQuery] = useState('')
+  const [page, setPage] = useState(1)
+  const [histPage, setHistPage] = useState(1)
+  const comparisons = dash.data?.comparisons || []
+  const filteredDepts = filterByQuery(
+    comparisons,
+    query,
+    (c: any) => `${c.department?.code || ''} ${c.department?.name || ''}`,
+  )
+  const pagedDepts = paginate(filteredDepts, page, 10)
+  const histRows = filterByQuery(
+    history.data || [],
+    query,
+    (h: any) => `${h.faculty?.name || ''} ${h.period?.code || ''} ${h.status || ''}`,
+  )
+  const pagedHist = paginate(histRows, histPage, 10)
+
   return (
     <>
-      <PageHeader title="Trends" subtitle="Historical snapshots." />
-      <Panel title="Recent calculations">
-        <ul className="plain-list">
-          {(history.data || []).slice(0, 30).map((h) => (
-            <li key={h.id}>
-              {h.faculty?.name} · {h.period?.code} · {h.total} · {h.status}
-            </li>
-          ))}
-        </ul>
+      <PageHeader
+        title="Analytics"
+        subtitle="Department comparison, distribution trends, and historical snapshots."
+      />
+      <Panel title="Filters">
+        <input
+          className="dash-input"
+          placeholder="Filter department / faculty / period"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setPage(1)
+            setHistPage(1)
+          }}
+        />
+      </Panel>
+      <div className="grid-2">
+        <BarChart
+          title="Faculty by department"
+          items={filteredDepts.map((c: any) => ({
+            label: c.department?.code || 'Dept',
+            value:
+              Number(c.facultyCount || 0) ||
+              Number(c.normal || 0) + Number(c.overload || 0) + Number(c.underload || 0),
+            color: '#1e3a8a',
+          }))}
+        />
+        <BarChart
+          title="Overload by department"
+          items={filteredDepts.map((c: any) => ({
+            label: c.department?.code || 'Dept',
+            value: Number(c.overload || 0),
+            color: '#dc2626',
+          }))}
+        />
+      </div>
+      <Panel title="Department comparison" action={<span className="meta-chip">{filteredDepts.length}</span>}>
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Normal</th>
+              <th>Over</th>
+              <th>Under</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pagedDepts.rows.map((c: any) => (
+              <tr key={c.department.id}>
+                <td>
+                  <strong>
+                    {c.department.code} — {c.department.name}
+                  </strong>
+                </td>
+                <td>{c.normal}</td>
+                <td>{c.overload}</td>
+                <td>{c.underload}</td>
+              </tr>
+            ))}
+            {pagedDepts.rows.length === 0 && (
+              <tr>
+                <td colSpan={4} className="empty-state">
+                  No departments match this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <Pager
+          page={pagedDepts.page}
+          pages={pagedDepts.pages}
+          total={pagedDepts.total}
+          onPage={setPage}
+        />
+      </Panel>
+      <Panel title="Historical snapshots" action={<span className="meta-chip">{histRows.length}</span>}>
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Faculty</th>
+              <th>Period</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pagedHist.rows.map((h: any) => (
+              <tr key={h.id}>
+                <td>{h.faculty?.name || '—'}</td>
+                <td>{h.period?.code || '—'}</td>
+                <td>{h.total ?? '—'}</td>
+                <td>
+                  <StatusPill status={h.status} />
+                </td>
+              </tr>
+            ))}
+            {pagedHist.rows.length === 0 && (
+              <tr>
+                <td colSpan={4} className="empty-state">
+                  No history rows for this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <Pager
+          page={pagedHist.page}
+          pages={pagedHist.pages}
+          total={pagedHist.total}
+          onPage={setHistPage}
+        />
       </Panel>
     </>
   )

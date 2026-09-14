@@ -9,6 +9,10 @@ import { cached, invalidateCache } from '../common/fast-cache';
 import { PrismaService } from '../prisma/prisma.service';
 import { WorkloadService } from '../workload/workload.service';
 import { NotificationsService } from '../notifications/notifications.service';
+import {
+  mapClassType,
+  normalizeClassType,
+} from '../workload/designation-workload-rules';
 
 /** Swappable Agent 25 PhD feed */
 export interface PhdProvider {
@@ -371,7 +375,32 @@ export class HodService {
   listAllocations(departmentId: string) {
     return this.prisma.courseAllocation.findMany({
       where: { course: { departmentId } },
-      include: { course: true, faculty: true },
+      include: {
+        course: {
+          select: {
+            id: true,
+            code: true,
+            name: true,
+            type: true,
+            section: true,
+            hoursPerWeek: true,
+            departmentId: true,
+          },
+        },
+        faculty: {
+          select: {
+            id: true,
+            name: true,
+            facultyCode: true,
+            designation: true,
+            email: true,
+            photoUrl: true,
+            photoThumbUrl: true,
+            dataSource: true,
+          },
+        },
+      },
+      orderBy: [{ createdAt: 'desc' }],
     });
   }
 
@@ -382,6 +411,7 @@ export class HodService {
       facultyId: string;
       hours: number;
       section?: string;
+      classType?: string;
       confirmOverload?: boolean;
       justification?: string;
       preview?: boolean;
@@ -401,26 +431,36 @@ export class HodService {
       throw new ForbiddenException('Unauthorized access.');
     }
 
+    const classType = normalizeClassType(body.classType);
+    if (body.classType && !classType) {
+      throw new BadRequestException('classType must be L, T, or P.');
+    }
+
     const existing = await this.prisma.courseAllocation.findMany({
       where: { facultyId: body.facultyId },
       include: { course: true },
     });
+    const courseTypeFromCourse = (
+      type: string,
+    ): 'THEORY' | 'TUTORIAL' | 'LABORATORY' | 'PROJECT' => {
+      if (['TUTORIAL', 'LABORATORY', 'PROJECT'].includes(type)) {
+        return type as 'THEORY' | 'TUTORIAL' | 'LABORATORY' | 'PROJECT';
+      }
+      if (type === 'LAB') return 'LABORATORY';
+      return 'THEORY';
+    };
     const current = await this.workload.calculateWorkload(body.facultyId);
     const projected = await this.workload.simulateFaculty(body.facultyId, {
       allocations: [
         ...existing.map((a) => ({
           hours: a.hours,
-          courseType: (['TUTORIAL', 'LABORATORY', 'PROJECT'].includes(a.course.type)
-            ? a.course.type
-            : a.course.type === 'LAB'
-              ? 'LABORATORY'
-              : 'THEORY') as 'THEORY' | 'TUTORIAL' | 'LABORATORY' | 'PROJECT',
+          courseType:
+            mapClassType(a.classType) || courseTypeFromCourse(a.course.type),
         })),
         {
           hours: body.hours,
-          courseType: (['TUTORIAL', 'LABORATORY', 'PROJECT'].includes(course.type)
-            ? course.type
-            : 'THEORY') as 'THEORY' | 'TUTORIAL' | 'LABORATORY' | 'PROJECT',
+          courseType:
+            mapClassType(classType) || courseTypeFromCourse(course.type),
         },
       ],
     });
@@ -466,6 +506,7 @@ export class HodService {
         facultyId: body.facultyId,
         hours: body.hours,
         section: body.section || course.section,
+        classType,
         justification: body.justification || null,
         dataSource: faculty.dataSource === 'DEMO' ? 'DEMO' : 'REAL',
       },
@@ -476,7 +517,15 @@ export class HodService {
       'ALLOCATE_COURSE',
       'CourseAllocation',
       alloc.id,
-      { newValue: { courseId: body.courseId, facultyId: body.facultyId, hours: body.hours } },
+      {
+        newValue: {
+          courseId: body.courseId,
+          facultyId: body.facultyId,
+          hours: body.hours,
+          classType,
+          section: body.section || course.section,
+        },
+      },
     );
 
     if (projected.status === 'OVERLOAD') {
@@ -500,6 +549,80 @@ export class HodService {
     }
 
     return { allocation: alloc, preCheck };
+  }
+
+  async updateAllocation(
+    departmentId: string,
+    allocationId: string,
+    body: {
+      hours?: number;
+      section?: string;
+      classType?: string;
+      facultyId?: string;
+      courseId?: string;
+      confirmOverload?: boolean;
+      justification?: string;
+    },
+  ) {
+    const existing = await this.prisma.courseAllocation.findUnique({
+      where: { id: allocationId },
+      include: { course: true, faculty: true },
+    });
+    if (!existing || existing.course.departmentId !== departmentId) {
+      throw new NotFoundException('Allocation not found');
+    }
+
+    const classType =
+      body.classType !== undefined
+        ? normalizeClassType(body.classType)
+        : normalizeClassType(existing.classType);
+    if (body.classType && !classType) {
+      throw new BadRequestException('classType must be L, T, or P.');
+    }
+
+    const nextHours =
+      body.hours != null && Number.isFinite(Number(body.hours))
+        ? Number(body.hours)
+        : existing.hours;
+    if (nextHours <= 0) {
+      throw new BadRequestException('Hours must be a positive number.');
+    }
+
+    const updated = await this.prisma.courseAllocation.update({
+      where: { id: allocationId },
+      data: {
+        hours: nextHours,
+        section: body.section !== undefined ? body.section || null : existing.section,
+        classType: classType || existing.classType,
+        courseId: body.courseId || existing.courseId,
+        facultyId: body.facultyId || existing.facultyId,
+        justification:
+          body.justification !== undefined
+            ? body.justification || null
+            : existing.justification,
+      },
+      include: { course: true, faculty: true },
+    });
+
+    await this.workload.recalculateAndPersist(updated.facultyId);
+    if (existing.facultyId !== updated.facultyId) {
+      await this.workload.recalculateAndPersist(existing.facultyId);
+    }
+
+    return updated;
+  }
+
+  async deleteAllocation(departmentId: string, allocationId: string) {
+    const existing = await this.prisma.courseAllocation.findUnique({
+      where: { id: allocationId },
+      include: { course: true },
+    });
+    if (!existing || existing.course.departmentId !== departmentId) {
+      throw new NotFoundException('Allocation not found');
+    }
+    await this.prisma.courseAllocation.delete({ where: { id: allocationId } });
+    await this.workload.recalculateAndPersist(existing.facultyId);
+    return { ok: true, id: allocationId };
   }
 
   listTimetable(departmentId: string) {

@@ -198,8 +198,17 @@ async function main() {
     data: { hodFacultyId: byEmail[byFacultyCode('675').email].id },
   });
 
-  const { importSection7 } = require('./import-section7');
-  await importSection7();
+  // Section-7 wipe/import is optional and destructive to CSE allocations.
+  // Prefer: npm run db:import:cse-odd2026 for full Odd-2026 REAL CSE.
+  if (process.env.IMPORT_SECTION7 === '1') {
+    const { importSection7 } = require('./import-section7');
+    await importSection7();
+    console.log('\nSection-7 timetable imported (IMPORT_SECTION7=1).');
+  } else {
+    console.log(
+      '\nSkipped Section-7 import (set IMPORT_SECTION7=1 to force). Next: npm run db:import:cse-odd2026',
+    );
+  }
 
   console.log('\n=== Agent 58 role logins (Neon) ===\n');
   for (const row of logins) {
@@ -207,7 +216,7 @@ async function main() {
       `${row.role.padEnd(10)} | ${row.email.padEnd(28)} | ${row.password} | ${row.name}`,
     );
   }
-  console.log('\nSection-7 timetable imported. No demo DBMS/OS/AI/ML dataset. No fake projects/PhD/committees.');
+  console.log('\nPolicies/norms/admin bootstrap ready. No fake projects/PhD/committees.');
 }
 
 main()

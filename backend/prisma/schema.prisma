@@ -48,6 +48,7 @@ model User {
   role                String
   status              String             @default("ACTIVE")
   photoUrl            String?
+  profileExtras       Json?
   facultyId           String?            @unique
   faculty             Faculty?           @relation(fields: [facultyId], references: [id])
   departmentId        String?
@@ -60,6 +61,10 @@ model User {
   approvalsSubmitted  ApprovalRequest[]  @relation("ApprovalSubmitter")
   auditLogs           ApprovalAuditLog[]
   notifications       Notification[]
+  passwordResetOtps   PasswordResetOtp[]
+  leaveRequestsCreated LeaveRequest[] @relation("LeaveCreator")
+  reassignmentsCreated WorkloadReassignmentRequest[] @relation("ReassignCreator")
+  reassignmentsDecided WorkloadReassignmentRequest[] @relation("ReassignDecider")
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt
 
@@ -95,6 +100,7 @@ model Faculty {
   academicExperience   String?
   education            String?
   specialization       String?
+  profileExtras        Json?
   photoUrl             String?
   photoThumbUrl        String?
   employeeId           String?
@@ -110,6 +116,9 @@ model Faculty {
   research             ResearchCommitment[]
   adminRoles           AdminResponsibility[]
   snapshots            WorkloadSnapshot[]
+  leaveRequests        LeaveRequest[]
+  reassignmentsFrom    WorkloadReassignmentRequest[] @relation("ReassignFrom")
+  reassignmentsTo      WorkloadReassignmentRequest[] @relation("ReassignTo")
   createdAt            DateTime               @default(now())
   updatedAt            DateTime               @updatedAt
 
@@ -209,6 +218,8 @@ model CourseAllocation {
   faculty        Faculty  @relation(fields: [facultyId], references: [id])
   hours          Float
   section        String?
+  /// L = Lecture, T = Tutorial, P = Practical (from Excel L/T/P)
+  classType      String?
   justification  String?
   dataSource     String   @default("REAL")
   createdAt      DateTime @default(now())
@@ -217,6 +228,7 @@ model CourseAllocation {
   @@index([facultyId])
   @@index([courseId])
   @@index([dataSource])
+  @@index([classType])
 }
 
 model TimetableSlot {
@@ -404,6 +416,63 @@ model ApprovalAuditLog {
   createdAt         DateTime        @default(now())
 }
 
+model LeaveRequest {
+  id            String                         @id @default(cuid())
+  facultyId     String
+  faculty       Faculty                        @relation(fields: [facultyId], references: [id])
+  date          DateTime
+  reason        String
+  status        String                         @default("PENDING")
+  createdById   String
+  createdBy     User                           @relation("LeaveCreator", fields: [createdById], references: [id])
+  reassignments WorkloadReassignmentRequest[]
+  createdAt     DateTime                       @default(now())
+  updatedAt     DateTime                       @updatedAt
+
+  @@index([facultyId, date])
+  @@index([status])
+}
+
+model WorkloadReassignmentRequest {
+  id               String        @id @default(cuid())
+  leaveRequestId   String?
+  leaveRequest     LeaveRequest? @relation(fields: [leaveRequestId], references: [id])
+  fromFacultyId    String
+  fromFaculty      Faculty       @relation("ReassignFrom", fields: [fromFacultyId], references: [id])
+  toFacultyId      String
+  toFaculty        Faculty       @relation("ReassignTo", fields: [toFacultyId], references: [id])
+  courseId         String?
+  timetableSlotId  String?
+  allocationId     String?
+  date             DateTime
+  startTime        String?
+  endTime          String?
+  hours            Float
+  section          String?
+  reason           String
+  fromBefore       Float
+  fromAfter        Float
+  toBefore         Float
+  toAfter          Float
+  fromStatusBefore String?
+  fromStatusAfter  String?
+  toStatusBefore   String?
+  toStatusAfter    String?
+  status           String        @default("PENDING_UTESH")
+  decidedById      String?
+  decidedBy        User?         @relation("ReassignDecider", fields: [decidedById], references: [id])
+  decidedAt        DateTime?
+  rejectionReason  String?
+  createdById      String
+  createdBy        User          @relation("ReassignCreator", fields: [createdById], references: [id])
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([status, createdAt])
+  @@index([fromFacultyId])
+  @@index([toFacultyId])
+}
+
 model Notification {
   id        String   @id @default(cuid())
   userId    String
@@ -415,6 +484,22 @@ model Notification {
   createdAt DateTime @default(now())
 
   @@index([userId, read])
+}
+
+// One-time OTP for forgot-password (Brevo email)
+model PasswordResetOtp {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email      String
+  otpHash    String
+  expiresAt  DateTime
+  consumedAt DateTime?
+  attempts   Int       @default(0)
+  createdAt  DateTime  @default(now())
+
+  @@index([email, createdAt])
+  @@index([userId])
 }
 
 model AuditLog {

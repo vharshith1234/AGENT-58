@@ -70,8 +70,16 @@ async function refreshAccessToken(): Promise<string | null> {
 }
 
 function errorMessage(body: any, fallback: string) {
-  if (Array.isArray(body?.message)) return body.message.join(', ')
-  if (typeof body?.message === 'string') return body.message
+  const msg = body?.message
+  if (typeof msg === 'string') return msg
+  if (Array.isArray(msg)) return msg.map((m) => (typeof m === 'string' ? m : m?.message || String(m))).join(', ')
+  if (msg && typeof msg === 'object') {
+    if (typeof msg.message === 'string') return msg.message
+    if (msg.code === 'OVERLOAD_WARNING') {
+      return 'This assignment would overload the faculty. Confirm overload to proceed.'
+    }
+  }
+  if (typeof body?.error === 'string' && body.error !== 'Conflict') return body.error
   return fallback
 }
 
@@ -151,6 +159,11 @@ async function request<T>(
         errorMessage(body, res.statusText || 'Request failed'),
         body,
       )
+    }
+
+    // Mutations must not leave stale GET responses in the client cache
+    if (method !== 'GET') {
+      responseCache.clear()
     }
 
     if (res.status === 204) return undefined as T

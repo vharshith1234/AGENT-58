@@ -7,13 +7,13 @@ import {
 import { PersonAvatar } from './PersonAvatar'
 import { authService } from '../lib/auth'
 import { ROLE_CONFIGS, type AppRole } from '../lib/roles'
-import { ROLE_NAV, roleBasePath } from '../lib/nav'
+import { flattenNav, roleBasePath } from '../lib/nav'
 
 export function DashboardShell({ role, children }: { role: AppRole; children?: ReactNode }) {
   const navigate = useNavigate()
   const config = ROLE_CONFIGS[role]
   const session = authService.getSession()
-  const links = ROLE_NAV[role]
+  const links = flattenNav(role)
   const [sessionTick, setSessionTick] = useState(0)
 
   useEffect(() => {
@@ -22,6 +22,10 @@ export function DashboardShell({ role, children }: { role: AppRole; children?: R
       navigate(authService.dashboardFor(session.user.role), { replace: true })
     }
   }, [session, role, navigate, sessionTick])
+
+  useEffect(() => {
+    void authService.refreshMe()
+  }, [role])
 
   useEffect(() => {
     const onUpdate = () => setSessionTick((n) => n + 1)
@@ -39,18 +43,6 @@ export function DashboardShell({ role, children }: { role: AppRole; children?: R
       <div className="app-shell-body">
         <aside className="app-sidebar" aria-label={`${config.label} navigation`}>
           <div className="sidebar-sticky-inner">
-            <NavLink to={profilePath} className="sidebar-user-card">
-              <PersonAvatar
-                name={liveSession.user.name}
-                email={liveSession.user.email}
-                photoUrl={liveSession.user.photoUrl}
-              />
-              <div className="sidebar-user-meta">
-                <strong>{liveSession.user.name}</strong>
-                <span>{config.shortLabel}</span>
-              </div>
-            </NavLink>
-            <div className="sidebar-nav-label">{config.label}</div>
             <nav className="sidebar-nav-links">
               {links.map((item) => (
                 <NavLink
@@ -66,6 +58,17 @@ export function DashboardShell({ role, children }: { role: AppRole; children?: R
                 </NavLink>
               ))}
             </nav>
+            <NavLink to={profilePath} className="sidebar-user-card sidebar-user-card--footer">
+              <PersonAvatar
+                name={liveSession.user.name}
+                email={liveSession.user.email}
+                photoUrl={liveSession.user.photoUrl}
+              />
+              <div className="sidebar-user-meta">
+                <strong title={liveSession.user.name}>{liveSession.user.name}</strong>
+                <span>{config.shortLabel}</span>
+              </div>
+            </NavLink>
           </div>
         </aside>
 
@@ -129,14 +132,16 @@ export function Panel({
   children,
   action,
   id,
+  className,
 }: {
   title: string
   children: ReactNode
   action?: ReactNode
   id?: string
+  className?: string
 }) {
   return (
-    <section className="panel" id={id}>
+    <section className={['panel', className].filter(Boolean).join(' ')} id={id}>
       <div className="panel-head">
         <h2>{title}</h2>
         {action}
@@ -178,7 +183,7 @@ export function TableSkeleton({ rows = 6, cols = 5 }: { rows?: number; cols?: nu
   )
 }
 
-export function paginate<T>(items: T[], page: number, pageSize = 12) {
+export function paginate<T>(items: T[], page: number, pageSize = 10) {
   const total = items.length
   const pages = Math.max(1, Math.ceil(total / pageSize))
   const p = Math.min(Math.max(1, page), pages)
@@ -187,30 +192,79 @@ export function paginate<T>(items: T[], page: number, pageSize = 12) {
     page: p,
     pages,
     total,
+    pageSize,
   }
+}
+
+function pageWindow(current: number, pages: number): Array<number | '…'> {
+  if (pages <= 7) return Array.from({ length: pages }, (_, i) => i + 1)
+  const set = new Set<number>([1, pages, current, current - 1, current + 1, current - 2, current + 2])
+  const sorted = [...set].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b)
+  const out: Array<number | '…'> = []
+  for (let i = 0; i < sorted.length; i++) {
+    if (i > 0 && sorted[i] - sorted[i - 1] > 1) out.push('…')
+    out.push(sorted[i])
+  }
+  return out
 }
 
 export function Pager({
   page,
   pages,
   onPage,
+  total,
+  pageSize = 10,
 }: {
   page: number
   pages: number
   onPage: (n: number) => void
+  total?: number
+  pageSize?: number
 }) {
-  if (pages <= 1) return null
+  if (pages <= 1 && (total == null || total <= pageSize)) return null
+  const windowPages = pageWindow(page, pages)
   return (
-    <div className="pager">
-      <button type="button" className="btn btn-secondary" disabled={page <= 1} onClick={() => onPage(page - 1)}>
+    <div className="pager pager-numbered" role="navigation" aria-label="Pagination">
+      <button
+        type="button"
+        className="btn btn-secondary btn-sm"
+        disabled={page <= 1}
+        onClick={() => onPage(page - 1)}
+      >
         Previous
       </button>
-      <span>
-        Page {page} of {pages}
-      </span>
-      <button type="button" className="btn btn-secondary" disabled={page >= pages} onClick={() => onPage(page + 1)}>
+      <div className="pager-pages">
+        {windowPages.map((item, idx) =>
+          item === '…' ? (
+            <span key={`e-${idx}`} className="pager-ellipsis">
+              …
+            </span>
+          ) : (
+            <button
+              key={item}
+              type="button"
+              className={`pager-page${item === page ? ' is-active' : ''}`}
+              onClick={() => onPage(item)}
+              aria-current={item === page ? 'page' : undefined}
+            >
+              {item}
+            </button>
+          ),
+        )}
+      </div>
+      <button
+        type="button"
+        className="btn btn-secondary btn-sm"
+        disabled={page >= pages}
+        onClick={() => onPage(page + 1)}
+      >
         Next
       </button>
+      {total != null ? (
+        <span className="pager-meta">
+          {total} total · {pageSize}/page
+        </span>
+      ) : null}
     </div>
   )
 }

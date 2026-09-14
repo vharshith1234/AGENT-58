@@ -1,0 +1,53 @@
+{
+  "facultyParsed": 122,
+  "facultyCreated": 122,
+  "facultyUpdated": 0,
+  "usersUpserted": 122,
+  "coursesUpserted": 44,
+  "allocationsParsed": 414,
+  "allocationsCreated": 414,
+  "allocationsSkipped": 0,
+  "wlOnlyFaculty": 6,
+  "snapshots": 128,
+  "statusHistogram": {
+    "UNDERLOAD": 28,
+    "NORMAL": 100,
+    "OVERLOAD": 0
+  },
+  "cseFacultyInDb": 128,
+  "deactivatedLeftover": 0,
+  "kpk": {
+    "empCode": "01350",
+    "facultyId": "cmu144v8k007g6hmil5qhlrqb",
+    "email": "kpk_cse@vignan.ac.in",
+    "photoUrl": null,
+    "total": 17,
+    "status": "NORMAL",
+    "courses": [
+      {
+        "code": "24CS303",
+        "name": "Computer Networks",
+        "hours": 5,
+        "section": "8"
+      },
+      {
+        "code": "24CS303",
+        "name": "Computer Networks",
+        "hours": 5,
+        "section": "15"
+      },
+      {
+        "code": "24CS303",
+        "name": "Computer Networks",
+        "hours": 5,
+        "section": "21"
+      },
+      {
+        "code": "24CS303",
+        "name": "Computer Networks",
+        "hours": 2,
+        "section": "19"
+      }
+    ]
+  }
+}

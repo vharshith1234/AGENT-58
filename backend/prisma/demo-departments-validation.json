@@ -2,7 +2,7 @@
   "sourceDirectory": "https://vignan.ac.in/newvignan/people.php",
   "directoryPeopleParsed": 709,
   "realCse": {
-    "uniqueTimetableFaculty": 7,
+    "uniqueTimetableFaculty": 120,
     "matchedFaculty": 7,
     "unmatched": [],
     "manualVerification": [
@@ -11,20 +11,20 @@
       "Bhathula Ninnagari — not found in directory listing."
     ],
     "officialImagesFound": 0,
-    "officialImagesMissing": 7,
-    "courses": 13,
-    "timetableEntries": 33,
-    "courseAllocations": 12,
+    "officialImagesMissing": 120,
+    "courses": 44,
+    "timetableEntries": 0,
+    "courseAllocations": 440,
     "note": "CSE Section-7 timetable remains REAL. Years 2–4 / sections A–C are DEMO and assigned only to DEMO faculty."
   },
   "cseDemoAcademic": {
     "extraFaculty": [
       "Dr. Balakrishna Kethineni",
-      "Dr. D. Yakobu",
       "Dr. K Rachananjali",
-      "Dr. M Umadevi",
-      "Dr. P.Siva Prasad",
-      "Dr. Prashant Upadhyay"
+      "Dr. Siva Koteswararao Chinnam",
+      "Dr. Akhil Babu Edara",
+      "Dr. Anil Babu Bathula",
+      "Dr. Anil Madugula"
     ],
     "courses": 12,
     "allocations": 27,

@@ -1,0 +1,146 @@
+[
+  {
+    "year": "I",
+    "code": "25CS101",
+    "title": "Programming In C (20 Sections)",
+    "leadFacultyName": "Mr. S.Jayasankar"
+  },
+  {
+    "year": "I",
+    "code": "NEWI002",
+    "title": "Agentic Tools (20 Sections)",
+    "leadFacultyName": "Dr.Simhadri Chinna Gopi"
+  },
+  {
+    "year": "II",
+    "code": "25CS203",
+    "title": "Database Management Systems (19 Sections)",
+    "leadFacultyName": "Mr. N. Uttej Kumar"
+  },
+  {
+    "year": "II",
+    "code": "25CS201",
+    "title": "Data Structures (19 Sections)",
+    "leadFacultyName": "Dr. G. Balu Narasimha Rao"
+  },
+  {
+    "year": "II",
+    "code": "25CS204",
+    "title": "Object Oriented Programming Through Java (19 Sections)",
+    "leadFacultyName": "Dr. O. Bhaskar"
+  },
+  {
+    "year": "II",
+    "code": "24CS302",
+    "title": "Artificial Intelligence (19 Sections)",
+    "leadFacultyName": "Mr. O.Gandhi"
+  },
+  {
+    "year": "II",
+    "code": "25CS202",
+    "title": "Data Wrangling and Visualization (19 Sections)",
+    "leadFacultyName": "Dr. T. Phanindra"
+  },
+  {
+    "year": "III",
+    "code": "24CS306",
+    "title": "Machine Learning (22 Sections)",
+    "leadFacultyName": "Dr. R. Renugadevi"
+  },
+  {
+    "year": "III",
+    "code": "24CS303",
+    "title": "Computer Networks (22 Sections)",
+    "leadFacultyName": "Mrs. V.Anusha"
+  },
+  {
+    "year": "III",
+    "code": "24CS305",
+    "title": "Computing Ethics (22 Sections)",
+    "leadFacultyName": "Ms. N. Sarvani"
+  },
+  {
+    "year": "III",
+    "code": "NEW3001",
+    "title": "Computer Vision (12 Sections)",
+    "leadFacultyName": "Dr. Prashant Upadhyay"
+  },
+  {
+    "year": "III",
+    "code": "NEW3002",
+    "title": "Modern Front-End Frameworks (10 Sections)",
+    "leadFacultyName": "Mrs. M. Bhargavi"
+  },
+  {
+    "year": "III",
+    "code": "NEW3003",
+    "title": "Data Analytics and Visualization (12 Sections)",
+    "leadFacultyName": "Mr. N. Brahma Naidu"
+  },
+  {
+    "year": "III",
+    "code": "NEW3004",
+    "title": "API Security and Authentication (8 Sections)",
+    "leadFacultyName": "Ms. B. Jyothika"
+  },
+  {
+    "year": "III",
+    "code": "22CS851",
+    "title": "Database Systems (1 Section)",
+    "leadFacultyName": "***"
+  },
+  {
+    "year": "III",
+    "code": "22CS903",
+    "title": "Database Management Systems (1 Section)",
+    "leadFacultyName": "***"
+  },
+  {
+    "year": "IV",
+    "code": "22CS406",
+    "title": "Privacy Preserving and Intrusion Detection (19 Sections)",
+    "leadFacultyName": "Mrs. G. Parimala"
+  },
+  {
+    "year": "IV",
+    "code": "22CS402",
+    "title": "Big Data Analytics (19 Sections)",
+    "leadFacultyName": "Mr. Sk. Jani"
+  },
+  {
+    "year": "IV",
+    "code": "22CS403",
+    "title": "Cloud Computing (19 Sections)",
+    "leadFacultyName": "Mr. P. Vijaya Babu"
+  },
+  {
+    "year": "IV",
+    "code": "22CS310",
+    "title": "Computing Ethics (19 Sections)",
+    "leadFacultyName": "Ms. K. Nimnagasri"
+  },
+  {
+    "year": "IV",
+    "code": "NEW4001",
+    "title": "MLOps (19 Sections)",
+    "leadFacultyName": "Mr. Ch. Ravi Kishore Reddy"
+  },
+  {
+    "year": "IV",
+    "code": "NEW4002",
+    "title": "Natural Language Processing (19 Sections)",
+    "leadFacultyName": "Dr. E. Deepak Chowdary"
+  },
+  {
+    "year": "IV",
+    "code": "22CS959",
+    "title": "Agentic AI (19 Sections)",
+    "leadFacultyName": "Dr. J. Veeranjaneyulu"
+  },
+  {
+    "year": "IV",
+    "code": "22CS907",
+    "title": "Operating Systems and Shell Programming (1 Section)",
+    "leadFacultyName": "***"
+  }
+]

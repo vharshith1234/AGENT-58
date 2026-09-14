@@ -1,0 +1,96 @@
+{
+  "sourceFile": "prisma/data/cse-odd-2026/Workload-AY-2026-27-I-Sem.xlsx",
+  "sourceSheet": "Faculty WL",
+  "sourceColumn": "Prescribed workload (h/week)",
+  "notes": "Cadre norms derived from Excel Faculty WL sheet (modal prescribed band per cadre).",
+  "rules": [
+    {
+      "cadre": "Professor",
+      "prescribed": "6-8",
+      "min": 6,
+      "expected": 7,
+      "max": 8,
+      "match": [
+        "\\bprofessor\\b",
+        "\\bprof\\.?\\b"
+      ],
+      "sampleCount": 2
+    },
+    {
+      "cadre": "Associate Professor",
+      "prescribed": "12-14",
+      "min": 12,
+      "expected": 13,
+      "max": 14,
+      "match": [
+        "assoc(?:iate)?\\.?\\s*prof"
+      ],
+      "sampleCount": 10
+    },
+    {
+      "cadre": "Assistant Professor",
+      "prescribed": "16-18",
+      "min": 16,
+      "expected": 17,
+      "max": 18,
+      "match": [
+        "asst\\.?\\s*prof",
+        "assistant\\s*professor"
+      ],
+      "sampleCount": 94
+    },
+    {
+      "cadre": "Senior Assistant Professor",
+      "prescribed": "16-18",
+      "min": 16,
+      "expected": 17,
+      "max": 18,
+      "match": [
+        "sr\\.?\\s*asst",
+        "senior\\s*(?:level\\s*)?(?:asst|assistant)"
+      ],
+      "sampleCount": 3
+    },
+    {
+      "cadre": "CAP",
+      "prescribed": "12",
+      "min": 12,
+      "expected": 12,
+      "max": 12,
+      "match": [
+        "\\bcap\\b",
+        "contractual\\s*assistant"
+      ],
+      "sampleCount": 6
+    },
+    {
+      "cadre": "Teaching Associate",
+      "prescribed": "16-18",
+      "min": 16,
+      "expected": 17,
+      "max": 18,
+      "match": [
+        "teaching\\s*associate"
+      ],
+      "sampleCount": 15
+    },
+    {
+      "cadre": "Teaching Assistant",
+      "prescribed": "16-18",
+      "min": 16,
+      "expected": 17,
+      "max": 18,
+      "match": [
+        "teaching\\s*assistant"
+      ],
+      "sampleCount": 2
+    }
+  ],
+  "default": {
+    "cadre": "Default",
+    "prescribed": "16-18",
+    "min": 16,
+    "expected": 17,
+    "max": 18
+  }
+}

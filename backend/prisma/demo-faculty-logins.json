@@ -1,62 +1,506 @@
 {
   "directoryCards": 717,
-  "photosAssigned": 54,
+  "photosAssigned": 56,
   "photosSkipped": [
     {
-      "name": "Bhathula Ninnagari",
+      "name": "Dr.M.Umadevi",
       "reason": "no confident directory match"
     },
     {
-      "name": "Mrs. V. Sai Spandana",
+      "name": "Dr. P. Siva Prasad",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. D. Yakobu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Prashant Upadhyay",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. B. Suvarna",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Jhansi Lakshmi P.",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr.R. Prathap Kumar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. E. Deepak Chowdary",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr.Simhadiri Chinna Gopi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. T.R. Rajesh",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Satish Kumar Satti",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Sk. Khadersha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. K. Divya",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Christiana Rose Elizabeth. Korrapati",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Upalanchi Vara Lakshmi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. T. Latesh Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Akula Gopi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. P. Deepthi Sowmya",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Md. Oqail Ahmad",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr.M. Sunil Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Vinoj J",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. R. Renugadevi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. G. Saubhagya Ranjan Biswal",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. O. Bhaskar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Rambabu Kusuma",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. G. Balu Narasimha Rao",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. G.Veera Bhadra Chary",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. Krishna Reddy",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. J. Vijitha Ananthi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "DR. PHANINDRA THOTA",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr. M. Raja Rao",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr.James Deva Koresh H",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Dr.M.Vijai Meyyapan",
       "reason": "no confident directory match"
     },
     {
       "name": "Dr. Gabbi Reddy Keerthi",
       "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. G. Parimala",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. M. Bhargavi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. SD. Shareefunnisa",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. K. Pavan Kumar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Kiran Kumar Kaveti",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. V.Anusha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. O.Gandhi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. P. Vijaya Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "MS. Sk.Sajida Sultana",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr.Sk. Sikindar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Chavva Ravi Kishore Reddy",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. G. Navya",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Sourav Mondal",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr.S.Jayasankar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms.K.Anusha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. D.Balakotaiah",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr.S.Suresh Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. P. Kiran Kumar Raja",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. T. Narasimha Rao",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Magham Sumalatha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. P. Venkata Rajulu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Sai Spandana Verella",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Jani Shaik",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. V. Nandini",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Archana Nalluri",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. K. Jyostna",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. R. Lalitha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. N. Brahma Naidu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Kumar Devapogu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Koganti Swathi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. U. Venkateswara Rao",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Gujjula Murali",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Shaik Reehana",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Jarugumalla Dayanika",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. M. Mohana Venkateswara Rao",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. B. Anil Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. S. Anitha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. D. Tipura",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Tanigundala Leelavathy",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. Ch. Swarna Lalitha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. P. Anusha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr.E.Akhil Babu",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs.N.Mounika",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms.N. Bhargavi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms.Y. Sai Eswari",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Badheli Krishnakanth",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Kanna Hareesh",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Shyam Sundar Jannu Soloman",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Gudipati Sravya",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Shashi Mani",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Lalu Naick Bhukya",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr.K.Kiran Kumar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Y. Ram Mohan",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Pavani Karra",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Bhimavarapu Jyothika",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Gaddam Tejaswi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Yemineni Sravani",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Munipalli Veerendra",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Varagani Tejaswi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Shaik Kareena Yashmin",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Vyshnavi Kagga",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Shaik Nazeema",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Kalluri Mercy Bhikshavathi",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Neeli Sarvani",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Palavelli Vamsi Krishna",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Pathan Yaseen Khan",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Bhukya Maneesha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Shaik Dehtaj",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Nese Bandhike Akhilandeswari",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs. P.S.V.V. Samhitha",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Arumalla Gopya Sri",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Rudru Gowtham",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Madugula Anil",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Adavi Aditya Venkateswara Kumar",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mr. Kudupudi Raj Kiran",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Kollabathula Nimnagasri",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Annam Durga Bhavani",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. Y. Sesha Naga Bindu Lalitha Sri",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Ms. G. Siva Naga Malleswari",
+      "reason": "no confident directory match"
+    },
+    {
+      "name": "Mrs.G. Prasanthi",
+      "reason": "no confident directory match"
     }
   ],
-  "detailsEnriched": 54,
+  "detailsEnriched": 56,
   "logins": [
     {
       "department": "CSE",
-      "name": "Dr. Balakrishna Kethineni",
-      "email": "balakrishnakethineni@vignan.ac.in",
-      "password": "Vignan@59222368",
+      "name": "Dr. Akhil Babu Edara",
+      "email": "akhilbabuedara@vignan.ac.in",
+      "password": "Vignan@20881343",
       "photo": true
     },
     {
       "department": "CSE",
-      "name": "Dr. D. Yakobu",
-      "email": "dyakobu@vignan.ac.in",
-      "password": "Vignan@28543860",
+      "name": "Dr. Anil Babu Bathula",
+      "email": "anilbabubathula@vignan.ac.in",
+      "password": "Vignan@55195847",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. Anil Madugula",
+      "email": "anilmadugula@vignan.ac.in",
+      "password": "Vignan@66905227",
+      "photo": true
+    },
+    {
+      "department": "CSE",
+      "name": "Dr. Balakrishna Kethineni",
+      "email": "balakrishnakethineni@vignan.ac.in",
+      "password": "Vignan@77042821",
       "photo": true
     },
     {
       "department": "CSE",
       "name": "Dr. K Rachananjali",
       "email": "krachananjali@vignan.ac.in",
-      "password": "Vignan@65906650",
+      "password": "Vignan@86825929",
       "photo": true
     },
     {
       "department": "CSE",
-      "name": "Dr. M Umadevi",
-      "email": "mumadevi@vignan.ac.in",
-      "password": "Vignan@44650534",
-      "photo": true
-    },
-    {
-      "department": "CSE",
-      "name": "Dr. P.Siva Prasad",
-      "email": "psivaprasad@vignan.ac.in",
-      "password": "Vignan@28555936",
-      "photo": true
-    },
-    {
-      "department": "CSE",
-      "name": "Dr. Prashant Upadhyay",
-      "email": "prashantupadhyay@vignan.ac.in",
-      "password": "Vignan@84172863",
+      "name": "Dr. Siva Koteswararao Chinnam",
+      "email": "sivakoteswararaochinnam@vignan.ac.in",
+      "password": "Vignan@70291898",
       "photo": true
     },
     {

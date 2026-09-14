@@ -1,145 +1,34 @@
 import { useState } from 'react'
 import {
-  ErrorRetry,
   PageHeader,
   Panel,
-  Stat,
-  TableSkeleton,
   useApiData,
 } from '../../components/DashboardShell'
-import { BarChart, DonutBreakdown } from '../../components/OverviewCharts'
 import { StatusPill } from '../../components/PersonAvatar'
 import { api, apiBlob } from '../../lib/api'
 import { ActivityPortfolio } from '../../components/ActivityPortfolio'
-
-const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+import {
+  PersonalMyCoursesPage,
+  PersonalMyWorkloadPage,
+  PersonalTeachingDashboard,
+  PersonalTimetablePage,
+} from '../shared/PersonalTeachingPages'
 
 export function FacultyOverview() {
-  const me = useApiData(() => api<any>('/faculty/me/workload'))
-  const b = me.data?.breakdown
   return (
-    <>
-      <PageHeader
-        title="Faculty Overview"
-        subtitle="Your workload composition and status."
-      />
-      <ErrorRetry error={me.error} onRetry={() => void me.reload()} />
-      {me.loading && <TableSkeleton />}
-      <div className="stat-grid">
-        <Stat label="Total Workload" value={b ? b.total.toFixed(2) : '—'} />
-        <Stat label="Status" value={b?.status ?? '—'} />
-        <Stat label="Norm Band" value={b ? `${b.normMin}–${b.normMax}` : '—'} />
-        <Stat label="Expected" value={b?.normExpected ?? '—'} />
-      </div>
-      {b && (
-        <div className="grid-2">
-          <BarChart
-            title="Workload components"
-            items={[
-              { label: 'Teaching', value: b.teachingWeighted, color: '#1e3a8a' },
-              { label: 'Projects', value: b.projectsWeighted, color: '#2563eb' },
-              { label: 'PhD', value: b.phdWeighted, color: '#0f766e' },
-              { label: 'Committees', value: b.committeeWeighted, color: '#b45309' },
-              { label: 'Research', value: b.researchWeighted, color: '#7c3aed' },
-              { label: 'Admin', value: b.adminWeighted, color: '#be123c' },
-            ]}
-          />
-          <DonutBreakdown
-            title="Share of total"
-            segments={[
-              { label: 'Teaching', value: b.teachingWeighted, color: '#1e3a8a' },
-              { label: 'Projects', value: b.projectsWeighted, color: '#2563eb' },
-              { label: 'Other', value: Math.max(0, b.total - b.teachingWeighted - b.projectsWeighted), color: '#94a3b8' },
-            ]}
-          />
-        </div>
-      )}
-    </>
+    <PersonalTeachingDashboard
+      title="Dashboard"
+      subtitle="Your teaching workload, courses, classes, and timetable."
+    />
   )
 }
 
 export function FacultyCoursesPage() {
-  const me = useApiData(() => api<any>('/faculty/me/workload'))
-  return (
-    <>
-      <PageHeader title="My Courses" subtitle="Courses allocated to you." />
-      <Panel title="Allocations">
-        {(me.data?.allocations || []).length === 0 && (
-          <p className="empty-state">No course allocations yet.</p>
-        )}
-        {(me.data?.allocations || []).length > 0 && (
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Credits</th>
-                <th>Section</th>
-                <th>Semester</th>
-                <th>Hours</th>
-              </tr>
-            </thead>
-            <tbody>
-              {(me.data?.allocations || []).map((a: any) => (
-                <tr key={a.id}>
-                  <td>
-                    <strong>{a.course?.code}</strong>
-                  </td>
-                  <td>{a.course?.name}</td>
-                  <td>{a.course?.type || '—'}</td>
-                  <td>{a.course?.credits ?? '—'}</td>
-                  <td>{a.section || a.course?.section || '—'}</td>
-                  <td>{a.course?.semester ?? '—'}</td>
-                  <td>{a.hours}h</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </Panel>
-    </>
-  )
+  return <PersonalMyCoursesPage />
 }
 
 export function FacultyTimetablePage() {
-  const me = useApiData(() => api<any>('/faculty/me/workload'))
-  return (
-    <>
-      <PageHeader title="My Timetable" subtitle="Your scheduled contact hours." />
-      <Panel title="Weekly slots">
-        {(me.data?.timetable || []).length === 0 && (
-          <p className="empty-state">No timetable slots yet.</p>
-        )}
-        {(me.data?.timetable || []).length > 0 && (
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Time</th>
-                <th>Course</th>
-                <th>Room</th>
-              </tr>
-            </thead>
-            <tbody>
-              {(me.data?.timetable || []).map((t: any) => (
-                <tr key={t.id}>
-                  <td>{DAYS[t.dayOfWeek] ?? t.dayOfWeek}</td>
-                  <td>
-                    {t.startTime}–{t.endTime}
-                  </td>
-                  <td>
-                    {t.course?.code} {t.course?.name}
-                  </td>
-                  <td>{t.room || '—'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </Panel>
-    </>
-  )
+  return <PersonalTimetablePage />
 }
 
 export function FacultyProjectsPage() {
@@ -153,7 +42,7 @@ export function FacultyProjectsPage() {
 }
 
 export function FacultyWorkloadPage() {
-  return <FacultyOverview />
+  return <PersonalMyWorkloadPage />
 }
 
 export function FacultyStatementPage() {
@@ -220,11 +109,11 @@ export function FacultyStatementPage() {
   return (
     <>
       <PageHeader
-        title="Workload Statement"
+        title="History"
         subtitle={
           faculty
             ? `${faculty.name} · ${faculty.facultyCode}`
-            : 'Verify and download your statement.'
+            : 'Verify and download your workload statement history.'
         }
         action={
           <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
@@ -411,20 +300,26 @@ export function FacultyResponsibilitiesPage() {
       <PageHeader title="My Responsibilities" subtitle="Administration, committees, and PhD supervision." />
       <Panel title="Administrative roles">
         <ul className="plain-list">
-          {(me.data?.admin || []).map((a: any) => <li key={a.id}>{a.roleName}</li>)}
+          {(me.data?.admin || []).map((a: any) => (
+            <li key={a.id}>{a.roleName}</li>
+          ))}
         </ul>
       </Panel>
       <Panel title="Committees (Agent 56)">
         <ul className="plain-list">
           {(me.data?.committees || []).map((c: any) => (
-            <li key={c.id}>{c.committee?.name} · {c.role}</li>
+            <li key={c.id}>
+              {c.committee?.name} · {c.role}
+            </li>
           ))}
         </ul>
       </Panel>
       <Panel title="PhD supervision (Agent 25)">
         <ul className="plain-list">
           {(me.data?.phd || []).map((p: any) => (
-            <li key={p.id}>{p.scholarCount} scholar(s) · {p.role}</li>
+            <li key={p.id}>
+              {p.scholarCount} scholar(s) · {p.role}
+            </li>
           ))}
         </ul>
       </Panel>

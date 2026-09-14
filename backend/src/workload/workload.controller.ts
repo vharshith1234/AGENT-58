@@ -9,6 +9,11 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { WorkloadService } from './workload.service';
+import {
+  DESIGNATION_RULES_META,
+  getNormForDesignation,
+  listDesignationWorkloadRules,
+} from './designation-workload-rules';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { PermissionsGuard, RequirePerm } from '../common/permissions.guard';
 import {
@@ -30,6 +35,30 @@ export class WorkloadController {
   @RequirePerm('analytics', 'view')
   summary() {
     return this.workload.institutionSummary();
+  }
+
+  /** Centralized Excel-derived designation → required hours rules. */
+  @Get('designation-rules')
+  @RequirePerm('workload', 'view')
+  designationRules(@Query('designation') designation?: string) {
+    if (designation) {
+      return {
+        meta: DESIGNATION_RULES_META,
+        designation,
+        norm: getNormForDesignation(designation),
+      };
+    }
+    return {
+      meta: DESIGNATION_RULES_META,
+      rules: listDesignationWorkloadRules().map((r) => ({
+        cadre: r.cadre,
+        prescribed: r.prescribed,
+        min: r.min,
+        expected: r.expected,
+        max: r.max,
+        requiredHours: r.expected,
+      })),
+    };
   }
 
   @Get('dashboard-summary')
@@ -144,7 +173,7 @@ export class WorkloadController {
   }
 
   @Post('balance/apply')
-  @RequirePerm('balancing', 'run')
+  @RequirePerm('balancing', 'manage')
   async apply(
     @Body()
     body: {

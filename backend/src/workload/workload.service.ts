@@ -3,6 +3,11 @@ import { Prisma } from '@prisma/client';
 import { cached, invalidateCache } from '../common/fast-cache';
 import { PrismaService } from '../prisma/prisma.service';
 import {
+  getNormForDesignation,
+  mapClassType,
+  summarizeWorkloadHours,
+} from './designation-workload-rules';
+import {
   applyReallocation,
   calculateWorkload,
   findAlternatives,
@@ -23,6 +28,13 @@ function mapCourseType(
   if (t === 'LABORATORY' || t === 'LAB') return 'LABORATORY';
   if (t === 'PROJECT') return 'PROJECT';
   return 'THEORY';
+}
+
+function allocationCourseType(a: {
+  classType?: string | null;
+  course?: { type?: string | null } | null;
+}): AllocationInput['courseType'] {
+  return mapClassType(a.classType) || mapCourseType(a.course?.type || 'THEORY');
 }
 
 /** DEMO / non-bearing activity never enters the engine. */
@@ -118,6 +130,37 @@ export class WorkloadService {
     return { min: global.min, expected: global.expected, max: global.max };
   }
 
+  /**
+   * Resolve min/expected/max for a faculty member.
+   * Excel designation rules win; department/global DB norms are fallback only.
+   */
+  async getNorm(opts: {
+    departmentId: string;
+    designation?: string | null;
+  }) {
+    const fromDesignation = getNormForDesignation(opts.designation);
+    if (fromDesignation) {
+      return {
+        min: fromDesignation.min,
+        expected: fromDesignation.expected,
+        max: fromDesignation.max,
+        requiredHours: fromDesignation.requiredHours,
+        cadre: fromDesignation.cadre,
+        prescribed: fromDesignation.prescribed,
+        source: 'designation-excel' as const,
+      };
+    }
+    const dept = await this.getNormForDepartment(opts.departmentId);
+    if (!dept) return null;
+    return {
+      ...dept,
+      requiredHours: dept.expected,
+      cadre: null as string | null,
+      prescribed: null as string | null,
+      source: 'department-db' as const,
+    };
+  }
+
   async buildInput(facultyId: string): Promise<FacultyWorkloadInput> {
     const faculty = await this.prisma.faculty.findUnique({
       where: { id: facultyId },
@@ -135,7 +178,13 @@ export class WorkloadService {
     if (!faculty) throw new NotFoundException('Faculty not found');
 
     const policies = await this.getActivePolicies();
-    const norm = await this.getNormForDepartment(faculty.departmentId);
+    const resolved = await this.getNorm({
+      departmentId: faculty.departmentId,
+      designation: faculty.designation,
+    });
+    const norm = resolved
+      ? { min: resolved.min, expected: resolved.expected, max: resolved.max }
+      : null;
 
     const demoFaculty = faculty.dataSource === 'DEMO';
     const slots = faculty.timetableSlots.filter((s) =>
@@ -153,7 +202,7 @@ export class WorkloadService {
       })),
       allocations: allocs.map((a) => ({
         hours: a.hours,
-        courseType: mapCourseType(a.course.type),
+        courseType: allocationCourseType(a),
       })),
       projects: [
         ...faculty.projectsGuide
@@ -482,8 +531,14 @@ export class WorkloadService {
       { computeMissing: false },
     );
     const enriched = faculty.map((meta) => {
+      const designationNorm = getNormForDesignation(meta.designation);
       const b = byId.get(meta.id);
       if (b) {
+        const hours = summarizeWorkloadHours({
+          assigned: b.total,
+          min: designationNorm?.min ?? b.normMin,
+          max: designationNorm?.max ?? b.normMax,
+        });
         return {
           ...b,
           evidence: {},
@@ -493,9 +548,25 @@ export class WorkloadService {
           photoUrl: meta.photoThumbUrl || meta.photoUrl,
           designation: meta.designation,
           dataSource: meta.dataSource,
-          availableCapacity: Math.max(0, b.normMax - b.total),
+          availableCapacity: Math.max(0, (designationNorm?.max ?? b.normMax) - b.total),
+          normMin: designationNorm?.min ?? b.normMin,
+          normExpected: designationNorm?.expected ?? b.normExpected,
+          normMax: designationNorm?.max ?? b.normMax,
+          cadre: designationNorm?.cadre || null,
+          prescribed: designationNorm?.prescribed || null,
+          ...hours,
+          status: hours.status as WorkloadBreakdown['status'],
         };
       }
+      const fallbackMin = designationNorm?.min ?? 16;
+      const fallbackMax = designationNorm?.max ?? 20;
+      const fallbackExpected = designationNorm?.expected ?? 18;
+      const hours = summarizeWorkloadHours({
+        assigned: 0,
+        min: fallbackMin,
+        max: fallbackMax,
+        status: 'UNDERLOAD',
+      });
       return {
         facultyId: meta.id,
         theoryRaw: 0,
@@ -519,11 +590,10 @@ export class WorkloadService {
         committeeWeighted: 0,
         phdWeighted: 0,
         total: 0,
-        status: 'UNDERLOAD' as const,
         provisionalTeaching: false,
-        normMin: 16,
-        normExpected: 18,
-        normMax: 20,
+        normMin: fallbackMin,
+        normExpected: fallbackExpected,
+        normMax: fallbackMax,
         percentOfNorm: 0,
         evidence: {},
         name: meta.name,
@@ -532,7 +602,11 @@ export class WorkloadService {
         photoUrl: meta.photoThumbUrl || meta.photoUrl,
         designation: meta.designation,
         dataSource: meta.dataSource,
-        availableCapacity: 20,
+        availableCapacity: fallbackMax,
+        cadre: designationNorm?.cadre || null,
+        prescribed: designationNorm?.prescribed || null,
+        ...hours,
+        status: hours.status as WorkloadBreakdown['status'],
       };
     });
     const suggestions = [
@@ -816,6 +890,9 @@ export class WorkloadService {
             courseId: alloc.courseId,
             facultyId: move.toFacultyId,
             hours: take,
+            classType: alloc.classType,
+            section: alloc.section,
+            dataSource: alloc.dataSource,
           },
         });
         remaining -= take;

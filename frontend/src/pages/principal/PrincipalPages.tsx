@@ -6,6 +6,7 @@ import {
   Panel,
   Stat,
   TableSkeleton,
+  paginate,
   useApiData,
 } from '../../components/DashboardShell'
 import { BarChart, DonutBreakdown } from '../../components/OverviewCharts'
@@ -72,21 +73,29 @@ export function PrincipalOverview() {
       </div>
       <div className="grid-2">
         <DonutBreakdown
-          title="Workload status"
+          title="Current workload status"
           segments={[
             { label: 'Normal', value: totalNormal, color: '#059669' },
             { label: 'Overload', value: totalOver, color: '#dc2626' },
             { label: 'Underload', value: totalUnder, color: '#2563eb' },
           ]}
         />
-        <BarChart
-          title="Faculty by department"
-          items={rows.map((r: any) => ({
-            label: r.departmentCode || 'Dept',
-            value: Number(r.NORMAL || 0) + Number(r.OVERLOAD || 0) + Number(r.UNDERLOAD || 0),
-            color: '#1e3a8a',
-          }))}
-        />
+        <Panel title="At a glance">
+          <ul className="compact-list">
+            <li>
+              <strong>{rows.length} departments</strong>
+              <span>In current institution snapshot</span>
+            </li>
+            <li>
+              <strong>{dash.data?.pendingApprovals ?? 0} escalated</strong>
+              <span>Packages awaiting executive attention</span>
+            </li>
+            <li>
+              <strong>Detailed trends</strong>
+              <span>Open Analytics for department and role comparisons</span>
+            </li>
+          </ul>
+        </Panel>
       </div>
     </>
   )
@@ -164,31 +173,14 @@ export function PrincipalCompliancePage() {
 
 export function PrincipalApprovalsPage() {
   const approvals = useApiData(() => api<any[]>('/principal/approvals'))
-  const [message, setMessage] = useState<string | null>(null)
-
-  async function approve(id: string) {
-    await api(`/principal/approvals/${id}/approve`, {
-      method: 'POST',
-      body: JSON.stringify({ comment: 'Principal approved' }),
-    })
-    setMessage('Approved.')
-    await approvals.reload()
-  }
-
-  async function finalize(id: string) {
-    await api(`/principal/approvals/${id}/finalize`, {
-      method: 'POST',
-      body: JSON.stringify({ comment: 'Finalized' }),
-    })
-    setMessage('Finalized.')
-    await approvals.reload()
-  }
 
   return (
     <>
-      <PageHeader title="Approvals" subtitle="Escalated packages awaiting principal action." />
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title="Escalated queue">
+      <PageHeader
+        title="Package activity"
+        subtitle="Executive monitor only — HR / Uttej controls assignments and request decisions."
+      />
+      <Panel title="Escalated history">
         {(approvals.data || []).length === 0 && (
           <p className="empty-state">No escalated packages.</p>
         )}
@@ -207,24 +199,6 @@ export function PrincipalApprovalsPage() {
                   <span>Dept {a.departmentId}</span>
                 </div>
               </div>
-              {(a.status === 'PENDING' || a.status === 'PRINCIPAL_REVIEW' || a.status === 'PRINCIPAL_APPROVED') && (
-                <div style={{ display: 'flex', gap: '0.4rem' }}>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={() => void approve(a.id)}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => void finalize(a.id)}
-                  >
-                    Finalize
-                  </button>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -234,7 +208,162 @@ export function PrincipalApprovalsPage() {
 }
 
 export function PrincipalAnalyticsPage() {
-  return <PrincipalOverview />
+  const dash = useApiData(() => api<any>('/principal/dashboard'))
+  const history = useApiData(() => api<any[]>('/workload/history'))
+  const [query, setQuery] = useState('')
+  const [page, setPage] = useState(1)
+  const [histPage, setHistPage] = useState(1)
+
+  const rawRows = dash.data?.allRows || dash.data?.rows || []
+  const byDept = new Map<string, any>()
+  for (const r of rawRows) {
+    const key = r.departmentCode || r.code || r.departmentId
+    const cur = byDept.get(key) || {
+      departmentCode: r.departmentCode || r.code,
+      NORMAL: 0,
+      OVERLOAD: 0,
+      UNDERLOAD: 0,
+    }
+    cur.NORMAL += Number(r.normal || r.NORMAL || 0)
+    cur.OVERLOAD += Number(r.overload || r.OVERLOAD || 0)
+    cur.UNDERLOAD += Number(r.underload || r.UNDERLOAD || 0)
+    byDept.set(key, cur)
+  }
+  const deptRows = Array.from(byDept.values()).filter((r) =>
+    !query.trim()
+      ? true
+      : String(r.departmentCode || '')
+          .toLowerCase()
+          .includes(query.trim().toLowerCase()),
+  )
+  const pagedDepts = paginate(deptRows, page, 10)
+  const histRows = (history.data || []).filter((h: any) =>
+    !query.trim()
+      ? true
+      : `${h.faculty?.name || ''} ${h.period?.code || ''} ${h.status || ''}`
+          .toLowerCase()
+          .includes(query.trim().toLowerCase()),
+  )
+  const pagedHist = paginate(histRows, histPage, 10)
+
+  return (
+    <>
+      <PageHeader
+        title="Analytics"
+        subtitle="Department comparison, distribution, and historical workload trends."
+      />
+      <Panel title="Filters">
+        <input
+          className="dash-input"
+          placeholder="Filter department / faculty / period"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value)
+            setPage(1)
+            setHistPage(1)
+          }}
+        />
+      </Panel>
+      <div className="grid-2">
+        <BarChart
+          title="Faculty by department"
+          items={deptRows.map((r: any) => ({
+            label: r.departmentCode || 'Dept',
+            value: Number(r.NORMAL || 0) + Number(r.OVERLOAD || 0) + Number(r.UNDERLOAD || 0),
+            color: '#1e3a8a',
+          }))}
+        />
+        <BarChart
+          title="Overload by department"
+          items={deptRows.map((r: any) => ({
+            label: r.departmentCode || 'Dept',
+            value: Number(r.OVERLOAD || 0),
+            color: '#dc2626',
+          }))}
+        />
+      </div>
+      <Panel title="Department comparison" action={<span className="meta-chip">{deptRows.length}</span>}>
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Normal</th>
+              <th>Overload</th>
+              <th>Underload</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pagedDepts.rows.map((r: any) => {
+              const total =
+                Number(r.NORMAL || 0) + Number(r.OVERLOAD || 0) + Number(r.UNDERLOAD || 0)
+              return (
+                <tr key={r.departmentCode}>
+                  <td>
+                    <strong>{r.departmentCode}</strong>
+                  </td>
+                  <td>{r.NORMAL}</td>
+                  <td>{r.OVERLOAD}</td>
+                  <td>{r.UNDERLOAD}</td>
+                  <td>{total}</td>
+                </tr>
+              )
+            })}
+            {pagedDepts.rows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="empty-state">
+                  No departments match this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <Pager
+          page={pagedDepts.page}
+          pages={pagedDepts.pages}
+          total={pagedDepts.total}
+          onPage={setPage}
+        />
+      </Panel>
+      <Panel title="Historical snapshots" action={<span className="meta-chip">{histRows.length}</span>}>
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Faculty</th>
+              <th>Period</th>
+              <th>Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pagedHist.rows.map((h: any) => (
+              <tr key={h.id}>
+                <td>{h.faculty?.name || '—'}</td>
+                <td>{h.period?.code || '—'}</td>
+                <td>{h.total ?? '—'}</td>
+                <td>
+                  <StatusPill status={h.status} />
+                </td>
+              </tr>
+            ))}
+            {pagedHist.rows.length === 0 && (
+              <tr>
+                <td colSpan={4} className="empty-state">
+                  No history rows for this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <Pager
+          page={pagedHist.page}
+          pages={pagedHist.pages}
+          total={pagedHist.total}
+          onPage={setHistPage}
+        />
+      </Panel>
+    </>
+  )
 }
 
 export function PrincipalReportsPage() {
@@ -296,12 +425,12 @@ export function PrincipalFacultyPage() {
     const params = new URLSearchParams()
     if (debounced) params.set('q', debounced)
     params.set('page', String(page))
-    params.set('pageSize', '12')
+    params.set('pageSize', '10')
     return api<any>(`/principal/faculty?${params.toString()}`)
   }, [debounced, page])
 
   const rows = faculty.data?.items || []
-  const pages = Math.max(1, Math.ceil((faculty.data?.total || 0) / 12))
+  const pages = Math.max(1, Math.ceil((faculty.data?.total || 0) / 10))
 
   return (
     <>

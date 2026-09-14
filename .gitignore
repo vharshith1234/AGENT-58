@@ -23,6 +23,7 @@ prisma/dev.db
 prisma/dev.db-journal
 backend/prisma/dev.db
 backend/prisma/dev.db-journal
+backend/.local-pg/
 
 # Editor / OS
 .vscode/*

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useMemo, useState, type ReactNode } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import {
   PageHeader,
   Panel,
@@ -13,77 +13,118 @@ import {
 } from '../../components/DashboardShell'
 import { BarChart, DonutBreakdown } from '../../components/OverviewCharts'
 import { PersonAvatar, StatusPill, DataSourceBadge } from '../../components/PersonAvatar'
-import { api, apiBlob, apiUpload, ApiError, triggerDownload } from '../../lib/api'
+import { api, apiBlob, triggerDownload } from '../../lib/api'
 import { authService } from '../../lib/auth'
+import { workloadHoursFrom, ClassTypeBadge, classTypeLabel } from '../../lib/workloadHours'
+import { formatSectionDisplay, sectionMatchesFilter } from '../../lib/sections'
+import {
+  ACADEMIC_SEMESTERS,
+  ACADEMIC_YEARS,
+  courseYear,
+  matchesAcademicFilters,
+  sectionsForYear,
+  yearLabel,
+} from '../../lib/academic'
+
+import {
+  HodDeptDashboard,
+  HodDeptFacultyPage,
+  HodDeptCoursesPage,
+  HodDeptAssignmentsPage,
+  HodDeptAnalyticsPage,
+  HodDeptHistoryPage,
+  HodDeptRequestsPage,
+} from '../shared/DeptMonitorPages'
 
 function useHodDept() {
   return authService.getSession()?.user.departmentId
 }
 
-function shortFacultyName(name?: string, code?: string) {
-  const raw = String(name || '').replace(/^(Dr|Prof|Mr|Mrs|Ms)\.?\s+/i, '').trim()
-  if (!raw) return code || 'Faculty'
-  const parts = raw.split(/\s+/).filter(Boolean)
-  if (parts.length === 1) return parts[0].slice(0, 14)
-  return `${parts[0][0]}. ${parts[parts.length - 1]}`.slice(0, 16)
+/** HOD department views — same as HR, monitor only. */
+export function HodOverview() {
+  return <HodDeptDashboard />
 }
-
-function courseYear(c: { academicYear?: string | null; semester?: number | null; section?: string | null }) {
-  const ay = String(c.academicYear || '')
-  if (ay === '1' || ay === '2' || ay === '3' || ay === '4') return Number(ay)
-  if (String(c.section || '') === '7') return 4
-  const sem = Number(c.semester || 0)
-  if (sem === 1 || sem === 2) return 1
-  if (sem === 3 || sem === 4) return 2
-  if (sem === 5 || sem === 6) return 3
-  if (sem === 7 || sem === 8) return 4
-  return 0
+export function HodFacultyPage() {
+  return <HodDeptFacultyPage />
 }
-
-function yearLabel(y: string | number) {
-  const n = Number(y)
-  if (n === 2) return '2nd Year'
-  if (n === 3) return '3rd Year'
-  if (n === 4) return '4th Year'
-  return `Year ${y}`
+export function HodCoursesPage() {
+  return <HodDeptCoursesPage />
+}
+export function HodAllocationsPage() {
+  return <HodDeptAssignmentsPage />
+}
+export function HodAnalyticsPage() {
+  return <HodDeptAnalyticsPage />
+}
+export function HodHistoryPage() {
+  return <HodDeptHistoryPage />
+}
+export function HodRequestsMonitorPage() {
+  return <HodDeptRequestsPage />
 }
 
 function AcademicFilterBar({
   year,
+  semester,
   section,
-  years,
-  sections,
   onYear,
+  onSemester,
   onSection,
+  showSemester = true,
 }: {
   year: string
+  semester?: string
   section: string
-  years: Array<string | number>
-  sections: string[]
   onYear: (v: string) => void
+  onSemester?: (v: string) => void
   onSection: (v: string) => void
-  source?: string
-  onSource?: (v: string) => void
-  showSource?: boolean
+  showSemester?: boolean
 }) {
+  const sectionOptions = sectionsForYear(year)
   return (
-    <div className="filter-bar">
-      <select className="dash-input" value={year} onChange={(e) => onYear(e.target.value)}>
-        <option value="ALL">All years</option>
-        {years.map((y) => (
-          <option key={y} value={String(y)}>
-            {yearLabel(y)}
-          </option>
-        ))}
-      </select>
-      <select className="dash-input" value={section} onChange={(e) => onSection(e.target.value)}>
-        <option value="ALL">All sections</option>
-        {sections.map((s) => (
-          <option key={s} value={s}>
-            Section {s}
-          </option>
-        ))}
-      </select>
+    <div className="form-grid report-filter-grid" style={{ marginBottom: '0.85rem' }}>
+      <label className="field-label">
+        <span>Year</span>
+        <select
+          className="dash-input"
+          value={year}
+          onChange={(e) => {
+            onYear(e.target.value)
+            onSection('ALL')
+          }}
+        >
+          <option value="ALL">All years</option>
+          {ACADEMIC_YEARS.map((y) => (
+            <option key={y} value={String(y)}>
+              {yearLabel(y)}
+            </option>
+          ))}
+        </select>
+      </label>
+      {showSemester && onSemester ? (
+        <label className="field-label">
+          <span>Semester</span>
+          <select className="dash-input" value={semester || 'ALL'} onChange={(e) => onSemester(e.target.value)}>
+            <option value="ALL">All semesters</option>
+            {ACADEMIC_SEMESTERS.map((s) => (
+              <option key={s} value={String(s)}>
+                Semester {s}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
+      <label className="field-label">
+        <span>Section</span>
+        <select className="dash-input" value={section} onChange={(e) => onSection(e.target.value)}>
+          <option value="ALL">All sections</option>
+          {sectionOptions.map((s) => (
+            <option key={s} value={s}>
+              Section {s}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   )
 }
@@ -101,22 +142,14 @@ function HodCourseTable({
   const [sectionFilter, setSectionFilter] = useState('ALL')
   const [editId, setEditId] = useState<string | null>(null)
   const [editName, setEditName] = useState('')
-  const years = Array.from(new Set(courses.map((c) => courseYear(c)).filter(Boolean))).sort()
-  const sections = Array.from(
-    new Set(
-      courses.flatMap((c) => [
-        c.section,
-        ...(c.allocations || []).map((a: any) => a.section),
-      ]).filter(Boolean),
-    ),
-  ) as string[]
   const rows = filterByQuery(
     courses.filter((c) => {
       if (statusFilter !== 'ALL' && c.status !== statusFilter) return false
       if (yearFilter !== 'ALL' && String(courseYear(c)) !== yearFilter) return false
+      if (courseYear(c) === 1) return false
       if (sectionFilter !== 'ALL') {
         const secs = [c.section, ...(c.allocations || []).map((a: any) => a.section)].filter(Boolean)
-        if (!secs.includes(sectionFilter)) return false
+        if (!secs.some((s) => sectionMatchesFilter(s, sectionFilter))) return false
       }
       return true
     }),
@@ -155,15 +188,15 @@ function HodCourseTable({
           <option value="ACTIVE">Active</option>
           <option value="INACTIVE">Inactive</option>
         </select>
-        <select className="dash-input" value={yearFilter} onChange={(e) => setYearFilter(e.target.value)}>
+        <select className="dash-input" value={yearFilter} onChange={(e) => { setYearFilter(e.target.value); setSectionFilter('ALL') }}>
           <option value="ALL">All years</option>
-          {years.map((y) => (
+          {ACADEMIC_YEARS.map((y) => (
             <option key={y} value={String(y)}>{yearLabel(y)}</option>
           ))}
         </select>
         <select className="dash-input" value={sectionFilter} onChange={(e) => setSectionFilter(e.target.value)}>
           <option value="ALL">All sections</option>
-          {sections.map((s) => (
+          {sectionsForYear(yearFilter).map((s) => (
             <option key={s} value={s}>Section {s}</option>
           ))}
         </select>
@@ -251,887 +284,80 @@ function HodCourseTable({
   )
 }
 
-export function HodOverview() {
-  const deptId = useHodDept()
-  const dash = useApiData(() => api<any>('/hod/dashboard'), [deptId])
-  const allocations = useApiData(() => api<any[]>('/hod/allocations'), [deptId])
-  const faculty = dash.data?.balance?.faculty || []
-  const coverage = dash.data?.academicCoverage || { years: [], sections: [], rows: [] }
-  const dept = dash.data?.department
+export function HodTimetablePage() {
+  const timetable = useApiData(() => api<any[]>('/hod/timetable'))
   const [year, setYear] = useState('ALL')
+  const [semester, setSemester] = useState('ALL')
   const [section, setSection] = useState('ALL')
-  const [status, setStatus] = useState('ALL')
-
-  const years = Array.from(
-    new Set(
-      [
-        ...(coverage.years || []),
-        ...(allocations.data || []).map((a: any) => courseYear(a.course || {})),
-      ].filter((y) => y === 2 || y === 3 || y === 4),
-    ),
-  ).sort() as number[]
-
-  const sections = Array.from(
-    new Set(
-      [
-        ...(coverage.sections || []),
-        ...(allocations.data || []).map((a: any) => a.section || a.course?.section),
-      ].filter(Boolean),
-    ),
-  ).sort((a, b) => String(a).localeCompare(String(b))) as string[]
-
-  const facultyScope = new Map<string, Array<{ year: number; section: string }>>()
-  for (const a of allocations.data || []) {
-    const fid = a.facultyId || a.faculty?.id
-    if (!fid) continue
-    const y = courseYear(a.course || {})
-    const s = String(a.section || a.course?.section || '')
-    if (!y || !s) continue
-    const list = facultyScope.get(fid) || []
-    list.push({ year: y, section: s })
-    facultyScope.set(fid, list)
-  }
-
-  const filteredFaculty = faculty.filter((f: any) => {
-    if (status !== 'ALL' && f.status !== status) return false
-    if (year === 'ALL' && section === 'ALL') return true
-    const scope = facultyScope.get(f.facultyId) || []
-    if (scope.length === 0) return false
-    return scope.some((row) => {
-      if (year !== 'ALL' && String(row.year) !== year) return false
-      if (section !== 'ALL' && String(row.section) !== section) return false
-      return true
-    })
-  })
-
-  const normal = filteredFaculty.filter((f: any) => f.status === 'NORMAL').length
-  const overloaded = filteredFaculty.filter((f: any) => f.status === 'OVERLOAD').length
-  const underloaded = filteredFaculty.filter((f: any) => f.status === 'UNDERLOAD').length
-
-  const coverageRows = (coverage.rows || []).filter((r: any) => {
-    if (year !== 'ALL' && String(r.year) !== year) return false
-    if (section !== 'ALL' && String(r.section) !== section) return false
-    return true
-  })
-
-  return (
-    <>
-      <PageHeader
-        title="Workload Dashboard"
-        subtitle="Filter by department, year, section, and workload status."
-      />
-      <ErrorRetry error={dash.error || allocations.error} onRetry={() => { void dash.reload(); void allocations.reload() }} />
-      {(dash.loading || allocations.loading) && <TableSkeleton />}
-
-      <Panel title="Filters">
-        <div className="workload-filters">
-          <label className="filter-field">
-            <span>Department</span>
-            <select className="dash-input" value={dept?.id || deptId || ''} disabled>
-              <option value={dept?.id || deptId || ''}>
-                {dept ? `${dept.code} — ${dept.name}` : 'Current department'}
-              </option>
-            </select>
-          </label>
-          <label className="filter-field">
-            <span>Year</span>
-            <select className="dash-input" value={year} onChange={(e) => setYear(e.target.value)}>
-              <option value="ALL">All</option>
-              {years.map((y) => (
-                <option key={y} value={String(y)}>
-                  {yearLabel(y)}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="filter-field">
-            <span>Section</span>
-            <select className="dash-input" value={section} onChange={(e) => setSection(e.target.value)}>
-              <option value="ALL">All</option>
-              {sections.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className="filter-field">
-            <span>Workload Status</span>
-            <select className="dash-input" value={status} onChange={(e) => setStatus(e.target.value)}>
-              <option value="ALL">All</option>
-              <option value="NORMAL">Normal</option>
-              <option value="UNDERLOAD">Underload</option>
-              <option value="OVERLOAD">Overload</option>
-            </select>
-          </label>
-        </div>
-      </Panel>
-
-      <div className="stat-grid">
-        <Stat label="Total Faculty" value={filteredFaculty.length} />
-        <Stat label="Normal" value={normal} />
-        <Stat label="Underload" value={underloaded} />
-        <Stat label="Overload" value={overloaded} />
-      </div>
-
-      <div className="grid-2">
-        <DonutBreakdown
-          title="Workload status"
-          segments={[
-            { label: 'Normal', value: normal, color: '#059669' },
-            { label: 'Overload', value: overloaded, color: '#dc2626' },
-            { label: 'Underload', value: underloaded, color: '#2563eb' },
-          ]}
-        />
-        <BarChart
-          title="Faculty workload"
-          items={filteredFaculty.slice(0, 10).map((f: any) => ({
-            label: shortFacultyName(f.name, f.facultyCode),
-            value: Number(f.total || 0),
-            color: f.status === 'OVERLOAD' ? '#dc2626' : f.status === 'UNDERLOAD' ? '#2563eb' : '#059669',
-          }))}
-        />
-      </div>
-
-      <Panel
-        title="Faculty workload"
-        action={
-          <Link className="open-profile-link" to="/hod/workload">
-            Open Workload tab →
-          </Link>
-        }
-      >
-        <p className="empty-state" style={{ margin: 0 }}>
-          Faculty load details are listed under the <Link to="/hod/workload">Workload</Link> tab
-          ({filteredFaculty.length} matching current filters).
-        </p>
-      </Panel>
-
-      <Panel title="Coverage in view">
-        {coverageRows.length === 0 && (
-          <p className="empty-state">No year/section coverage for this filter.</p>
-        )}
-        {coverageRows.length > 0 && (
-          <table className="data-table compact-table">
-            <thead>
-              <tr>
-                <th>Year</th>
-                <th>Section</th>
-                <th>Subjects</th>
-                <th>Faculty</th>
-                <th>Allocations</th>
-                <th>Slots</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {coverageRows.map((r: any) => (
-                <tr key={`${r.year}-${r.section}-${r.dataSource}`}>
-                  <td>{yearLabel(r.year || '—')}</td>
-                  <td>{r.section}</td>
-                  <td>{r.courses}</td>
-                  <td>{r.facultyCount}</td>
-                  <td>{r.allocations}</td>
-                  <td>{r.slots}</td>
-                  <td>
-                    <DataSourceBadge source={r.dataSource} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </Panel>
-    </>
-  )
-}
-
-export function HodFacultyPage() {
-  const deptId = useHodDept()
-  const balance = useApiData(
-    () =>
-      deptId
-        ? api<any>(`/workload/department/${deptId}/balance`)
-        : Promise.resolve(null),
-    [deptId],
-  )
-  const [busy, setBusy] = useState(false)
-  const [message, setMessage] = useState<string | null>(null)
-  const [query, setQuery] = useState('')
-  const [statusFilter, setStatusFilter] = useState('ALL')
   const [page, setPage] = useState(1)
-  const faculty = filterByQuery(
-    (balance.data?.faculty || []).filter((f: any) => {
-      if (statusFilter !== 'ALL' && f.status !== statusFilter) return false
-      return true
-    }),
-    query,
-    (f: any) => `${f.facultyCode || ''} ${f.name || ''} ${f.designation || ''} ${f.status || ''}`,
+  const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const slotRows = (timetable.data || []).filter((t: any) =>
+    matchesAcademicFilters(
+      t.course || {},
+      { year, semester, section },
+      t.batchLabel || t.course?.section,
+    ),
   )
-  const paged = paginate(faculty, page, 12)
-
-  async function recalculate() {
-    if (!deptId) return
-    setBusy(true)
-    try {
-      await api(`/workload/department/${deptId}/recalculate`, { method: 'POST' })
-      await balance.reload()
-      setMessage('Workloads recalculated.')
-    } catch (e: any) {
-      setMessage(e.message)
-    } finally {
-      setBusy(false)
-    }
-  }
+  const paged = paginate(slotRows, page, 10)
 
   return (
     <>
       <PageHeader
-        title="Faculty"
-        subtitle="Department faculty workload status."
-        action={
-          <button
-            type="button"
-            className="btn btn-primary"
-            disabled={busy}
-            onClick={() => void recalculate()}
-          >
-            Recalculate
-          </button>
-        }
+        title="Department Timetable"
+        subtitle="Department timetable slots (Years 2–4)."
       />
-      {message && <div className="alert-banner">{message}</div>}
-      <ErrorRetry error={balance.error} onRetry={() => void balance.reload()} />
-      {balance.loading && <TableSkeleton />}
-      <Panel title="Faculty workload">
-        <div className="form-grid" style={{ marginBottom: '0.75rem' }}>
-          <input
-            className="dash-input"
-            placeholder="Search faculty"
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value)
-              setPage(1)
-            }}
-          />
-          <select
-            className="dash-input"
-            value={statusFilter}
-            onChange={(e) => {
-              setStatusFilter(e.target.value)
-              setPage(1)
-            }}
-          >
-            <option value="ALL">All statuses</option>
-            <option value="NORMAL">Normal</option>
-            <option value="OVERLOAD">Overload</option>
-            <option value="UNDERLOAD">Underload</option>
-          </select>
-        </div>
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Faculty</th>
-              <th>Designation</th>
-              <th>Teaching</th>
-              <th>Projects</th>
-              <th>Research</th>
-              <th>Admin</th>
-              <th>Committee</th>
-              <th>Total</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paged.rows.map((f: any) => (
-              <tr key={f.facultyId}>
-                <td>
-                  <div className="person-cell">
-                    <PersonAvatar
-                      name={f.name || f.facultyCode}
-                      email={f.email}
-                      photoUrl={f.photoUrl}
-                    />
-                    <div className="person-meta">
-                      <strong>
-                        <Link to={`/hod/faculty/${f.facultyId}`}>
-                          {f.facultyCode} · {f.name}
-                        </Link>
-                      </strong>
-                      <span>
-                        Norm {f.normMin}–{f.normMax}
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>{f.designation || '—'}</td>
-                <td>{f.teachingWeighted?.toFixed?.(2)}</td>
-                <td>{f.projectsWeighted?.toFixed?.(2)}</td>
-                <td>{f.researchWeighted?.toFixed?.(2)}</td>
-                <td>{f.adminWeighted?.toFixed?.(2)}</td>
-                <td>{f.committeeWeighted?.toFixed?.(2)}</td>
-                <td>
-                  <strong>{f.total?.toFixed?.(2) ?? f.total}</strong>
-                </td>
-                <td>
-                  <StatusPill status={f.status} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <Pager page={paged.page} pages={paged.pages} onPage={setPage} />
-      </Panel>
-    </>
-  )
-}
-
-export function HodCoursesPage() {
-  const courses = useApiData(() => api<any[]>('/hod/courses'))
-  const [busy, setBusy] = useState(false)
-  const [message, setMessage] = useState<string | null>(null)
-  const [form, setForm] = useState({
-    code: '',
-    name: '',
-    hoursPerWeek: '3',
-    type: 'THEORY',
-    credits: '3',
-    semester: '1',
-    section: 'A',
-  })
-
-  async function addCourse(e: React.FormEvent) {
-    e.preventDefault()
-    setBusy(true)
-    try {
-      await api('/hod/courses', {
-        method: 'POST',
-        body: JSON.stringify({
-          code: form.code,
-          name: form.name,
-          hoursPerWeek: Number(form.hoursPerWeek),
-          type: form.type,
-          credits: Number(form.credits),
-          semester: Number(form.semester),
-          section: form.section,
-        }),
-      })
-      setForm({
-        code: '',
-        name: '',
-        hoursPerWeek: '3',
-        type: 'THEORY',
-        credits: '3',
-        semester: '1',
-        section: 'A',
-      })
-      setMessage('Course added.')
-      await courses.reload()
-    } catch (err: any) {
-      setMessage(err.message)
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  async function submitApproval() {
-    setBusy(true)
-    try {
-      await api('/hod/submit-approval', { method: 'POST', body: '{}' })
-      setMessage('Package submitted to Dean.')
-    } catch (e: any) {
-      setMessage(e.message)
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  return (
-    <>
-      <PageHeader
-        title="Courses"
-        subtitle="Manage department course catalogue."
-        action={
-          <button
-            type="button"
-            className="btn btn-primary"
-            disabled={busy}
-            onClick={() => void submitApproval()}
-          >
-            Submit for Dean
-          </button>
-        }
-      />
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title="Add course">
-        <form
-          onSubmit={(e) => void addCourse(e)}
-          className="form-grid"
-        >
-          <input
-            className="dash-input"
-            placeholder="Code"
-            required
-            value={form.code}
-            onChange={(e) => setForm({ ...form, code: e.target.value })}
-          />
-          <input
-            className="dash-input"
-            placeholder="Name"
-            required
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-          />
-          <input
-            className="dash-input"
-            placeholder="Hours/week"
-            value={form.hoursPerWeek}
-            onChange={(e) => setForm({ ...form, hoursPerWeek: e.target.value })}
-          />
-          <select
-            className="dash-input"
-            value={form.type}
-            onChange={(e) => setForm({ ...form, type: e.target.value })}
-          >
-            <option value="THEORY">Theory</option>
-            <option value="TUTORIAL">Tutorial</option>
-            <option value="LABORATORY">Laboratory</option>
-          </select>
-          <input
-            className="dash-input"
-            placeholder="Credits"
-            value={form.credits}
-            onChange={(e) => setForm({ ...form, credits: e.target.value })}
-          />
-          <input
-            className="dash-input"
-            placeholder="Semester"
-            value={form.semester}
-            onChange={(e) => setForm({ ...form, semester: e.target.value })}
-          />
-          <input
-            className="dash-input"
-            placeholder="Section"
-            value={form.section}
-            onChange={(e) => setForm({ ...form, section: e.target.value })}
-          />
-          <button type="submit" className="btn btn-secondary" disabled={busy}>
-            Add course
-          </button>
-        </form>
-      </Panel>
-      <Panel title="Course list">
-        <HodCourseTable courses={courses.data || []} onReload={() => void courses.reload()} />
-      </Panel>
-    </>
-  )
-}
-
-export function HodAllocationsPage() {
-  const deptId = useHodDept()
-  const navigate = useNavigate()
-  const courses = useApiData(() => api<any[]>('/hod/courses'))
-  const allocations = useApiData(() => api<any[]>('/hod/allocations'))
-  const balance = useApiData(
-    () =>
-      deptId
-        ? api<any>(`/workload/department/${deptId}/balance`)
-        : Promise.resolve(null),
-    [deptId],
-  )
-  const faculty = balance.data?.faculty || []
-  const [form, setForm] = useState({ courseId: '', facultyId: '', hours: '4' })
-  const [message, setMessage] = useState<string | null>(null)
-  const [busy, setBusy] = useState(false)
-  const [warning, setWarning] = useState<any>(null)
-  const [justification, setJustification] = useState('')
-  const [year, setYear] = useState('ALL')
-  const [section, setSection] = useState('ALL')
-  const allocRows = (allocations.data || []).filter((a: any) => {
-    if (year !== 'ALL' && String(courseYear(a.course || {})) !== year) return false
-    if (section !== 'ALL' && String(a.section || a.course?.section || '') !== section) return false
-    return true
-  })
-  const allocYears = Array.from(
-    new Set((allocations.data || []).map((a: any) => courseYear(a.course || {})).filter(Boolean)),
-  ).sort()
-  const allocSections = Array.from(
-    new Set((allocations.data || []).map((a: any) => a.section || a.course?.section).filter(Boolean)),
-  ) as string[]
-
-  async function submit(payload: Record<string, unknown>) {
-    return api<any>('/hod/allocations', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-    })
-  }
-
-  async function addAllocation(e: React.FormEvent) {
-    e.preventDefault()
-    setBusy(true)
-    setMessage(null)
-    try {
-      const result = await submit({
-        courseId: form.courseId,
-        facultyId: form.facultyId,
-        hours: Number(form.hours),
-      })
-      setWarning(null)
-      setMessage(
-        `Allocation saved. ${result.preCheck?.after?.status || ''} · projected ${result.preCheck?.after?.total?.toFixed?.(1)}`,
-      )
-      await Promise.all([allocations.reload(), balance.reload()])
-    } catch (err: any) {
-      if (err instanceof ApiError && err.status === 409) {
-        setWarning((err.body as any) || err)
-        setMessage(err.message)
-      } else {
-        setMessage(err.message)
-      }
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  async function proceedWithJustification() {
-    setBusy(true)
-    try {
-      await submit({
-        courseId: form.courseId,
-        facultyId: form.facultyId,
-        hours: Number(form.hours),
-        confirmOverload: true,
-        justification,
-      })
-      setWarning(null)
-      setJustification('')
-      setMessage('Allocation saved with overload justification.')
-      await Promise.all([allocations.reload(), balance.reload()])
-    } catch (err: any) {
-      setMessage(err.message)
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  const preCheck = warning?.preCheck || warning?.after ? warning : warning
-
-  return (
-    <>
-      <PageHeader title="Course Allocation" subtitle="Official teaching assignments drive workload. Timetable is schedule only." />
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title="Assign">
-        <form onSubmit={(e) => void addAllocation(e)} className="form-grid">
-          <select
-            className="dash-input"
-            required
-            value={form.courseId}
-            onChange={(e) => setForm({ ...form, courseId: e.target.value })}
-          >
-            <option value="">Select course</option>
-            {(courses.data || []).map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.code} · {c.name} ({c.type})
-              </option>
-            ))}
-          </select>
-          <select
-            className="dash-input"
-            required
-            value={form.facultyId}
-            onChange={(e) => setForm({ ...form, facultyId: e.target.value })}
-          >
-            <option value="">Select faculty</option>
-            {faculty.map((f: any) => (
-              <option key={f.facultyId} value={f.facultyId}>
-                {f.facultyCode} · {f.name} ({f.total?.toFixed?.(1)})
-              </option>
-            ))}
-          </select>
-          <input
-            className="dash-input"
-            type="number"
-            min="0.5"
-            step="0.5"
-            value={form.hours}
-            onChange={(e) => setForm({ ...form, hours: e.target.value })}
-          />
-          <button type="submit" className="btn btn-secondary" disabled={busy}>
-            Check & assign
-          </button>
-        </form>
-      </Panel>
-      {warning && (
-        <Panel title="Overload warning">
-          <p>
-            Current {preCheck?.preCheck?.before?.total?.toFixed?.(1) ?? '—'} → projected{' '}
-            {preCheck?.preCheck?.after?.total?.toFixed?.(1) ?? '—'} (max{' '}
-            {preCheck?.preCheck?.after?.normMax ?? '—'}).
-          </p>
-          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', margin: '0.75rem 0' }}>
-            <button type="button" className="btn btn-secondary" onClick={() => setWarning(null)}>
-              Cancel
-            </button>
-            <button type="button" className="btn btn-primary" onClick={() => navigate('/hod/what-if')}>
-              Use What-if Simulation
-            </button>
-          </div>
-          <p>Choose another faculty:</p>
-          <ul className="plain-list">
-            {(preCheck?.preCheck?.alternatives || []).map((a: any) => (
-              <li key={a.facultyId}>
-                {a.name}: current {a.current?.toFixed?.(1)}, capacity {a.capacity?.toFixed?.(1)}{' '}
-                {a.suitable ? '· Suitable' : '· Not suitable'}
-                {a.suitable && (
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    style={{ marginLeft: '0.4rem' }}
-                    onClick={() => setForm({ ...form, facultyId: a.facultyId })}
-                  >
-                    Select
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
-          <label>
-            Justification
-            <textarea
-              className="dash-input"
-              rows={2}
-              value={justification}
-              onChange={(e) => setJustification(e.target.value)}
-            />
-          </label>
-          <button
-            type="button"
-            className="btn btn-warn"
-            disabled={busy || !justification.trim()}
-            onClick={() => void proceedWithJustification()}
-          >
-            Proceed with justification
-          </button>
-        </Panel>
-      )}
-      <Panel title="Current allocations">
+      <ErrorRetry error={timetable.error} onRetry={() => void timetable.reload()} />
+      <Panel title="Slots" action={<span className="meta-chip">{slotRows.length}</span>}>
         <AcademicFilterBar
           year={year}
+          semester={semester}
           section={section}
-          years={allocYears}
-          sections={allocSections}
-          onYear={setYear}
-          onSection={setSection}
+          onYear={(v) => {
+            setYear(v)
+            setPage(1)
+          }}
+          onSemester={(v) => {
+            setSemester(v)
+            setPage(1)
+          }}
+          onSection={(v) => {
+            setSection(v)
+            setPage(1)
+          }}
         />
+        {timetable.loading && <TableSkeleton />}
+        {paged.rows.length === 0 && !timetable.loading && (
+          <p className="empty-state">No timetable slots for this filter.</p>
+        )}
         <table className="data-table">
           <thead>
             <tr>
+              <th>Day</th>
+              <th>Time</th>
               <th>Course</th>
               <th>Year</th>
               <th>Section</th>
               <th>Faculty</th>
-              <th>Hours</th>
-              <th>Type</th>
+              <th>Room</th>
             </tr>
           </thead>
           <tbody>
-            {allocRows.map((a: any) => (
-              <tr key={a.id}>
-                <td>{a.course?.code}</td>
-                <td>{courseYear(a.course || {}) ? `Y${courseYear(a.course || {})}` : '—'}</td>
-                <td>{a.section || a.course?.section || '—'}</td>
-                <td>{a.faculty?.name}</td>
-                <td>{a.hours}</td>
-                <td>{a.course?.type}</td>
-              </tr>
-            ))}
-            {allocRows.length === 0 && (
-              <tr>
-                <td colSpan={6} className="empty-state">No allocations for this filter.</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </Panel>
-    </>
-  )
-}
-
-export function HodTimetablePage() {
-  const timetable = useApiData(() => api<any[]>('/hod/timetable'))
-  const courses = useApiData(() => api<any[]>('/hod/courses'))
-  const deptId = useHodDept()
-  const balance = useApiData(
-    () => (deptId ? api<any>(`/workload/department/${deptId}/balance`) : Promise.resolve(null)),
-    [deptId],
-  )
-  const [form, setForm] = useState({
-    courseId: '',
-    facultyId: '',
-    dayOfWeek: '1',
-    startTime: '09:00',
-    endTime: '10:00',
-    room: '',
-    contactType: 'THEORY',
-  })
-  const [csv, setCsv] = useState('')
-  const [preview, setPreview] = useState<any | null>(null)
-  const [pendingRows, setPendingRows] = useState<any[]>([])
-  const [message, setMessage] = useState<string | null>(null)
-  const [year, setYear] = useState('ALL')
-  const [section, setSection] = useState('ALL')
-  const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  const slotRows = (timetable.data || []).filter((t: any) => {
-    if (year !== 'ALL' && String(courseYear(t.course || {})) !== year) return false
-    if (section !== 'ALL' && String(t.batchLabel || t.course?.section || '') !== section) return false
-    return true
-  })
-  const slotYears = Array.from(
-    new Set((timetable.data || []).map((t: any) => courseYear(t.course || {})).filter(Boolean)),
-  ).sort()
-  const slotSections = Array.from(
-    new Set((timetable.data || []).map((t: any) => t.batchLabel || t.course?.section).filter(Boolean)),
-  ) as string[]
-
-  async function addSlot(e: React.FormEvent) {
-    e.preventDefault()
-    try {
-      await api('/hod/timetable', { method: 'POST', body: JSON.stringify(form) })
-      setMessage('Slot added.')
-      await timetable.reload()
-    } catch (err: any) {
-      setMessage(err.message)
-    }
-  }
-
-  function parseCsvRows() {
-    return csv
-      .trim()
-      .split('\n')
-      .slice(1)
-      .filter(Boolean)
-      .map((line) => {
-        const [Day, startTime, endTime, courseCode, facultyCode, room, section, Type] =
-          line.split(',').map((s) => s.trim())
-        return { Day, startTime, endTime, courseCode, facultyCode, room, section, Type }
-      })
-  }
-
-  async function previewRows(rows: any[]) {
-    const result = await api<any>('/hod/timetable/preview', {
-      method: 'POST',
-      body: JSON.stringify({ rows }),
-    })
-    setPendingRows(rows)
-    setPreview(result)
-    setMessage(`Preview: ${result.valid} valid, ${result.invalid} invalid. Confirm to import.`)
-  }
-
-  async function confirmImport() {
-    const result = await api<any[]>('/hod/timetable/import', {
-      method: 'POST',
-      body: JSON.stringify({ rows: pendingRows, confirm: true }),
-    })
-    const ok = result.filter((r) => r.ok).length
-    const bad = result.filter((r) => !r.ok).length
-    setMessage(`Imported ${ok} slot(s). ${bad} error(s).`)
-    setPreview(null)
-    setPendingRows([])
-    await timetable.reload()
-  }
-
-  async function onExcel(file: File | null) {
-    if (!file) return
-    const fd = new FormData()
-    fd.append('file', file)
-    const result = await apiUpload<any>('/hod/timetable/excel', fd)
-    setPendingRows(result.results?.map((r: any) => r.row).filter(Boolean) || [])
-    setPreview(result)
-    setMessage(`Excel preview: ${result.valid} valid, ${result.invalid} invalid.`)
-  }
-
-  return (
-    <>
-      <PageHeader title="Timetable" subtitle="Schedule validation only — hours are not added on top of allocations." />
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title="Add slot">
-        <form className="form-grid" onSubmit={(e) => void addSlot(e)}>
-          <select className="dash-input" required value={form.courseId} onChange={(e) => setForm({ ...form, courseId: e.target.value })}>
-            <option value="">Course</option>
-            {(courses.data || []).map((c) => (
-              <option key={c.id} value={c.id}>{c.code}</option>
-            ))}
-          </select>
-          <select className="dash-input" required value={form.facultyId} onChange={(e) => setForm({ ...form, facultyId: e.target.value })}>
-            <option value="">Faculty</option>
-            {(balance.data?.faculty || []).map((f: any) => (
-              <option key={f.facultyId} value={f.facultyId}>{f.name}</option>
-            ))}
-          </select>
-          <select className="dash-input" value={form.dayOfWeek} onChange={(e) => setForm({ ...form, dayOfWeek: e.target.value })}>
-            {DAYS.map((d, i) => <option key={d} value={i}>{d}</option>)}
-          </select>
-          <input className="dash-input" type="time" value={form.startTime} onChange={(e) => setForm({ ...form, startTime: e.target.value })} />
-          <input className="dash-input" type="time" value={form.endTime} onChange={(e) => setForm({ ...form, endTime: e.target.value })} />
-          <input className="dash-input" placeholder="Room" value={form.room} onChange={(e) => setForm({ ...form, room: e.target.value })} />
-          <button className="btn btn-secondary" type="submit">Add</button>
-        </form>
-      </Panel>
-      <Panel title="Excel / CSV import">
-        <p className="empty-state">Columns: Day, Start Time, End Time, Course Code, Faculty ID, Room, Section, Type. Preview first — nothing is saved until you confirm.</p>
-        <input
-          className="dash-input"
-          type="file"
-          accept=".xlsx,.xls,.csv"
-          onChange={(e) => void onExcel(e.target.files?.[0] || null)}
-        />
-        <textarea className="dash-input" rows={4} placeholder="Day,Start Time,End Time,Course Code,Faculty ID,Room,Section,Type" value={csv} onChange={(e) => setCsv(e.target.value)} />
-        <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.5rem' }}>
-          <button type="button" className="btn btn-secondary" onClick={() => void previewRows(parseCsvRows())}>
-            Preview
-          </button>
-          <button type="button" className="btn btn-primary" disabled={!preview} onClick={() => void confirmImport()}>
-            Confirm import
-          </button>
-        </div>
-        {preview && (
-          <ul className="plain-list" style={{ marginTop: '0.75rem' }}>
-            {(preview.results || []).slice(0, 12).map((r: any, i: number) => (
-              <li key={i}>
-                {r.ok ? 'OK' : 'Error'}: {r.error || r.resolved?.courseCode || JSON.stringify(r.row)}
-              </li>
-            ))}
-          </ul>
-        )}
-      </Panel>
-      <Panel title="Slots">
-        <AcademicFilterBar
-          year={year}
-          section={section}
-          years={slotYears}
-          sections={slotSections}
-          onYear={setYear}
-          onSection={setSection}
-        />
-        {slotRows.length === 0 && <p className="empty-state">No timetable slots for this filter.</p>}
-        <table className="data-table">
-          <thead>
-            <tr><th>Day</th><th>Time</th><th>Course</th><th>Year</th><th>Section</th><th>Faculty</th><th>Room</th></tr>
-          </thead>
-          <tbody>
-            {slotRows.map((t: any) => (
+            {paged.rows.map((t: any) => (
               <tr key={t.id}>
                 <td>{DAYS[t.dayOfWeek] || t.dayOfWeek}</td>
-                <td>{t.startTime}–{t.endTime}</td>
+                <td>
+                  {t.startTime}–{t.endTime}
+                </td>
                 <td>{t.course?.code}</td>
-                <td>{courseYear(t.course || {}) ? `Y${courseYear(t.course || {})}` : '—'}</td>
-                <td>{t.batchLabel || t.course?.section || '—'}</td>
+                <td>{courseYear(t.course || {}) ? yearLabel(courseYear(t.course || {})) : '—'}</td>
+                <td>{formatSectionDisplay(t.batchLabel || t.course?.section)}</td>
                 <td>{t.faculty?.name}</td>
                 <td>{t.room || '—'}</td>
               </tr>
             ))}
           </tbody>
         </table>
+        <Pager page={paged.page} pages={paged.pages} total={paged.total} onPage={setPage} />
       </Panel>
     </>
   )
@@ -1232,26 +458,55 @@ export function HodWorkloadPage() {
   const [query, setQuery] = useState('')
   const [statusFilter, setStatusFilter] = useState('ALL')
   const [page, setPage] = useState(1)
+  const allFaculty = balance.data?.faculty || []
   const faculty = filterByQuery(
-    (balance.data?.faculty || []).filter((f: any) =>
-      statusFilter === 'ALL' ? true : f.status === statusFilter,
-    ),
+    allFaculty.filter((f: any) => (statusFilter === 'ALL' ? true : f.status === statusFilter)),
     query,
     (f: any) => `${f.facultyCode || ''} ${f.name || ''} ${f.status || ''}`,
   )
-  const paged = paginate(faculty, page, 12)
+  const paged = paginate(faculty, page, 10)
+  const kpi = {
+    total: allFaculty.length,
+    normal: allFaculty.filter((f: any) => f.status === 'NORMAL').length,
+    underload: allFaculty.filter((f: any) => f.status === 'UNDERLOAD').length,
+    overload: allFaculty.filter((f: any) => f.status === 'OVERLOAD').length,
+  }
   return (
     <>
-      <PageHeader title="Workload" subtitle="Department teaching load by faculty. Teaching is taken from Course Allocation only." />
+      <PageHeader
+        title="Faculty Workload"
+        subtitle="Department teaching load by faculty. Teaching is taken from Course Allocation only."
+      />
       <ErrorRetry error={balance.error} onRetry={() => void balance.reload()} />
       {balance.loading && <TableSkeleton cols={10} />}
+      <div className="stat-grid">
+        <Stat label="Total Faculty" value={kpi.total} />
+        <Stat label="Normal" value={kpi.normal} />
+        <Stat label="Underload" value={kpi.underload} />
+        <Stat label="Overload" value={kpi.overload} />
+      </div>
       <Panel
-        title="Faculty workload"
+        title="Faculty load"
         action={<span className="panel-meta">{faculty.length} matching</span>}
       >
         <div className="form-grid" style={{ marginBottom: '0.75rem' }}>
-          <input className="dash-input" placeholder="Search faculty" value={query} onChange={(e) => { setQuery(e.target.value); setPage(1) }} />
-          <select className="dash-input" value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setPage(1) }}>
+          <input
+            className="dash-input"
+            placeholder="Search faculty"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setPage(1)
+            }}
+          />
+          <select
+            className="dash-input"
+            value={statusFilter}
+            onChange={(e) => {
+              setStatusFilter(e.target.value)
+              setPage(1)
+            }}
+          >
             <option value="ALL">All statuses</option>
             <option value="NORMAL">Normal</option>
             <option value="OVERLOAD">Overload</option>
@@ -1351,8 +606,12 @@ export function HodWorkloadPage() {
                 <td>{f.researchWeighted?.toFixed?.(2)}</td>
                 <td>{f.adminWeighted?.toFixed?.(2)}</td>
                 <td>{f.committeeWeighted?.toFixed?.(2)}</td>
-                <td><strong>{f.total?.toFixed?.(2)}</strong></td>
-                <td><StatusPill status={f.status} /></td>
+                <td>
+                  <strong>{f.total?.toFixed?.(2)}</strong>
+                </td>
+                <td>
+                  <StatusPill status={f.status} />
+                </td>
               </tr>
             ))}
           </tbody>
@@ -1533,57 +792,117 @@ export function HodBalancingPage() {
 
   return (
     <>
-      <PageHeader title="Workload Balancing" subtitle="Suggestions are not applied until you confirm." />
+      <PageHeader title="Workload Balancing" subtitle="Suggestions preview. Leave transfers are accepted only by Uttej (Workload Controller)." />
       {message && <div className="alert-banner">{message}</div>}
-      <div className="grid-2">
-        <Panel title="Overloaded">
-          <ul className="plain-list">
-            {overloaded.map((f: any) => (
-              <li key={f.facultyId}>{f.name} = {f.total.toFixed(1)}</li>
-            ))}
-            {overloaded.length === 0 && <p className="empty-state">None</p>}
-          </ul>
+      <div className="balancing-grid">
+        <Panel
+          title="Overloaded"
+          action={<span className="meta-chip meta-chip-danger">{overloaded.length}</span>}
+        >
+          {overloaded.length === 0 ? (
+            <p className="empty-state">No overloaded faculty.</p>
+          ) : (
+            <ul className="balance-roster">
+              {overloaded
+                .slice()
+                .sort((a: any, b: any) => Number(b.total || 0) - Number(a.total || 0))
+                .map((f: any) => (
+                  <li key={f.facultyId} className="balance-roster-item is-overload">
+                    <div className="balance-roster-main">
+                      <strong>{f.name}</strong>
+                      <span className="balance-roster-sub">Above max load</span>
+                    </div>
+                    <span className="balance-hours is-overload">{Number(f.total).toFixed(1)}h</span>
+                  </li>
+                ))}
+            </ul>
+          )}
         </Panel>
-        <Panel title="Available capacity">
-          <ul className="plain-list">
-            {underloaded.concat(normal).map((f: any) => (
-              <li key={f.facultyId}>
-                {f.name} = {f.total.toFixed(1)} (capacity {f.availableCapacity?.toFixed?.(1)})
-              </li>
-            ))}
+        <Panel
+          title="Available capacity"
+          action={
+            <span className="meta-chip meta-chip-ok">
+              {underloaded.concat(normal).length}
+            </span>
+          }
+        >
+          <ul className="balance-roster">
+            {underloaded
+              .concat(normal)
+              .slice()
+              .sort(
+                (a: any, b: any) =>
+                  Number(b.availableCapacity || 0) - Number(a.availableCapacity || 0),
+              )
+              .map((f: any) => (
+                <li
+                  key={f.facultyId}
+                  className={`balance-roster-item ${f.status === 'UNDERLOAD' ? 'is-under' : 'is-normal'}`}
+                >
+                  <div className="balance-roster-main">
+                    <strong>{f.name}</strong>
+                    <span className="balance-roster-sub">
+                      {f.status === 'UNDERLOAD' ? 'Underload' : 'Normal'} · room for{' '}
+                      {Number(f.availableCapacity || 0).toFixed(1)}h
+                    </span>
+                  </div>
+                  <div className="balance-metrics">
+                    <span className="balance-hours">{Number(f.total).toFixed(1)}h</span>
+                    <span className="balance-capacity">
+                      +{Number(f.availableCapacity || 0).toFixed(1)}
+                    </span>
+                  </div>
+                </li>
+              ))}
           </ul>
         </Panel>
       </div>
-      <Panel title="Proposed reallocations">
-        {(balance.data?.suggestions || []).length === 0 && (
+      <Panel
+        title="Proposed reallocations"
+        action={
+          <span className="meta-chip">{(balance.data?.suggestions || []).length}</span>
+        }
+      >
+        {(balance.data?.suggestions || []).length === 0 ? (
           <p className="empty-state">No reallocation suggestions.</p>
-        )}
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Move</th>
-              <th>Before</th>
-              <th>After</th>
-              <th>Change</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
+        ) : (
+          <div className="balance-suggestions">
             {(balance.data?.suggestions || []).map((s: any, i: number) => (
-              <tr key={i}>
-                <td>{s.fromName} → {s.toName}</td>
-                <td>{s.beforeFrom?.toFixed?.(1)} / {s.beforeTo?.toFixed?.(1)}</td>
-                <td>{s.afterFrom?.toFixed?.(1)} / {s.afterTo?.toFixed?.(1)}</td>
-                <td>{s.suggestedHours}h · {s.reason}</td>
-                <td>
-                  <button className="btn btn-primary" disabled={busy} onClick={() => void confirmMove(s)}>
+              <div key={i} className="balance-suggestion-card">
+                <div className="balance-suggestion-move">
+                  <div className="balance-suggestion-party">
+                    <span className="balance-suggestion-label">From</span>
+                    <strong>{s.fromName}</strong>
+                    <span className="balance-suggestion-nums">
+                      {s.beforeFrom?.toFixed?.(1)}h → {s.afterFrom?.toFixed?.(1)}h
+                    </span>
+                  </div>
+                  <div className="balance-suggestion-arrow" aria-hidden>
+                    → {s.suggestedHours}h
+                  </div>
+                  <div className="balance-suggestion-party">
+                    <span className="balance-suggestion-label">To</span>
+                    <strong>{s.toName}</strong>
+                    <span className="balance-suggestion-nums">
+                      {s.beforeTo?.toFixed?.(1)}h → {s.afterTo?.toFixed?.(1)}h
+                    </span>
+                  </div>
+                </div>
+                {s.reason && <p className="balance-suggestion-reason">{s.reason}</p>}
+                <div className="balance-suggestion-actions">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    disabled={busy}
+                    onClick={() => void confirmMove(s)}
+                  >
                     Confirm
                   </button>
-                </td>
-              </tr>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+        )}
       </Panel>
     </>
   )
@@ -1591,26 +910,18 @@ export function HodBalancingPage() {
 
 export function HodReportsPage() {
   const deptId = useHodDept()
-  const [message, setMessage] = useState<string | null>(null)
   async function exportFile(kind: 'excel' | 'csv') {
     if (!deptId) return
     const blob = await apiBlob(`/reports/department/${deptId}/${kind}`)
     triggerDownload(blob, kind === 'csv' ? 'department-workload.csv' : 'department-workload.xlsx')
   }
-  async function submitApproval() {
-    await api('/hod/submit-approval', { method: 'POST', body: '{}' })
-    setMessage('Package submitted to Dean (HOD_SUBMITTED).')
-  }
   return (
     <>
       <PageHeader
         title="Reports"
-        subtitle="Department workload exports and approval submission."
+        subtitle="Department workload exports (monitor only)."
         action={
           <div style={{ display: 'flex', gap: '0.4rem' }}>
-            <button type="button" className="btn btn-secondary" onClick={() => void submitApproval()}>
-              Submit to Dean
-            </button>
             <button type="button" className="btn btn-secondary" onClick={() => void exportFile('csv')}>
               Download CSV
             </button>
@@ -1620,10 +931,9 @@ export function HodReportsPage() {
           </div>
         }
       />
-      {message && <div className="alert-banner">{message}</div>}
       <Panel title="Exports">
         <p className="empty-state">
-          Download Excel or CSV for the active period. Teaching hours come from Course Allocation, not timetable.
+          Download Excel or CSV for the active period. Assignment and approval actions are handled by HR / Uttej.
         </p>
       </Panel>
     </>
@@ -1632,47 +942,125 @@ export function HodReportsPage() {
 
 export function HodFacultyDetailPage() {
   const { facultyId } = useParams()
-  const detail = useApiData(
-    () => api<any>(`/hod/faculty/${facultyId}`),
-    [facultyId],
-  )
+  const detail = useApiData(() => api<any>(`/hod/faculty/${facultyId}`), [facultyId])
+  const allocations = useApiData(() => api<any[]>('/hod/allocations'), [facultyId])
+  const timetable = useApiData(() => api<any[]>('/hod/timetable'), [facultyId])
   const f = detail.data?.faculty
   const b = detail.data?.breakdown
+  const hours = workloadHoursFrom(b || {})
+  const myAllocations = (allocations.data || []).filter(
+    (a: any) => String(a.facultyId || a.faculty?.id) === String(facultyId),
+  )
+  const mySlots = (timetable.data || []).filter(
+    (t: any) => String(t.facultyId || t.faculty?.id) === String(facultyId),
+  )
+  const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
   return (
     <>
-      <PageHeader title={f?.name || 'Faculty workload'} subtitle={`${f?.facultyCode || ''} · ${f?.department?.name || ''}`} />
-      {b && (
-        <>
-          <div className="stat-grid">
-            <Stat label="Total" value={b.total.toFixed(2)} />
-            <Stat label="Status" value={b.status} />
-            <Stat label="Min / Expected / Max" value={`${b.normMin} / ${b.normExpected} / ${b.normMax}`} />
-            <Stat label="% of expected" value={`${b.percentOfNorm}%`} />
+      <PageHeader
+        title="Faculty Profile"
+        subtitle="Current workload and teaching focus."
+        action={
+          <Link to="/hod/faculty" className="btn btn-secondary btn-sm">
+            ← Back
+          </Link>
+        }
+      />
+      {detail.loading && <TableSkeleton />}
+      {f && (
+        <section className="profile-hero-card profile-hero-compact">
+          <PersonAvatar name={f.name} photoUrl={f.photoUrl} />
+          <div className="profile-hero-meta">
+            <h2 className="profile-hero-name">{f.name}</h2>
+            <p className="profile-hero-title">
+              {f.designation || '—'}
+              {f.department?.code ? ` · ${f.department.code}` : ''}
+            </p>
+            <StatusPill status={hours.status || b?.status || '—'} />
           </div>
-          <Panel title="Breakdown">
-            <table className="data-table">
-              <tbody>
-                {[
-                  ['Theory', b.theoryWeighted],
-                  ['Tutorial', b.tutorialWeighted],
-                  ['Laboratory', b.labWeighted],
-                  ['UG Project', b.ugProjectsWeighted],
-                  ['PG Project', b.pgProjectsWeighted],
-                  ['PhD', b.phdWeighted],
-                  ['Research', b.researchWeighted],
-                  ['Administration', b.adminWeighted],
-                  ['Committee', b.committeeWeighted],
-                ].map(([label, val]) => (
-                  <tr key={String(label)}>
-                    <td>{label}</td>
-                    <td>{Number(val).toFixed(2)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Panel>
-        </>
+        </section>
       )}
+
+      {b && (
+        <div className="workload-highlight-panel">
+          <Panel title="Current workload">
+            <div className="stat-grid workload-highlight-grid">
+              <Stat label="Required Hours" value={hours.requiredHours} />
+              <Stat label="Assigned Hours" value={hours.assignedHours} />
+              <Stat label="Remaining Hours" value={hours.remainingHours} />
+              <Stat label="Workload Status" value={hours.status} />
+            </div>
+          </Panel>
+        </div>
+      )}
+
+      <div className="grid-2">
+        <Panel title="Current courses / subjects" action={<span className="meta-chip">{myAllocations.length}</span>}>
+          <table className="data-table compact-table">
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Section</th>
+                <th>Type</th>
+                <th>Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myAllocations.map((a: any) => (
+                <tr key={a.id}>
+                  <td>
+                    <strong>{a.course?.code || '—'}</strong>
+                  </td>
+                  <td>{formatSectionDisplay(a.section || a.course?.section)}</td>
+                  <td>
+                    <ClassTypeBadge type={classTypeLabel(a.classType, a.course?.type)} />
+                  </td>
+                  <td>{a.hours ?? '—'}</td>
+                </tr>
+              ))}
+              {myAllocations.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="empty-state">
+                    No current course allocations.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </Panel>
+        <Panel title="Current classes / timetable" action={<span className="meta-chip">{mySlots.length}</span>}>
+          <table className="data-table compact-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Course</th>
+                <th>Room</th>
+              </tr>
+            </thead>
+            <tbody>
+              {mySlots.map((t: any) => (
+                <tr key={t.id}>
+                  <td>{DAYS[t.dayOfWeek] || t.dayOfWeek}</td>
+                  <td>
+                    {t.startTime}–{t.endTime}
+                  </td>
+                  <td>{t.course?.code || '—'}</td>
+                  <td>{t.room || '—'}</td>
+                </tr>
+              ))}
+              {mySlots.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="empty-state">
+                    No timetable slots assigned.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </Panel>
+      </div>
     </>
   )
 }
@@ -1689,7 +1077,7 @@ function SimpleCrudPage({
   listPath: string
   createPath: string
   fields: Array<{ name: string; placeholder: string; options?: string[] }>
-  renderRow: (row: any) => string
+  renderRow: (row: any) => ReactNode
   embedded?: boolean
 }) {
   const rows = useApiData(() => api<any[]>(listPath))
@@ -1700,61 +1088,100 @@ function SimpleCrudPage({
   )
   const [form, setForm] = useState<Record<string, string>>({})
   const [message, setMessage] = useState<string | null>(null)
+  const list = rows.data || []
+
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()
-    await api(createPath, { method: 'POST', body: JSON.stringify(form) })
+    const payload = { ...form }
+    for (const f of fields) {
+      if (f.options && !payload[f.name]) payload[f.name] = f.options[0]
+    }
+    await api(createPath, { method: 'POST', body: JSON.stringify(payload) })
     setMessage('Saved.')
+    setForm({})
     await rows.reload()
   }
-  return (
-    <>
-      {!embedded && <PageHeader title={title} />}
-      {message && <div className="alert-banner">{message}</div>}
-      <Panel title={embedded ? `Add ${title.toLowerCase()}` : 'Add'}>
-        <form className="form-grid" onSubmit={(e) => void onSubmit(e)}>
-          {fields.map((f) =>
-            f.name === 'facultyId' || f.name === 'guideId' ? (
+
+  const formPanel = (
+    <Panel title={embedded ? `Add ${title.toLowerCase()}` : 'Add'}>
+      <form className={`form-grid${embedded ? ' form-grid-stacked' : ''}`} onSubmit={(e) => void onSubmit(e)}>
+        {fields.map((f) =>
+          f.name === 'facultyId' || f.name === 'guideId' ? (
+            <label key={f.name} className="field-label">
+              <span>{f.placeholder}</span>
               <select
-                key={f.name}
                 className="dash-input"
                 required
                 value={form[f.name] || ''}
                 onChange={(e) => setForm({ ...form, [f.name]: e.target.value })}
               >
-                <option value="">{f.placeholder}</option>
+                <option value="">Select faculty</option>
                 {(balance.data?.faculty || []).map((fac: any) => (
                   <option key={fac.facultyId} value={fac.facultyId}>{fac.name}</option>
                 ))}
               </select>
-            ) : f.options ? (
+            </label>
+          ) : f.options ? (
+            <label key={f.name} className="field-label">
+              <span>{f.placeholder}</span>
               <select
-                key={f.name}
                 className="dash-input"
                 value={form[f.name] || f.options[0]}
                 onChange={(e) => setForm({ ...form, [f.name]: e.target.value })}
               >
                 {f.options.map((o) => <option key={o}>{o}</option>)}
               </select>
-            ) : (
+            </label>
+          ) : (
+            <label key={f.name} className="field-label">
+              <span>{f.placeholder}</span>
               <input
-                key={f.name}
                 className="dash-input"
                 placeholder={f.placeholder}
                 value={form[f.name] || ''}
                 onChange={(e) => setForm({ ...form, [f.name]: e.target.value })}
               />
-            ),
-          )}
-          <button className="btn btn-secondary" type="submit">Save</button>
-        </form>
-      </Panel>
-      <Panel title={embedded ? title : 'Records'}>
-        <ul className="plain-list">
-          {(rows.data || []).map((r) => (
-            <li key={r.id}>{renderRow(r)}</li>
+            </label>
+          ),
+        )}
+        <div className="form-actions">
+          <button className="btn btn-primary" type="submit">Save</button>
+        </div>
+      </form>
+    </Panel>
+  )
+
+  const listPanel = (
+    <Panel
+      title={embedded ? title : 'Records'}
+      action={<span className="meta-chip">{list.length}</span>}
+    >
+      {list.length === 0 ? (
+        <p className="empty-state">No {title.toLowerCase()} records yet.</p>
+      ) : (
+        <ul className="role-roster">
+          {list.map((r) => (
+            <li key={r.id} className="role-roster-item">
+              {renderRow(r)}
+            </li>
           ))}
         </ul>
-      </Panel>
+      )}
+    </Panel>
+  )
+
+  const body = (
+    <>
+      {message && <div className="alert-banner">{message}</div>}
+      {formPanel}
+      {listPanel}
+    </>
+  )
+
+  return (
+    <>
+      {!embedded && <PageHeader title={title} />}
+      {embedded ? <div className="crud-column">{body}</div> : body}
     </>
   )
 }
@@ -1771,7 +1198,16 @@ export function HodResearchPage() {
         { name: 'role', placeholder: 'Role', options: ['Principal Investigator', 'Co-Investigator', 'Researcher'] },
         { name: 'commitmentPct', placeholder: 'Commitment %' },
       ]}
-      renderRow={(r) => `${r.faculty?.name} · ${r.projectTitle} · ${r.role} · ${r.commitmentPct}%`}
+      renderRow={(r) => (
+        <div className="role-roster-row">
+          <div className="role-roster-main">
+            <strong>{r.faculty?.name || 'Faculty'}</strong>
+            <span className="role-roster-sub">{r.projectTitle}</span>
+          </div>
+          <span className="role-badge">{r.role}</span>
+          <span className="meta-chip">{r.commitmentPct}%</span>
+        </div>
+      )}
     />
   )
 }
@@ -1783,7 +1219,7 @@ export function HodAdminCommitteesPage() {
         title="Administration & Committees"
         subtitle="Department administrative roles and committee memberships in one place."
       />
-      <div className="grid-2">
+      <div className="admin-committees-grid">
         <SimpleCrudPage
           embedded
           title="Administration"
@@ -1793,7 +1229,19 @@ export function HodAdminCommitteesPage() {
             { name: 'facultyId', placeholder: 'Faculty' },
             { name: 'roleName', placeholder: 'Role', options: ['Department Coordinator', 'Class Coordinator', 'Lab Coordinator', 'Exam Coordinator', 'Placement Coordinator', 'Admission Coordinator'] },
           ]}
-          renderRow={(r) => `${r.faculty?.name} · ${r.roleName}`}
+          renderRow={(r) => (
+            <div className="role-roster-row">
+              <div className="role-roster-main">
+                <strong>{r.faculty?.name || 'Faculty'}</strong>
+                {(r.scopeLabel || r.duration) && (
+                  <span className="role-roster-sub">
+                    {[r.scopeLabel, r.duration].filter(Boolean).join(' · ')}
+                  </span>
+                )}
+              </div>
+              <span className="role-badge">{r.roleName}</span>
+            </div>
+          )}
         />
         <SimpleCrudPage
           embedded
@@ -1805,7 +1253,15 @@ export function HodAdminCommitteesPage() {
             { name: 'name', placeholder: 'Committee' },
             { name: 'role', placeholder: 'Role', options: ['Chairperson', 'Coordinator', 'Member'] },
           ]}
-          renderRow={(r) => `${r.faculty?.name} · ${r.committee?.name} · ${r.role}`}
+          renderRow={(r) => (
+            <div className="role-roster-row">
+              <div className="role-roster-main">
+                <strong>{r.faculty?.name || 'Faculty'}</strong>
+                <span className="role-roster-sub">{r.committee?.name || r.name || 'Committee'}</span>
+              </div>
+              <span className="role-badge">{r.role}</span>
+            </div>
+          )}
         />
       </div>
     </>
@@ -1820,102 +1276,16 @@ export function HodCommitteesPage() {
   return <HodAdminCommitteesPage />
 }
 
-export function HodAnalyticsPage() {
-  const deptId = useHodDept()
-  const dash = useApiData(() => api<any>('/hod/dashboard'), [deptId])
-  const balance = useApiData(
-    () =>
-      deptId
-        ? api<any>(`/workload/department/${deptId}/balance`)
-        : Promise.resolve(null),
-    [deptId],
-  )
-  const faculty = balance.data?.faculty || []
-  const overload = faculty.filter((f: any) => f.status === 'OVERLOAD').length
-  const underload = faculty.filter((f: any) => f.status === 'UNDERLOAD').length
-  const normal = faculty.filter((f: any) => f.status === 'NORMAL').length
-  const [query, setQuery] = useState('')
-  const rows = filterByQuery(
-    faculty,
-    query,
-    (f: any) => `${f.facultyCode || ''} ${f.name || ''} ${f.status || ''}`,
-  )
-  return (
-    <>
-      <PageHeader title="Analytics" subtitle="Department load mix and faculty totals." />
-      <div className="stat-grid">
-        <Stat label="Faculty" value={dash.data?.totalFaculty ?? faculty.length} />
-        <Stat label="Average" value={dash.data?.averageWorkload ?? '—'} />
-        <Stat label="Normal" value={normal} />
-        <Stat label="Overload" value={overload} />
-        <Stat label="Underload" value={underload} />
-      </div>
-      <div className="grid-2">
-        <DonutBreakdown
-          title="Workload status"
-          segments={[
-            { label: 'Normal', value: normal, color: '#059669' },
-            { label: 'Overload', value: overload, color: '#dc2626' },
-            { label: 'Underload', value: underload, color: '#2563eb' },
-          ]}
-        />
-        <BarChart
-          title="Faculty totals"
-          items={faculty.map((f: any) => ({
-            label: shortFacultyName(f.name, f.facultyCode),
-            value: Number(f.total || 0),
-            color: f.status === 'OVERLOAD' ? '#dc2626' : f.status === 'UNDERLOAD' ? '#2563eb' : '#059669',
-          }))}
-        />
-      </div>
-      <Panel title="Faculty search">
-        <input
-          className="dash-input"
-          style={{ marginBottom: '0.75rem' }}
-          placeholder="Search faculty"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Faculty</th>
-              <th>Total</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((f: any) => (
-              <tr key={f.facultyId}>
-                <td>{f.name}</td>
-                <td>{f.total?.toFixed?.(2)}</td>
-                <td><StatusPill status={f.status} /></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Panel>
-    </>
-  )
-}
-
 export function HodCorrectionsPage() {
   const corrections = useApiData(() => api<any[]>('/hod/corrections'))
-  const [message, setMessage] = useState<string | null>(null)
-
-  async function review(id: string, status: 'APPROVED' | 'REJECTED') {
-    await api(`/hod/corrections/${id}/review`, {
-      method: 'POST',
-      body: JSON.stringify({ status, note: `Marked ${status} by HOD` }),
-    })
-    setMessage(`Request ${status.toLowerCase()}.`)
-    await corrections.reload()
-  }
 
   return (
     <>
-      <PageHeader title="Correction Requests" subtitle="Review department faculty correction requests." />
-      {message && <div className="alert-banner">{message}</div>}
+      <PageHeader
+        title="Correction Requests"
+        subtitle="Department correction requests (monitor only — HR reviews)."
+      />
+      <ErrorRetry error={corrections.error} onRetry={() => void corrections.reload()} />
       <Panel title="Queue">
         {(corrections.data || []).length === 0 && (
           <p className="empty-state">No correction requests.</p>
@@ -1940,16 +1310,6 @@ export function HodCorrectionsPage() {
                   )}
                 </div>
               </div>
-              {c.status === 'PENDING' && (
-                <div style={{ display: 'flex', gap: '0.4rem' }}>
-                  <button type="button" className="btn btn-success" onClick={() => void review(c.id, 'APPROVED')}>
-                    Approve
-                  </button>
-                  <button type="button" className="btn btn-danger" onClick={() => void review(c.id, 'REJECTED')}>
-                    Reject
-                  </button>
-                </div>
-              )}
             </div>
           ))}
         </div>

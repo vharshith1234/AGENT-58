@@ -428,7 +428,15 @@ export class HrService {
 
   listCorrections() {
     return this.prisma.correctionRequest.findMany({
-      include: { submittedBy: true, reviewedBy: true },
+      include: {
+        submittedBy: {
+          include: {
+            department: true,
+            faculty: { include: { department: true } },
+          },
+        },
+        reviewedBy: true,
+      },
       orderBy: { createdAt: 'desc' },
     });
   }
@@ -445,12 +453,23 @@ export class HrService {
         resolutionNote: body.note,
         reviewedById: reviewerId,
       },
+      include: {
+        submittedBy: { include: { department: true, faculty: true } },
+      },
     });
     await this.notifications.create(
       updated.submittedById,
       `Correction ${body.status.toLowerCase()}`,
       body.note || `Your correction request was ${body.status.toLowerCase()}.`,
     );
+    const who =
+      updated.submittedBy?.faculty?.name ||
+      updated.submittedBy?.name ||
+      'Faculty';
+    const msg = `${who}: ${updated.issueCategory} → ${body.status}`;
+    await this.notifications.notifyRole('HOD', `Correction ${body.status.toLowerCase()}`, msg);
+    await this.notifications.notifyRole('DEAN', `Correction ${body.status.toLowerCase()}`, msg);
+    await this.notifications.notifyRole('PRINCIPAL', `Correction ${body.status.toLowerCase()}`, msg);
     this.invalidateDashboardCache();
     return updated;
   }

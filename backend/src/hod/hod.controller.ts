@@ -16,11 +16,15 @@ import { memoryStorage } from 'multer';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { PermissionsGuard, RequirePerm } from '../common/permissions.guard';
 import { HodService } from './hod.service';
+import { ReassignmentService } from '../workload/reassignment.service';
 
 @Controller('hod')
 @UseGuards(JwtAuthGuard, PermissionsGuard)
 export class HodController {
-  constructor(private hod: HodService) {}
+  constructor(
+    private hod: HodService,
+    private reassignment: ReassignmentService,
+  ) {}
 
   private dept(req: { user: { departmentId?: string } }) {
     return req.user.departmentId!;
@@ -88,6 +92,7 @@ export class HodController {
       facultyId: string;
       hours: number;
       section?: string;
+      classType?: string;
       confirmOverload?: boolean;
       justification?: string;
       preview?: boolean;
@@ -224,5 +229,19 @@ export class HodController {
   @RequirePerm('approvals', 'submit')
   submit(@Req() req: { user: { id: string; departmentId?: string } }) {
     return this.hod.submitForApproval(this.dept(req), req.user.id);
+  }
+
+  @Get('reassignments')
+  @RequirePerm('balancing', 'view')
+  reassignments(@Req() req: { user: { departmentId?: string } }) {
+    return this.reassignment.listForMonitor({
+      departmentId: this.dept(req),
+    });
+  }
+
+  @Get('reassignments/stats')
+  @RequirePerm('balancing', 'view')
+  reassignmentStats(@Req() req: { user: { departmentId?: string } }) {
+    return this.reassignment.stats({ departmentId: this.dept(req) });
   }
 }

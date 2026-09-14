@@ -1,10 +1,11 @@
-import {
+﻿import {
   BadRequestException,
   Body,
   Controller,
   Delete,
   Get,
   Post,
+  Query,
   Req,
   Res,
   UploadedFile,
@@ -19,6 +20,8 @@ import { existsSync, mkdirSync } from 'fs';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { PermissionsGuard, RequirePerm } from '../common/permissions.guard';
 import { FacultyPortalService } from './faculty.service';
+import { ReassignmentService } from '../workload/reassignment.service';
+import type { AuthUser } from '../common/scope';
 
 const uploadRoot = join(process.cwd(), 'uploads', 'faculty');
 if (!existsSync(uploadRoot)) mkdirSync(uploadRoot, { recursive: true });
@@ -26,7 +29,10 @@ if (!existsSync(uploadRoot)) mkdirSync(uploadRoot, { recursive: true });
 @Controller('faculty')
 @UseGuards(JwtAuthGuard, PermissionsGuard)
 export class FacultyController {
-  constructor(private faculty: FacultyPortalService) {}
+  constructor(
+    private faculty: FacultyPortalService,
+    private reassignment: ReassignmentService,
+  ) {}
 
   @Get('me/workload')
   @RequirePerm('workload', 'view')
@@ -163,5 +169,58 @@ export class FacultyController {
       'attachment; filename="workload-statement.csv"',
     );
     res.send(buf);
+  }
+
+  @Get('me/today')
+  @RequirePerm('timetable', 'view')
+  today(
+    @Req() req: { user: { facultyId?: string } },
+    @Query('date') date?: string,
+  ) {
+    return this.reassignment.todaySlots(req.user.facultyId!, date);
+  }
+
+  @Get('me/reassignment-candidates')
+  @RequirePerm('balancing', 'view')
+  candidates(
+    @Req() req: { user: { facultyId?: string } },
+    @Query('hours') hours?: string,
+    @Query('courseId') courseId?: string,
+  ) {
+    return this.reassignment.recommendCandidates(
+      req.user.facultyId!,
+      Number(hours || 1),
+      undefined,
+      courseId || undefined,
+    );
+  }
+
+  @Post('me/reassignments')
+  @RequirePerm('balancing', 'submit')
+  createReassignment(
+    @Req() req: { user: AuthUser },
+    @Body()
+    body: {
+      date: string;
+      reason: string;
+      toFacultyId: string;
+      timetableSlotId?: string;
+      courseId?: string;
+      allocationId?: string;
+      hours?: number;
+      startTime?: string;
+      endTime?: string;
+      section?: string;
+    },
+  ) {
+    return this.reassignment.createLeaveAndReassignment(req.user, body);
+  }
+
+  @Get('me/reassignments')
+  @RequirePerm('balancing', 'view')
+  myReassignments(@Req() req: { user: { facultyId?: string } }) {
+    return this.reassignment.listForMonitor({
+      mineFacultyId: req.user.facultyId,
+    });
   }
 }

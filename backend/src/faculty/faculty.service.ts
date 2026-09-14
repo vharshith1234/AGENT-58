@@ -154,9 +154,24 @@ export class FacultyPortalService {
       },
     });
     await this.notifications.notifyRole(
-      (body.targetRole as any) || 'HOD',
+      'HR',
       'New correction request',
-      body.description,
+      `${body.issueCategory}: ${body.description}`,
+    );
+    await this.notifications.notifyRole(
+      'HOD',
+      'New correction request',
+      `${body.issueCategory}: ${body.description}`,
+    );
+    await this.notifications.notifyRole(
+      'DEAN',
+      'New correction request',
+      `${body.issueCategory}: ${body.description}`,
+    );
+    await this.notifications.notifyRole(
+      'PRINCIPAL',
+      'New correction request',
+      `${body.issueCategory}: ${body.description}`,
     );
     return correction;
   }

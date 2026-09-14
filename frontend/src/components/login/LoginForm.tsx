@@ -2,8 +2,22 @@ import { useEffect, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthError, authService } from '../../lib/auth'
+import { quickLoginPortal } from '../../lib/demoLogins'
+import { LOGIN_PORTALS, ROLE_CONFIGS, type AppRole } from '../../lib/roles'
 
-export function LoginForm() {
+export function LoginForm({
+  portal,
+  onPortalChange,
+  onQuickEnter,
+  quickBusy,
+  externalError,
+}: {
+  portal: AppRole
+  onPortalChange: (role: AppRole) => void
+  onQuickEnter: (role: AppRole) => void | Promise<void>
+  quickBusy?: boolean
+  externalError?: string | null
+}) {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -13,11 +27,18 @@ export function LoginForm() {
   const [loading, setLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const progressTimer = useRef<ReturnType<typeof setInterval> | null>(null)
+  const activePortal = quickLoginPortal(portal)
+  const busy = loading || !!quickBusy
+  const displayError = formError || externalError || ''
 
   useEffect(() => {
     const remembered = authService.getRememberEmail()
     if (remembered) setEmail(remembered)
   }, [])
+
+  useEffect(() => {
+    setFormError('')
+  }, [activePortal])
 
   useEffect(() => {
     if (!loading) {
@@ -65,12 +86,25 @@ export function LoginForm() {
 
     setLoading(true)
     try {
-      const session = await authService.login(emailValue, passwordValue)
+      const session = await authService.login(emailValue, passwordValue, activePortal)
+      const actualRole = session.user.role
+      if (
+        actualRole !== activePortal &&
+        actualRole !== 'DEAN' &&
+        actualRole !== 'PRINCIPAL'
+      ) {
+        await authService.logout()
+        setProgress(0)
+        setFormError(
+          `This account is ${ROLE_CONFIGS[actualRole]?.shortLabel || actualRole}. Open the ${ROLE_CONFIGS[actualRole]?.shortLabel || actualRole} login.`,
+        )
+        return
+      }
       if (remember) authService.setRememberEmail(emailValue)
       else authService.setRememberEmail(null)
       setProgress(100)
-      await new Promise((r) => setTimeout(r, 220))
-      navigate(authService.dashboardFor(session.user.role), { replace: true })
+      await new Promise((r) => setTimeout(r, 180))
+      navigate(authService.dashboardFor(actualRole), { replace: true })
     } catch (err) {
       setProgress(0)
       if (err instanceof AuthError) setFormError(err.message)
@@ -81,11 +115,36 @@ export function LoginForm() {
   }
 
   return (
-    <div className="credentials-panel faculty">
+    <div className={`credentials-panel faculty portal-${activePortal.toLowerCase()}`}>
+      <nav className="login-role-links" aria-label="Quick role access">
+        {LOGIN_PORTALS.map((role, index) => (
+          <span key={role} className="login-role-link-wrap">
+            {index > 0 ? <span className="login-role-sep" aria-hidden>|</span> : null}
+            <button
+              type="button"
+              className="login-role-link"
+              data-active={activePortal === role ? 'true' : undefined}
+              aria-current={activePortal === role ? 'page' : undefined}
+              disabled={busy}
+              title={`Enter as ${ROLE_CONFIGS[role].shortLabel} (no password)`}
+              onClick={() => void onQuickEnter(role)}
+            >
+              {quickBusy && activePortal === role
+                ? 'Opening…'
+                : ROLE_CONFIGS[role].shortLabel}
+            </button>
+          </span>
+        ))}
+      </nav>
+
+      <p className="login-portal-label slide-element">
+        Click HR / HOD / Dean / Faculty to enter directly · or sign in below
+      </p>
+
       <form onSubmit={onSubmit} noValidate>
-        {formError ? (
+        {displayError ? (
           <div className="field-wrapper slide-element error-message">
-            <div className="error-text">{formError}</div>
+            <div className="error-text">{displayError}</div>
           </div>
         ) : null}
 
@@ -99,7 +158,7 @@ export function LoginForm() {
             placeholder=" "
             data-filled={email ? 'true' : undefined}
             required
-            disabled={loading}
+            disabled={busy}
           />
           <label>Email / User ID</label>
           <i className="fa-solid fa-envelope" aria-hidden />
@@ -115,7 +174,7 @@ export function LoginForm() {
             placeholder=" "
             data-filled={password ? 'true' : undefined}
             required
-            disabled={loading}
+            disabled={busy}
           />
           <label>Password</label>
           <button
@@ -136,7 +195,7 @@ export function LoginForm() {
                 type="checkbox"
                 checked={remember}
                 onChange={(e) => setRemember(e.target.checked)}
-                disabled={loading}
+                disabled={busy}
               />
               <span>Remember me</span>
             </label>
@@ -149,12 +208,26 @@ export function LoginForm() {
         </div>
 
         <div className="field-wrapper slide-element login-submit-wrap">
-          <button className="submit-button" type="submit" disabled={loading}>
-            {loading ? `Signing in… ${progress}%` : 'Sign In'}
+          <button className="submit-button" type="submit" disabled={busy}>
+            {quickBusy
+              ? `Opening ${ROLE_CONFIGS[activePortal].shortLabel}…`
+              : loading
+                ? `Signing in… ${progress}%`
+                : `Sign in as ${ROLE_CONFIGS[activePortal].shortLabel}`}
           </button>
-          {loading ? (
-            <div className="login-progress" aria-live="polite" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} role="progressbar">
-              <div className="login-progress-bar" style={{ width: `${progress}%` }} />
+          {loading || quickBusy ? (
+            <div
+              className="login-progress"
+              aria-live="polite"
+              aria-valuenow={progress || (quickBusy ? 60 : 0)}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              role="progressbar"
+            >
+              <div
+                className="login-progress-bar"
+                style={{ width: `${loading ? progress : quickBusy ? 60 : 0}%` }}
+              />
             </div>
           ) : null}
         </div>

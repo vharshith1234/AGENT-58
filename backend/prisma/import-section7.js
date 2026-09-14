@@ -438,6 +438,9 @@ async function main() {
   });
 
   const keepAdminEmails = new Set(ADMIN_EMAILS);
+  // Default: non-destructive so Odd-2026 CSE allocations survive.
+  // Destructive wipe only when ALLOW_SECTION7_WIPE=1.
+  const allowWipe = process.env.ALLOW_SECTION7_WIPE === '1';
 
   const demoTeachingEmails = [
     'sks_cse@vignan.ac.in',
@@ -457,50 +460,73 @@ async function main() {
   });
   const cseCourseIds = cseCourseRows.map((c) => c.id);
 
-  await prisma.adminResponsibility.deleteMany({
-    where: {
-      facultyId: { in: cseFacultyIds },
-      roleName: { contains: 'Class Teacher' },
-    },
-  });
-  await prisma.researchCommitment.deleteMany({
-    where: { facultyId: { in: cseFacultyIds } },
-  });
-  await prisma.committeeMembership.deleteMany({
-    where: { facultyId: { in: cseFacultyIds } },
-  });
-  await prisma.phDSupervision.deleteMany({
-    where: { facultyId: { in: cseFacultyIds } },
-  });
-  await prisma.project.deleteMany({
-    where: {
-      OR: [{ guideId: { in: cseFacultyIds } }, { coGuideId: { in: cseFacultyIds } }],
-    },
-  });
-  if (cseCourseIds.length) {
-    await prisma.timetableSlot.deleteMany({
-      where: { courseId: { in: cseCourseIds } },
+  const deactivated = [];
+
+  if (!allowWipe) {
+    console.log(
+      'Section-7: non-destructive mode (Odd-2026 allocations preserved). Set ALLOW_SECTION7_WIPE=1 to wipe CSE allocations/timetable.',
+    );
+  } else {
+    await prisma.adminResponsibility.deleteMany({
+      where: {
+        facultyId: { in: cseFacultyIds },
+        roleName: { contains: 'Class Teacher' },
+      },
     });
-    await prisma.courseAllocation.deleteMany({
-      where: { courseId: { in: cseCourseIds } },
+    await prisma.researchCommitment.deleteMany({
+      where: { facultyId: { in: cseFacultyIds } },
+    });
+    await prisma.committeeMembership.deleteMany({
+      where: { facultyId: { in: cseFacultyIds } },
+    });
+    await prisma.phDSupervision.deleteMany({
+      where: { facultyId: { in: cseFacultyIds } },
+    });
+    await prisma.project.deleteMany({
+      where: {
+        OR: [{ guideId: { in: cseFacultyIds } }, { coGuideId: { in: cseFacultyIds } }],
+      },
+    });
+    if (cseCourseIds.length) {
+      await prisma.timetableSlot.deleteMany({
+        where: { courseId: { in: cseCourseIds } },
+      });
+      await prisma.courseAllocation.deleteMany({
+        where: { courseId: { in: cseCourseIds } },
+      });
+    }
+
+    const demoCourses = await prisma.course.findMany({
+      where: {
+        departmentId: cse.id,
+        OR: [
+          { code: { startsWith: 'CS3' } },
+          {
+            name: {
+              in: [
+                'DBMS',
+                'DBMS Lab',
+                'Operating Systems',
+                'Computer Networks',
+                'Artificial Intelligence',
+                'Machine Learning',
+                'AI Lab',
+                'OS Tutorial',
+                'Software Engineering',
+                'Networks Lab',
+                'Programming Tutorial',
+              ],
+            },
+          },
+        ],
+      },
+      select: { id: true, code: true, name: true },
+    });
+    await prisma.course.deleteMany({
+      where: { id: { in: demoCourses.map((c) => c.id) } },
     });
   }
 
-  const demoCourses = await prisma.course.findMany({
-    where: {
-      departmentId: cse.id,
-      OR: [
-        { code: { startsWith: 'CS3' } },
-        { name: { in: ['DBMS', 'DBMS Lab', 'Operating Systems', 'Computer Networks', 'Artificial Intelligence', 'Machine Learning', 'AI Lab', 'OS Tutorial', 'Software Engineering', 'Networks Lab', 'Programming Tutorial'] } },
-      ],
-    },
-    select: { id: true, code: true, name: true },
-  });
-  await prisma.course.deleteMany({
-    where: { id: { in: demoCourses.map((c) => c.id) } },
-  });
-
-  const deactivated = [];
   for (const email of demoTeachingEmails) {
     const fac = await prisma.faculty.findUnique({ where: { email } });
     if (!fac) continue;
@@ -515,28 +541,30 @@ async function main() {
     deactivated.push({ name: fac.name, email, action: 'deactivated' });
   }
 
-  const keepNames = new Set(
-    FACULTY.filter((f) => KEEP_FACULTY_KEYS.has(f.key)).map((f) => f.name.toLowerCase()),
-  );
-  const extra = await prisma.faculty.findMany({
-    where: { departmentId: cse.id, status: { not: 'Inactive' } },
-    include: { user: true },
-  });
-  for (const fac of extra) {
-    if (keepAdminEmails.has(fac.email) || keepAdminEmails.has(fac.user?.email || '')) continue;
-    if (keepNames.has(fac.name.toLowerCase())) continue;
-    if (fac.user && fac.user.role !== 'FACULTY') continue;
-    await prisma.faculty.update({
-      where: { id: fac.id },
-      data: { status: 'Inactive' },
+  if (allowWipe) {
+    const keepNames = new Set(
+      FACULTY.filter((f) => KEEP_FACULTY_KEYS.has(f.key)).map((f) => f.name.toLowerCase()),
+    );
+    const extra = await prisma.faculty.findMany({
+      where: { departmentId: cse.id, status: { not: 'Inactive' } },
+      include: { user: true },
     });
-    if (fac.user && fac.user.role === 'FACULTY') {
-      await prisma.user.update({
-        where: { id: fac.user.id },
-        data: { status: 'INACTIVE' },
+    for (const fac of extra) {
+      if (keepAdminEmails.has(fac.email) || keepAdminEmails.has(fac.user?.email || '')) continue;
+      if (keepNames.has(fac.name.toLowerCase())) continue;
+      if (fac.user && fac.user.role !== 'FACULTY') continue;
+      await prisma.faculty.update({
+        where: { id: fac.id },
+        data: { status: 'Inactive' },
       });
+      if (fac.user && fac.user.role === 'FACULTY') {
+        await prisma.user.update({
+          where: { id: fac.user.id },
+          data: { status: 'INACTIVE' },
+        });
+      }
+      deactivated.push({ name: fac.name, email: fac.email, action: 'deactivated-not-in-keep-list' });
     }
-    deactivated.push({ name: fac.name, email: fac.email, action: 'deactivated-not-in-keep-list' });
   }
 
   const facultyIds = {};
@@ -572,6 +600,18 @@ async function main() {
       : await prisma.faculty.create({ data });
     facultyIds[row.key] = saved.id;
     await ensureFacultyLogin(cse, row, saved.id, email);
+  }
+
+  if (!allowWipe) {
+    const report = {
+      generatedAt: new Date().toISOString(),
+      mode: 'non-destructive',
+      note: 'Skipped CSE allocation/timetable wipe and Section-7 slot import. Odd-2026 data preserved. Re-run with ALLOW_SECTION7_WIPE=1 for legacy Section-7 replace.',
+      demoFacultyDeactivated: deactivated,
+      facultyEnsured: Object.keys(facultyIds).length,
+    };
+    console.log(JSON.stringify(report, null, 2));
+    return report;
   }
 
   const courseIds = {};
@@ -687,7 +727,7 @@ async function main() {
     facultyUnmatched: FACULTY.filter((f) => f.match.status === 'UNMATCHED').map((f) => f.name),
     manualVerification: MANUAL_VERIFICATION,
     demoFacultyDeactivated: deactivated,
-    demoCoursesRemoved: demoCourses.map((c) => `${c.code} ${c.name}`),
+    demoCoursesRemoved: [],
     fakeProjectsResearchPhdCommitteesCleared: true,
     coursesImported: COURSES.length,
     timetableRecordsImported: slotsCreated,

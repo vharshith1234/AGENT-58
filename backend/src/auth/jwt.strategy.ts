@@ -1,7 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { ConfigService } from '@nestjs/config';
+import { PrismaService } from '../prisma/prisma.service';
 
 export type JwtPayload = {
   sub: string;
@@ -14,7 +15,10 @@ export type JwtPayload = {
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(config: ConfigService) {
+  constructor(
+    config: ConfigService,
+    private prisma: PrismaService,
+  ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
@@ -22,14 +26,30 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  validate(payload: JwtPayload) {
+  /** Always use live DB role/scope so role changes apply without waiting for token expiry. */
+  async validate(payload: JwtPayload) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: payload.sub },
+      select: {
+        id: true,
+        email: true,
+        role: true,
+        status: true,
+        departmentId: true,
+        schoolId: true,
+        facultyId: true,
+      },
+    });
+    if (!user || user.status !== 'ACTIVE') {
+      throw new UnauthorizedException('User not available');
+    }
     return {
-      id: payload.sub,
-      email: payload.email,
-      role: payload.role,
-      departmentId: payload.departmentId,
-      schoolId: payload.schoolId,
-      facultyId: payload.facultyId,
+      id: user.id,
+      email: user.email,
+      role: user.role,
+      departmentId: user.departmentId,
+      schoolId: user.schoolId,
+      facultyId: user.facultyId,
     };
   }
 }

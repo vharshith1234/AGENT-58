@@ -120,7 +120,7 @@ export function PersonAvatar({
 export function StatusPill({ status }: { status?: string | null }) {
   const s = (status || 'PENDING').toUpperCase()
   const cls =
-    s === 'NORMAL' || s === 'APPROVED' || s === 'COMPLETED'
+    s === 'NORMAL' || s === 'APPROVED' || s === 'COMPLETED' || s === 'ACCEPTED'
       ? 'status-normal'
       : s === 'ACTIVE' || s === 'ONGOING'
         ? 'status-info'
@@ -128,7 +128,7 @@ export function StatusPill({ status }: { status?: string | null }) {
           ? 'status-overload'
           : s === 'UNDERLOAD' || s === 'REVIEW' || s === 'UNDER_REVIEW' || s === 'SUBMITTED'
             ? 'status-underload'
-            : s === 'PENDING'
+            : s === 'PENDING' || s === 'PENDING_UTESH'
               ? 'status-pending'
               : 'status-indeterminate'
 

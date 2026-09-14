@@ -46,7 +46,10 @@ export const ROLE_CONFIGS: Record<AppRole, RoleConfig> = {
   },
 }
 
-/** Login portal order */
+/** Primary login portals shown on the login page */
+export const LOGIN_PORTALS: AppRole[] = ['HR', 'HOD', 'DEAN', 'FACULTY']
+
+/** Login portal order (visual indicators) */
 export const ROLE_INDICATORS: AppRole[] = [
   'HR',
   'HOD',
@@ -54,3 +57,9 @@ export const ROLE_INDICATORS: AppRole[] = [
   'PRINCIPAL',
   'FACULTY',
 ]
+
+export function parseLoginPortal(value: string | null | undefined): AppRole {
+  const v = String(value || '').toUpperCase()
+  if (v === 'HR' || v === 'HOD' || v === 'DEAN' || v === 'FACULTY') return v
+  return 'FACULTY'
+}
