@@ -1,15 +1,28 @@
 import { useCallback, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoginForm } from '../components/login/LoginForm'
-import { WelcomePanel } from '../components/login/WelcomePanel'
 import {
-  InstitutionalFooter,
-  InstitutionalHeader,
-} from '../components/InstitutionalChrome'
+  LoginSplash,
+  markLoginSplashSeen,
+  shouldShowLoginSplash,
+} from '../components/login/LoginSplash'
+import { WelcomePanel } from '../components/login/WelcomePanel'
+import { InstitutionalHeader } from '../components/InstitutionalChrome'
 import { AuthError, authService } from '../lib/auth'
 import { QUICK_LOGIN_ACCOUNTS, quickLoginPortal } from '../lib/demoLogins'
 import { parseLoginPortal, type AppRole } from '../lib/roles'
 import '../styles/drims-login.css'
+import '../styles/premium-login.css'
+
+function PremiumLoginFooter() {
+  return (
+    <footer className="premium-login-footer">
+      <div className="premium-login-footer-inner">
+        <p>© 2026 AGENT 58 · VIGNAN&apos;S · Faculty Workload System</p>
+      </div>
+    </footer>
+  )
+}
 
 export function LoginPage() {
   const [params] = useSearchParams()
@@ -17,6 +30,8 @@ export function LoginPage() {
   const portal = parseLoginPortal(params.get('role'))
   const [quickBusy, setQuickBusy] = useState(false)
   const [quickError, setQuickError] = useState<string | null>(null)
+  const [showSplash, setShowSplash] = useState(() => shouldShowLoginSplash())
+  const [enterLogin, setEnterLogin] = useState(() => !showSplash)
 
   const setPortal = useCallback(
     (role: AppRole) => {
@@ -38,7 +53,6 @@ export function LoginPage() {
           account.password,
           portalRole,
         )
-        authService.setRememberEmail(account.email)
         navigate(authService.dashboardFor(session.user.role), { replace: true })
       } catch (err) {
         setQuickError(
@@ -53,28 +67,43 @@ export function LoginPage() {
     [navigate, setPortal],
   )
 
+  const onSplashComplete = useCallback(() => {
+    markLoginSplashSeen()
+    setShowSplash(false)
+    setEnterLogin(true)
+  }, [])
+
   return (
-    <div className="login-page">
+    <div
+      className={`login-page login-page--premium${enterLogin ? ' login-page--enter' : ''}`}
+    >
+      {showSplash ? <LoginSplash onComplete={onSplashComplete} /> : null}
+
       <InstitutionalHeader />
 
-      <div className="auth-wrapper">
-        <div className="background-shape" aria-hidden />
-        <div className="secondary-shape" aria-hidden />
-        <LoginForm
-          portal={portal}
-          onPortalChange={setPortal}
-          onQuickEnter={quickEnter}
-          quickBusy={quickBusy}
-          externalError={quickError}
-        />
-        <WelcomePanel
-          portal={portal}
-          onQuickEnter={quickEnter}
-          busy={quickBusy}
-        />
-      </div>
+      <main className="premium-hero">
+        <div className="premium-hero-bg" aria-hidden>
+          <img src="/brand/vignan-campus.png" alt="" />
+          <div className="premium-hero-bg-veil" />
+        </div>
 
-      <InstitutionalFooter />
+        <div className="premium-hero-inner">
+          <LoginForm
+            portal={portal}
+            onPortalChange={setPortal}
+            onQuickEnter={quickEnter}
+            quickBusy={quickBusy}
+            externalError={quickError}
+          />
+          <WelcomePanel
+            portal={portal}
+            onQuickEnter={quickEnter}
+            busy={quickBusy}
+          />
+        </div>
+      </main>
+
+      <PremiumLoginFooter />
     </div>
   )
 }

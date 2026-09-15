@@ -1,7 +1,8 @@
-const API_ORIGIN = (import.meta.env.VITE_API_URL || 'http://localhost:3000/api').replace(
-  /\/api\/?$/,
-  '',
-)
+const API_ORIGIN = (
+  import.meta.env.DEV
+    ? ''
+    : import.meta.env.VITE_API_URL || 'http://localhost:3000/api'
+).replace(/\/api\/?$/, '')
 
 function initials(name: string) {
   const parts = name.trim().split(/\s+/).filter(Boolean)

@@ -11,6 +11,110 @@
   overflow-x: hidden;
 }
 
+.login-page--enter .login-header,
+.login-page--enter .auth-wrapper,
+.login-page--enter .login-footer {
+  animation: login-enter 0.45s ease both;
+}
+
+.login-page--enter .auth-wrapper {
+  animation-delay: 0.06s;
+}
+
+.login-page--enter .login-footer {
+  animation-delay: 0.12s;
+}
+
+@keyframes login-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.login-splash.is-exiting {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.login-splash-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  /* Show the full frame — no over-zoom / crop */
+  object-fit: contain;
+  object-position: center center;
+  background: #000;
+  cursor: pointer;
+  transform: none;
+}
+
+@media (max-width: 767px) {
+  .login-splash-video {
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+
+html.login-splash-open,
+html.login-splash-open body {
+  overflow: hidden !important;
+  height: 100%;
+}
+
+.login-splash-skip {
+  position: absolute;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 1;
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(15, 23, 42, 0.55);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.login-splash-skip:hover {
+  background: rgba(15, 23, 42, 0.75);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767px) {
+  .login-splash-skip {
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}
+
 .login-header {
   width: 100%;
   background: #fafafa;
@@ -686,6 +790,62 @@
   color: #6b7280;
 }
 
+.login-robot-wrap {
+  display: block;
+  line-height: 0;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.login-robot-source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.login-robot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+}
+
+.login-robot--welcome {
+  width: 96px;
+  height: 96px;
+  margin: 0 0 0.85rem auto;
+  animation: none;
+}
+
+.login-robot--mobile {
+  display: none;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 0.75rem;
+  animation: none;
+}
+
+.login-robot-wrap:hover .login-robot--welcome,
+.login-robot-wrap:hover .login-robot--mobile,
+.premium-robot-stage:hover .login-robot--welcome {
+  animation: login-robot-float 3.2s ease-in-out infinite;
+}
+
+@keyframes login-robot-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 .auth-wrapper .background-shape {
   position: absolute;
   right: 0;
@@ -803,17 +963,24 @@
   }
 
   .auth-wrapper {
-    margin: 20px 12px;
+    margin: 16px auto;
     height: auto;
     max-width: calc(100% - 24px);
     width: calc(100% - 24px);
     border-radius: 16px;
+    overflow: visible;
   }
 
   .auth-wrapper .credentials-panel {
     width: 100%;
     position: relative;
-    padding: 32px 20px;
+    padding: 28px 20px 32px;
+    left: auto;
+    top: auto;
+  }
+
+  .login-robot--mobile {
+    display: block;
   }
 
   .welcome-section,
@@ -825,6 +992,19 @@
   .credentials-panel h2 {
     font-size: 22px;
     margin-bottom: 24px;
+  }
+
+  .login-role-links {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .login-portal-label {
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-size: 0.78rem;
+    line-height: 1.4;
   }
 
   .field-wrapper {
@@ -839,6 +1019,11 @@
 
   .footer-container {
     padding: 8px 16px;
+  }
+
+  .remember-forgot-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 }
 

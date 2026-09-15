@@ -1,14 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 import type { FormEvent, KeyboardEvent, ClipboardEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {
-  InstitutionalFooter,
-  InstitutionalHeader,
-} from '../InstitutionalChrome'
+import { InstitutionalHeader } from '../InstitutionalChrome'
 import { api } from '../../lib/api'
 import '../../styles/drims-login.css'
+import '../../styles/premium-login.css'
 
 type Step = 'email' | 'otp' | 'password' | 'done'
+
+function PremiumForgotFooter() {
+  return (
+    <footer className="premium-login-footer">
+      <div className="premium-login-footer-inner">
+        <p>© 2026 AGENT 58 · VIGNAN&apos;S · Faculty Workload System</p>
+      </div>
+    </footer>
+  )
+}
 
 export function ForgotPasswordPage() {
   const navigate = useNavigate()
@@ -151,155 +159,184 @@ export function ForgotPasswordPage() {
   }
 
   return (
-    <div className="login-page">
+    <div className="login-page login-page--premium login-page--enter login-page--forgot">
       <InstitutionalHeader />
-      <div className="auth-wrapper forgot-auth-wrap">
-        <div className="background-shape" aria-hidden />
-        <div className="credentials-panel faculty forgot-official">
-          <div className="forgot-official-head slide-element">
-            <span className="forgot-official-badge">
-              <i className="fa-solid fa-envelope-circle-check" aria-hidden />
-              Official mail OTP
-            </span>
-            <h2>Forgot Password?</h2>
-            <p className="forgot-official-sub">
-              Reset using a one-time code sent to your <strong>registered email</strong> (official
-              institutional or linked mailbox).
-            </p>
-          </div>
 
-          {error ? (
-            <div className="forgot-alert forgot-alert-error slide-element">{error}</div>
-          ) : null}
-          {info && step === 'otp' ? (
-            <div className="forgot-alert forgot-alert-ok slide-element">
-              {info}
-              {maskedEmail ? (
-                <>
-                  {' '}
-                  Sent to <strong>{maskedEmail}</strong>.
-                </>
-              ) : null}
-            </div>
-          ) : null}
-
-          {step === 'email' && (
-            <form className="forgot-form" onSubmit={(e) => void sendOtp(e)} noValidate>
-              <label className="forgot-box-field slide-element">
-                <span className="forgot-box-label">Official Email / User ID</span>
-                <div className="forgot-box-input">
-                  <i className="fa-solid fa-envelope" aria-hidden />
-                  <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@vignan.ac.in"
-                    required
-                    autoComplete="username"
-                  />
-                </div>
-              </label>
-              <button className="submit-button forgot-submit" type="submit" disabled={loading}>
-                {loading ? 'Sending OTP…' : 'Send OTP to Official Mail'}
-              </button>
-            </form>
-          )}
-
-          {step === 'otp' && (
-            <form className="forgot-form" onSubmit={(e) => void verifyOtp(e)} noValidate>
-              <div className="forgot-otp-block slide-element">
-                <span className="forgot-box-label">Enter 6-digit OTP</span>
-                <div className="forgot-otp-boxes" onPaste={onOtpPaste}>
-                  {otpDigits.map((d, i) => (
-                    <input
-                      key={i}
-                      ref={(el) => {
-                        otpRefs.current[i] = el
-                      }}
-                      className="forgot-otp-box"
-                      type="text"
-                      inputMode="numeric"
-                      maxLength={1}
-                      value={d}
-                      aria-label={`OTP digit ${i + 1}`}
-                      onChange={(e) => setOtpAt(i, e.target.value)}
-                      onKeyDown={(e) => onOtpKeyDown(i, e)}
-                      autoComplete={i === 0 ? 'one-time-code' : 'off'}
-                    />
-                  ))}
-                </div>
-              </div>
-              <button className="submit-button forgot-submit" type="submit" disabled={loading}>
-                {loading ? 'Verifying…' : 'Verify OTP'}
-              </button>
-              <button
-                type="button"
-                className="forgot-resend"
-                disabled={loading}
-                onClick={() => void sendOtp()}
-              >
-                Resend OTP to official mail
-              </button>
-            </form>
-          )}
-
-          {step === 'password' && (
-            <form className="forgot-form" onSubmit={(e) => void resetPassword(e)} noValidate>
-              <label className="forgot-box-field slide-element">
-                <span className="forgot-box-label">New password</span>
-                <div className="forgot-box-input">
-                  <i className="fa-solid fa-lock" aria-hidden />
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Min. 8 characters"
-                    required
-                    autoComplete="new-password"
-                  />
-                </div>
-              </label>
-              <label className="forgot-box-field slide-element">
-                <span className="forgot-box-label">Confirm password</span>
-                <div className="forgot-box-input">
-                  <i className="fa-solid fa-lock" aria-hidden />
-                  <input
-                    type="password"
-                    value={confirm}
-                    onChange={(e) => setConfirm(e.target.value)}
-                    placeholder="Re-enter password"
-                    required
-                    autoComplete="new-password"
-                  />
-                </div>
-              </label>
-              <button className="submit-button forgot-submit" type="submit" disabled={loading}>
-                {loading ? 'Saving…' : 'Reset password'}
-              </button>
-            </form>
-          )}
-
-          {step === 'done' && (
-            <div className="forgot-done slide-element">
-              <div className="forgot-alert forgot-alert-ok">
-                Password updated. You can sign in with your new password.
-              </div>
-              <button className="submit-button forgot-submit" type="button" onClick={() => navigate('/login')}>
-                Back to Login
-              </button>
-            </div>
-          )}
-
-          {step !== 'done' && (
-            <p className="switch-link slide-element">
-              <Link to="/login" className="forgot-link">
-                Back to Login
-              </Link>
-            </p>
-          )}
+      <main className="premium-hero premium-hero--forgot">
+        <div className="premium-hero-bg" aria-hidden>
+          <img src="/brand/vignan-campus.png" alt="" />
+          <div className="premium-hero-bg-veil" />
         </div>
-      </div>
-      <InstitutionalFooter />
+
+        <div className="premium-forgot-wrap">
+          <div className="premium-login-card premium-forgot-card">
+            <div className="premium-forgot-head">
+              <span className="premium-forgot-badge">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <rect x="3" y="5" width="18" height="14" rx="3" stroke="#1769E8" strokeWidth="1.8" />
+                  <path d="M4 7.5L12 13l8-5.5" stroke="#1769E8" strokeWidth="1.8" strokeLinecap="round" />
+                  <circle cx="18.5" cy="7.5" r="3.2" fill="#EAF4FF" stroke="#5B5CE2" strokeWidth="1.4" />
+                  <path d="M18.5 6.2v1.5l.9.9" stroke="#123B73" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
+                Official mail OTP
+              </span>
+              <h2>Forgot Password?</h2>
+              <p>
+                Reset using a one-time code sent to your <strong>registered email</strong>{' '}
+                (official institutional or linked mailbox).
+              </p>
+            </div>
+
+            {error ? <div className="premium-forgot-alert is-error">{error}</div> : null}
+            {info && step === 'otp' ? (
+              <div className="premium-forgot-alert is-ok">
+                {info}
+                {maskedEmail ? (
+                  <>
+                    {' '}
+                    Sent to <strong>{maskedEmail}</strong>.
+                  </>
+                ) : null}
+              </div>
+            ) : null}
+
+            {step === 'email' && (
+              <form className="premium-forgot-form" onSubmit={(e) => void sendOtp(e)} noValidate>
+                <label className="premium-field">
+                  <span>Official Email / User ID</span>
+                  <div className="premium-input">
+                    <i className="fa-solid fa-envelope" aria-hidden />
+                    <input
+                      type="text"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@vignan.ac.in"
+                      required
+                      autoComplete="username"
+                    />
+                  </div>
+                </label>
+                <button className="premium-submit" type="submit" disabled={loading}>
+                  <span className="premium-submit-arrow" aria-hidden>
+                    →
+                  </span>
+                  {loading ? 'Sending OTP…' : 'Send OTP to Official Mail'}
+                </button>
+              </form>
+            )}
+
+            {step === 'otp' && (
+              <form className="premium-forgot-form" onSubmit={(e) => void verifyOtp(e)} noValidate>
+                <div className="premium-otp-block">
+                  <span className="premium-field-label">Enter 6-digit OTP</span>
+                  <div className="premium-otp-boxes" onPaste={onOtpPaste}>
+                    {otpDigits.map((d, i) => (
+                      <input
+                        key={i}
+                        ref={(el) => {
+                          otpRefs.current[i] = el
+                        }}
+                        className="premium-otp-box"
+                        type="text"
+                        inputMode="numeric"
+                        maxLength={1}
+                        value={d}
+                        aria-label={`OTP digit ${i + 1}`}
+                        onChange={(e) => setOtpAt(i, e.target.value)}
+                        onKeyDown={(e) => onOtpKeyDown(i, e)}
+                        autoComplete={i === 0 ? 'one-time-code' : 'off'}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <button className="premium-submit" type="submit" disabled={loading}>
+                  <span className="premium-submit-arrow" aria-hidden>
+                    →
+                  </span>
+                  {loading ? 'Verifying…' : 'Verify OTP'}
+                </button>
+                <button
+                  type="button"
+                  className="premium-forgot-resend"
+                  disabled={loading}
+                  onClick={() => void sendOtp()}
+                >
+                  Resend OTP to official mail
+                </button>
+              </form>
+            )}
+
+            {step === 'password' && (
+              <form
+                className="premium-forgot-form"
+                onSubmit={(e) => void resetPassword(e)}
+                noValidate
+              >
+                <label className="premium-field">
+                  <span>New password</span>
+                  <div className="premium-input">
+                    <i className="fa-solid fa-lock" aria-hidden />
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Min. 8 characters"
+                      required
+                      autoComplete="new-password"
+                    />
+                  </div>
+                </label>
+                <label className="premium-field">
+                  <span>Confirm password</span>
+                  <div className="premium-input">
+                    <i className="fa-solid fa-lock" aria-hidden />
+                    <input
+                      type="password"
+                      value={confirm}
+                      onChange={(e) => setConfirm(e.target.value)}
+                      placeholder="Re-enter password"
+                      required
+                      autoComplete="new-password"
+                    />
+                  </div>
+                </label>
+                <button className="premium-submit" type="submit" disabled={loading}>
+                  <span className="premium-submit-arrow" aria-hidden>
+                    →
+                  </span>
+                  {loading ? 'Saving…' : 'Reset password'}
+                </button>
+              </form>
+            )}
+
+            {step === 'done' && (
+              <div className="premium-forgot-done">
+                <div className="premium-forgot-alert is-ok">
+                  Password updated. You can sign in with your new password.
+                </div>
+                <button
+                  className="premium-submit"
+                  type="button"
+                  onClick={() => navigate('/login')}
+                >
+                  <span className="premium-submit-arrow" aria-hidden>
+                    →
+                  </span>
+                  Back to Login
+                </button>
+              </div>
+            )}
+
+            {step !== 'done' ? (
+              <p className="premium-forgot-back">
+                <Link to="/login">← Back to Login</Link>
+              </p>
+            ) : null}
+          </div>
+        </div>
+      </main>
+
+      <PremiumForgotFooter />
     </div>
   )
 }

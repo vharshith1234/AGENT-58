@@ -11,6 +11,15 @@ function isAllowedOrigin(origin: string | undefined): boolean {
   if (!origin) return true;
   if (/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
 
+  // Local LAN (phone / other devices on same Wi‑Fi)
+  if (
+    /^https?:\/\/((192\.168\.\d{1,3}\.\d{1,3})|(10\.\d{1,3}\.\d{1,3}\.\d{1,3})|(172\.(1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3}))(:\d+)?$/.test(
+      origin,
+    )
+  ) {
+    return true;
+  }
+
   const fromEnv = (process.env.CORS_ORIGINS || '')
     .split(',')
     .map((s) => s.trim())
@@ -21,7 +30,7 @@ function isAllowedOrigin(origin: string | undefined): boolean {
   if (/^https:\/\/([a-z0-9-]+\.)*vercel\.app$/i.test(origin)) return true;
   if (
     origin === 'https://agent-58-tawny.vercel.app' ||
-    origin.startsWith('https://agent-58-') && origin.endsWith('.vercel.app')
+    (origin.startsWith('https://agent-58-') && origin.endsWith('.vercel.app'))
   ) {
     return true;
   }

@@ -1,4 +1,10 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000/api'
+function resolveApiBase() {
+  // Dev always uses same-origin /api (Vite proxy) so phone/LAN works.
+  if (import.meta.env.DEV) return '/api'
+  return import.meta.env.VITE_API_URL || 'http://localhost:3000/api'
+}
+
+const API_BASE = resolveApiBase()
 const DEFAULT_TIMEOUT_MS = 45_000
 const CACHE_TTL_MS = 60_000
 
